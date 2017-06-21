@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * The template for displaying all pages
  *
@@ -14,7 +14,7 @@
 get_header(); ?>
 <main>
     <div id="content_left">
-        <?
+        <?php
         while ( have_posts() ) : the_post();
             //output title, content, etc here
             //the_post_thumbnail('full');
@@ -57,4 +57,4 @@ get_header(); ?>
         ?>
     </div>
 </main>
-<? get_footer(); ?>
+<?php get_footer(); ?>

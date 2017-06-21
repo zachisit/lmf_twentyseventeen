@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * The template for displaying the footer
  *
@@ -10,11 +10,11 @@
 <footer>
     <div id="left">
         <ul>
-            <li><a href="" title="<? echo get_bloginfo( 'name' ); ?> Facebook" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i>
+            <li><a href="" title="<?php echo get_bloginfo( 'name' ); ?> Facebook" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i>
                 </a></li>
-            <li><a href="" title="<? echo get_bloginfo( 'name' ); ?> Twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>
+            <li><a href="" title="<?php echo get_bloginfo( 'name' ); ?> Twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>
                 </a></li>
-            <li><a href="" title="<? echo get_bloginfo( 'name' ); ?> YouTube" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i>
+            <li><a href="" title="<?php echo get_bloginfo( 'name' ); ?> YouTube" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i>
                 </a></li>
         </ul>
     </div>
@@ -27,11 +27,12 @@
         </ul>
     </div>
     <div id="bottom">
-        <p>&copy; 2012-<? echo date("Y"); ?> <? echo get_bloginfo( 'name' ); ?></p>
+        <p>&copy; 2012-<?php echo date("Y"); ?> <?php echo get_bloginfo( 'name' ); ?></p>
         <p>Hosting provided by <a href="" title="Handsome Cat Hosting">Handsome Cat Hosting</a></p>
     </div>
 </footer>
-<? wp_footer(); ?>
+</div><!--/wrapper-->
+<?php wp_footer(); ?>
 
 <!--Google Analytics-->
     <!--remove me and replace with client GA code-->

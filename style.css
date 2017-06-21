@@ -41,21 +41,34 @@ Use it to make something cool, have fun, and share what you've learned with othe
 # Normalize
 --------------------------------------------------------------*/
 html {
-    font-family: sans-serif;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust:     100%;
+    font-family:sans-serif;
+    -webkit-text-size-adjust:100%;
+    -ms-text-size-adjust:100%;
+    background:#f8f8f8;
 }
 body {
     margin: 0;
+    font-family:Arial, Arial, Tahoma, sans-serif;
+    font-weight:300;
 }
 ul {
     margin:0;
     padding:0;
+    list-style-type:none;
 }
 #wrapper {
     background:white;
     width:1000px;
-    margin:auto;
+    margin:5px auto;
+    box-shadow:0px 0px 0.188em rgba(0, 0, 0, 0.1);
+    display:table;
+}
+a {
+    color:#3385c3;
+    text-decoration:none;
+}
+a:hover  {
+    text-decoration:underline;
 }
 
 
@@ -68,16 +81,69 @@ header {
 }
 header #logo {
     float:left;
-    width:auto;
-    margin:0;
+    width:307px;
+    margin:1.875em 0 0 1.875em;
 }
 header #right {
     float:right;
-    width:80%;
+    width:537px;
 }
 header #right #top {
     float:left;
     width:100%;
+    border-top:3px solid #096cc8;
+}
+header #right #top #one {
+    float:left;
+    width:100px;
+    border-right:2px solid #ccc;
+    margin:0.625em 0 0 0;
+}
+header #right #top #one ul {
+    margin:auto;
+    display:table;
+}
+header #right #top #one ul li {
+    display:inline;
+    padding:0 0.250em 0 0;
+}
+header #right #top #one ul li:last-child {
+    padding:0;
+}
+header #right #top #two {
+    float:left;
+    width:160px;
+    border-right:2px solid #ccc;
+    margin:0.625em 0 0 0;
+}
+header #right #top #two #phone {
+    margin:auto;
+    display:table;
+}
+header #right #top #two #phone::before {
+    content:"\f095";
+    font-size:1.250em;
+    padding:0 0.625em 0 0;
+    font-family:"FontAwesome";
+}
+header #right #top #three {
+    float:left;
+    width:120px;
+    border-right:0.125em solid #ccc;
+    margin:0.625em 0 0 0;
+}
+header #right #top #three #contact {
+    display:table;
+    margin:auto;
+}
+header #right #top #four {
+    float:left;
+    width:140px;
+    margin:0.625em 0 0 0;
+}
+header #right #top #four #login {
+    margin:auto;
+    display:table;
 }
 header #right #bottom {
     float:left;
@@ -103,10 +169,88 @@ header #menu {
 #home_hours {
     float:left;
     width:100%;
+    margin:0 0 0.625em 0;
+}
+#home_hours p {
+    background:#F8F8F8;
+    color:#04435d;
+    font-size:1.313em;
+    padding:0.9em 0;
+    font-family:Cambria, Georgia, serif;
+    font-style:italic;
+    width:95%;
+    margin:auto;
+}
+#home_hours p::before {
+    content:"\f10e";
+    font-family:"FontAwesome";
+    font-size:1.5em;
+    padding:0.2em 0.500em 0 1em;
 }
 #home_two_cta {
     float:left;
     width:100%;
+    height:245px;
+}
+#home_two_cta #one {
+    width:49.5%;
+    float:left;
+}
+#home_two_cta h2 {
+    color:white;
+    font-size:1.5em;
+    text-transform:uppercase;
+    margin:1em;
+    font-weight:200;
+    text-align:left;
+    min-height:108px;
+}
+#home_two_cta a {
+    color:white;
+    border:1px solid white;
+    padding:0.625em;
+    margin:0 0 0 1em;
+}
+#home_two_cta a:hover {
+    text-decoration:none;
+}
+#home_two_cta a::after {
+    content:"\f061";
+    font-family:"FontAwesome";
+    font-size:1.1em;
+    padding:0 0 0 .5em;
+}
+#home_two_cta #one #left {
+    float:left;
+    width:50%;
+}
+#home_two_cta #one #right {
+    float:right;
+    width:50%;
+    height:245px;
+    background:#096cc8;
+}
+#home_two_cta #one #left img {
+    width:100%;
+    height:245px;
+}
+#home_two_cta #two {
+    width:50%;
+    float:right;
+}
+#home_two_cta #two #left {
+    float:left;
+    width:50%;
+}
+#home_two_cta #two #right {
+    float:right;
+    width:50%;
+    height:245px;
+    background:#b30917;
+}
+#home_two_cta #two #left img {
+    width:100%;
+    height:245px;
 }
 #home_intouch {
     float:left;
@@ -114,16 +258,83 @@ header #menu {
 }
 #home_intouch #left {
     float:left;
-    width:45%;
+    width:50%;
+}
+#home_intouch #left h1 {
+    font-size:1.5em;
+    font-weight:100;
+    padding:0 0 0 0.625em;
+}
+#home_intouch #left .title {
+    border-bottom:1px solid #ccc;
+    padding:0 0 0.325em 0;
+    color:#333;
+    font-size:1em;
+    margin:0 0 0 1em;
+}
+#home_intouch #left .datum {
+    font-size:1em;
+    margin:0.3em 0 1.4em 1em;
+}
+#home_intouch #left .phone::before {
+    content:"\f095";
+    font-family:"FontAwesome";
+    font-size:1.1em;
+    padding:0 0.8em 0 .5em;
+}
+#home_intouch #left .address::before {
+    content:"\f041";
+    font-family:"FontAwesome";
+    font-size:1.1em;
+    padding:0 0.8em 0 .5em;
+}
+#home_intouch #left .contact::before {
+    content:"\f003";
+    font-family:"FontAwesome";
+    font-size:1.1em;
+    padding:0 0.8em 0 .5em;
+}
+#home_intouch #left .twitter::before {
+    content:"\f099";
+    font-family:"FontAwesome";
+    font-size:1.1em;
+    padding:0 0.8em 0 .5em;
 }
 #home_intouch #right {
     float:right;
-    width:45%;
+    width:50%;
 }
 #home_look {
     float:left;
     width:100%;
+    background:#3385c3;
+    padding:1.4em 0;
+    color:white;
 }
+#home_look #left {
+    float:left;
+    margin:0 0 0 3em;
+    font-size:1.5em;
+    text-transform:uppercase;
+}
+#home_look #right {
+    float:right;
+    margin:0 1em 0 0;
+}
+#home_look #right a {
+    color:white;
+    border:1px solid white;
+    padding:0.4em 1.2em;
+    font-size:1em;
+    text-transform:uppercase;
+}
+#home_look #right a::after {
+    content:"\f061";
+    font-family:"FontAwesome";
+    font-size:1.1em;
+    padding:0 0 0 .5em;
+}
+
 /*--------------------------------------------------------------
 # Mobile Menu
 ---------------------------------------------------------------*/
@@ -131,7 +342,7 @@ header #menu {
     background:black;
     height:9px;
     width:100%;
-    margin:2px;
+    margin:0.125em;
     width:44px;
     float:right;
 }
@@ -142,44 +353,44 @@ header #menu {
     height:40px;
     float:right;
     display:none;
-    margin:6px 0 0 0;
+    margin:0.375em 0 0 0;
 }
 
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
 .alignleft {
-    display: inline;
-    float: left;
-    margin-right: 1.5em;
+    display:inline;
+    float:left;
+    margin-right:1.5em;
 }
 .alignright {
-    display: inline;
-    float: right;
-    margin-left: 1.5em;
+    display:inline;
+    float:right;
+    margin-left:1.5em;
 }
 .aligncenter {
-    clear: both;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    clear:both;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 /*--------------------------------------------------------------
 # Responsive Video Wrappers
 ---------------------------------------------------------------*/
 .videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    padding-top: 25px;
-    height: 0;
+    position:relative;
+    padding-bottom:56.25%; /* 16:9 */
+    padding-top:1.500em;
+    height:0;
 }
 .videoWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
 }
 
 /*--------------------------------------------------------------
@@ -188,6 +399,42 @@ header #menu {
 footer {
     float:left;
     width:100%;
+    background:#f8f8f8;
+    padding:1.4em 0 0 0;
+}
+footer #right {
+    width:auto;
+    float:right;
+    margin:0 1em 0 0;
+}
+footer #right ul li {
+    display:inline;
+    padding:0 0.5em 0 0;
+}
+footer #right ul li a {
+    font-size:0.8em;
+}
+footer #left {
+    width:auto;
+    float:left;
+    margin:0 0 0 1em;
+}
+footer #left ul li {
+    display:inline;
+    padding:0 0.5em 0 0;
+}
+footer #bottom {
+    float:left;
+    width:100%;
+}
+footer #bottom p:first-child {
+    font-size:0.8em;
+    font-style:italic;
+    text-align:center;
+}
+footer #bottom p:last-child {
+    font-size:0.9em;
+    text-align:center;
 }
 
 /*---------------------------------------------------------------

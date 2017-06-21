@@ -48,9 +48,16 @@ function theme_scripts() {
 
     //css
     wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'font_awesome_css', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
+    wp_enqueue_style( 'slick_carousel_css', 'https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css');
+    wp_enqueue_style( 'slick_carousell_theme_css' , get_template_directory_uri() . '/slick-theme.css' );
+    wp_enqueue_style( 'slick_css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css' );
 
     //js
     wp_enqueue_script( 'mobile-menu', get_template_directory_uri() . '/js/mobile_menu.js', array(), '20180428', true );
+    wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/966d4a5f64.js', array(), '20170621' );
+    wp_enqueue_script( 'slick_carousel_js', 'https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', array(), '20170615', true );
+    wp_enqueue_script( 'slick_carousel_declaractions_js', get_template_directory_uri() . '/js/slick_homepage_slider.js', array(), '20170619' );
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
@@ -59,234 +66,109 @@ add_action( 'wp_enqueue_scripts', 'theme_scripts' );
  **************************************************/
 add_theme_support( 'post-thumbnails' );
 
-
-/***********************************************************************
- * backend styling
- ***********************************************************************/
-function admin_login_logo() {
-    ?>
-    <style type="text/css">
-        body {
-            background:black !important;
-        }
-        .login #backtoblog a:focus, .login #nav a:focus, .login h1 a:focus, .login #backtoblog a, .login #nav a {
-            color:white !important;
-        }
-        body.login div#login h1 a {
-            background-image: url(<?php echo get_bloginfo( 'template_directory' ) ?>/images/logo.png);
-            height:180px;
-            background-size:180px;
-            width:210px;
-            height:212px;
-            background-position:center;
-        }
-    </style>
-<?php }
-add_action( 'login_enqueue_scripts', 'admin_login_logo' );
-
-/***********************************************************************
- * determine if page is in certain parent page
- * @source: https://css-tricks.com/snippets/wordpress/if-page-is-parent-or-child/
- ***********************************************************************/
-function is_tree($pid) {      // $pid = The ID of the page we're looking for pages underneath
-    global $post;         // load details about this page
-    if(is_page()&&($post->post_parent==$pid||is_page($pid)))
-        return true;   // we're at the page or at a sub page
-    else
-        return false;  // we're elsewhere
-};
-
-
-/***********************************************************************
-* output sibling pages of a current pge
-***********************************************************************/
-function wpb_list_child_pages() {
-
-    global $post;
-
-    $string = '';
-
-    if ( is_page() && $post->post_parent )
-
-        $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0' );
-    else
-        $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0' );
-
-    if ( $childpages ) {
-
-        $string = '<ul>' . $childpages . '</ul>';
-    } else {
-        echo "no child pages available to show";
-    }
-
-    return $string;
-
-}
-
-add_shortcode('wpb_childpages', 'wpb_list_child_pages');
-
 /*************************************************************
- * # Example CPT
+ * Homepage Image Slider CPT
  *************************************************************/
-//register the CPT
-function wpt_event_posttype() {
-    register_post_type( 'events',
+function ncherm_homepage_slider_posttype() {
+    register_post_type( 'homepage_slider',
         array(
             'labels' => array(
-                'name' => __( 'Events' ),
-                'singular_name' => __( 'Event' ),
-                'add_new' => __( 'Add New Event' ),
-                'add_new_item' => __( 'Add New Event' ),
-                'edit_item' => __( 'Edit Event' ),
-                'new_item' => __( 'Add New Event' ),
-                'view_item' => __( 'View Event' ),
-                'search_items' => __( 'Search Event' ),
-                'not_found' => __( 'No events found' ),
-                'not_found_in_trash' => __( 'No events found in trash' )
+                'name' => __( 'Home Image Slider' ),
+                'singular_name' => __( 'Image Slider' ),
+                'add_new' => __( 'Add New Image Slider' ),
+                'add_new_item' => __( 'Add New Image Slider' ),
+                'edit_item' => __( 'Edit Image Sliders' ),
+                'new_item' => __( 'Add New Image Slider' ),
+                'view_item' => __( 'View Image Slider' ),
+                'search_items' => __( 'Search Image Slider' ),
+                'not_found' => __( 'No Image Slider found' ),
+                'not_found_in_trash' => __( 'No Image Slider found in trash' )
             ),
             'public' => true,
-            'supports' => array( 'title', 'thumbnail' ),
+            'supports' => array( 'title', 'thumbnail', ),
             'capability_type' => 'post',
-            'rewrite' => array("slug" => "events"), // Permalinks format
-            'menu_position' => 5,
-            'register_meta_box_cb' => 'add_events_metaboxes'
-            //'menu_icon' => 'https://developer.wordpress.org/resource/dashicons/#update'
+            'rewrite' => array("slug" => "homepage_slider"),
+            'menu_position' => 3,
+            'register_meta_box_cb' => 'add_homepage_slider_metaboxes',
+            'menu_icon' => 'dashicons-format-gallery',
+            'media_buttons' => false
         )
     );
 }
 
-add_action( 'init', 'wpt_event_posttype' );
+add_action( 'init', 'ncherm_homepage_slider_posttype' );
 
-// Add the Events Meta Boxes
-
-function add_events_metaboxes() {
-    add_meta_box('wpt_events_location', 'Event Location', 'wpt_events_location', 'events', 'side', 'default');
+function add_homepage_slider_metaboxes() {
+    add_meta_box('ncherm_homepage_slider_meta_values', 'Slider Specifics', 'ncherm_homepage_slider_meta_values', 'homepage_slider', 'side', 'default');
 }
 
-// The Event Location Metabox
-
-function wpt_events_location() {
+function ncherm_homepage_slider_meta_values() {
     global $post;
 
-    // Noncename needed to verify where the data originated
-    echo '<input type="hidden" name="eventmeta_noncename" id="eventmeta_noncename" value="' .
+    //noncename needed to verify where the data originated
+    echo '<input type="hidden" name="homepage_slider_noncename" id="homepage_slider_noncename" value="' .
         wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
 
-    // Get the location data if its already been entered
-    $location = get_post_meta($post->ID, '_location', true);
+    $homepage_slider_meta = get_post_meta($post->ID);
 
-    // Echo out the field
-    echo '<input type="text" name="_location" value="' . $location  . '" class="widefat" />';
+    //get the slider data if its already been entered
+    $homepage_slider_top_text = get_post_meta($post->ID, '_homepage_slider_top_text', true);
+    $homepage_slider_link_button_text = get_post_meta($post->ID, '_homepage_slider_link_button_text', true);
+    $homepage_slider_link_button_link = get_post_meta($post->ID, '_homepage_slider_link_button_link', true);
+    $homepage_slider_second_level_text = get_post_meta($post->ID, '_homepage_slider_second_level_text', true);
+    $homepage_slider_viddler_id = get_post_meta($post->ID, '_homepage_slider_viddler_id', true);
 
+    //echo out the slider text field
+    echo '<label>Main Slider Text</label><br /><input type="text" name="_homepage_slider_top_text" value="' . $homepage_slider_meta['_homepage_slider_viddler_id']  . '" class="widefat" /><br /><br />';
+
+    //echo out the button text field
+    echo '<label>Button Button Text</label><br /><input type="text" name="_homepage_slider_link_button_text" value="' . $homepage_slider_link_button_text  . '" class="widefat" /><br /><br />';
+
+    //echo out the button button link field
+    echo '<label>Button Button Link</label><br /><input type="text" name="_homepage_slider_link_button_link" value="' . $homepage_slider_link_button_link  . '" class="widefat" /><br /><br />';
+
+    //echo out the lower level text field
+    echo '<label>Lower Level Text</label><br /><input type="text" name="_homepage_slider_second_level_text" value="' . $homepage_slider_second_level_text  . '" class="widefat" /><br /><br />';
+
+    //echo out the viddler video id field
+    echo '<label>Viddler Video ID</label><br /><input type="text" name="_homepage_slider_viddler_id" value="' . $homepage_slider_viddler_id  . '" class="widefat" /><br /><br />';
+
+    //output video for ease of client
+    //do not show this if no value added for viddler video
+    if ( !empty ($homepage_slider_viddler_id)) {
+        echo '<iframe id="viddler-'. $homepage_slider_viddler_id .'" src="//www.viddler.com/embed/'. $homepage_slider_viddler_id .'/?f=1&player=simple&secret=34213636&enablejsapi=1" width="100%" height="159" frameborder="0" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+';
+    }
 }
 
-// Save the Metabox Data
-
-function wpt_save_events_meta($post_id, $post) {
-
-    // verify this came from the our screen and with proper authorization,
-    // because save_post can be triggered at other times
-    if ( !wp_verify_nonce( $_POST['eventmeta_noncename'], plugin_basename(__FILE__) )) {
+function ncherm_homepage_slider_save_meta($post_id, $post) {
+    //verify this came from the our screen and with proper authorization
+    if ( !wp_verify_nonce( $_POST['homepage_slider_noncename'], plugin_basename(__FILE__) )) {
         return $post->ID;
     }
 
-    // Is the user allowed to edit the post or page?
+    //is the user allowed to edit the post or page?
     if ( !current_user_can( 'edit_post', $post->ID ))
         return $post->ID;
 
-    // OK, we're authenticated: we need to find and save the data
-    // We'll put it into an array to make it easier to loop though.
+    //save data
+    $homepage_slider_block_meta['_homepage_slider_top_text'] = $_POST['_homepage_slider_top_text'];
+    $homepage_slider_block_meta['_homepage_slider_link_button_text'] = $_POST['_homepage_slider_link_button_text'];
+    $homepage_slider_block_meta['_homepage_slider_link_button_link'] = $_POST['_homepage_slider_link_button_link'];
+    $homepage_slider_block_meta['_homepage_slider_second_level_text'] = $_POST['_homepage_slider_second_level_text'];
+    $homepage_slider_block_meta['_homepage_slider_viddler_id'] = $_POST['_homepage_slider_viddler_id'];
 
-    $events_meta['_location'] = $_POST['_location'];
-
-    // Add values of $events_meta as custom fields
-
-    foreach ($events_meta as $key => $value) { // Cycle through the $events_meta array!
-        if( $post->post_type == 'revision' ) return; // Don't store custom data twice
-        $value = implode(',', (array)$value); // If $value is an array, make it a CSV (unlikely)
-        if(get_post_meta($post->ID, $key, FALSE)) { // If the custom field already has a value
+    //add values of $home_block_meta as custom fields
+    foreach ($homepage_slider_block_meta as $key => $value) {
+        if( $post->post_type == 'revision' ) return;
+        $value = implode(',', (array)$value);
+        if(get_post_meta($post->ID, $key, FALSE)) {
             update_post_meta($post->ID, $key, $value);
-        } else { // If the custom field doesn't have a value
+        } else {
             add_post_meta($post->ID, $key, $value);
         }
-        if(!$value) delete_post_meta($post->ID, $key); // Delete if blank
+        if(!$value) delete_post_meta($post->ID, $key);
     }
-
 }
 
-add_action('save_post', 'wpt_save_events_meta', 1, 2); // save the custom fields
-
-/*************************************************************
- * # Register Custom Class in WYSIWIG for Editors
- *************************************************************/
-// Callback function to insert 'styleselect' into the $buttons array
-function my_mce_buttons_2( $buttons ) {
-    array_unshift( $buttons, 'styleselect' );
-    return $buttons;
-}
-// Register our callback to the appropriate filter
-add_filter('mce_buttons_2', 'my_mce_buttons_2');
-
-// Callback function to filter the MCE settings
-function my_mce_before_init_insert_formats( $init_array ) {
-// Define the style_formats array
-    $style_formats = array(
-// Each array child is a format with it's own settings
-        array(
-            'title' => 'My Link Custom Class',
-            'selector' => 'a',
-            'classes' => 'my-custom-link-class'
-        )
-    );
-// Insert the array, JSON ENCODED, into 'style_formats'
-    $init_array['style_formats'] = json_encode( $style_formats );
-
-    return $init_array;
-
-}
-// Attach callback to 'tiny_mce_before_init'
-add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
-
-/*************************************************************
-* # Register custom css classes option in WYSIWIG for editors
-*************************************************************/
-//callback function to insert 'styleselect' into the $buttons array
-function my_mce_buttons_2( $buttons ) {
-    array_unshift( $buttons, 'styleselect' );
-    return $buttons;
-}
-
-//register our callback to the appropriate filter
-add_filter('mce_buttons_2', 'my_mce_buttons_2');
-
-//callback function to filter the MCE settings
-function my_mce_before_init_insert_formats( $init_array ) {
-
-    // Define the style_formats array
-    $style_formats = array(
-
-    //list each out, more than one array is ok
-    /*array(
-       'title' => 'PDF Link',
-       'selector' => 'a',
-       'classes' => 'pdf_link'
-    ),
-
-    array(
-       'title' => 'Button Link',
-       'selector' => 'a',
-       'classes' => 'button_link'
-    )*/
-);
-
-//insert the array, JSON ENCODED, into 'style_formats'
-    $init_array['style_formats'] = json_encode( $style_formats );
-
-    return $init_array;
-}
-
-//attach callback to 'tiny_mce_before_init'
-add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
-
-
-?>
+add_action('save_post', 'ncherm_homepage_slider_save_meta', 1, 2);
