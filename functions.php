@@ -42,7 +42,7 @@ register_nav_menus( array(
 /*************************************************
  * css and js scripts
  **************************************************/
-function theme_scripts() {
+function lmf_theme_scripts() {
     //normalize
     wp_enqueue_script('jquery');
 
@@ -59,7 +59,7 @@ function theme_scripts() {
     wp_enqueue_script( 'slick_carousel_js', 'https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', array(), '20170615', true );
     wp_enqueue_script( 'slick_carousel_declaractions_js', get_template_directory_uri() . '/js/slick_homepage_slider.js', array(), '20170619' );
 }
-add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+add_action( 'wp_enqueue_scripts', 'lmf_theme_scripts' );
 
 /*************************************************
  * featured images in Page Edit
@@ -69,7 +69,7 @@ add_theme_support( 'post-thumbnails' );
 /*************************************************************
  * Homepage Image Slider CPT
  *************************************************************/
-function ncherm_homepage_slider_posttype() {
+function lmf_homepage_slider_posttype() {
     register_post_type( 'homepage_slider',
         array(
             'labels' => array(
@@ -96,13 +96,13 @@ function ncherm_homepage_slider_posttype() {
     );
 }
 
-add_action( 'init', 'ncherm_homepage_slider_posttype' );
+add_action( 'init', 'lmf_homepage_slider_posttype' );
 
 function add_homepage_slider_metaboxes() {
-    add_meta_box('ncherm_homepage_slider_meta_values', 'Slider Specifics', 'ncherm_homepage_slider_meta_values', 'homepage_slider', 'side', 'default');
+    add_meta_box('lmf_homepage_slider_meta_values', 'Slider Specifics', 'lmf_homepage_slider_meta_values', 'homepage_slider', 'side', 'default');
 }
 
-function ncherm_homepage_slider_meta_values() {
+function lmf_homepage_slider_meta_values() {
     global $post;
 
     //noncename needed to verify where the data originated
@@ -141,7 +141,7 @@ function ncherm_homepage_slider_meta_values() {
     }
 }
 
-function ncherm_homepage_slider_save_meta($post_id, $post) {
+function lmf_homepage_slider_save_meta($post_id, $post) {
     //verify this came from the our screen and with proper authorization
     if ( !wp_verify_nonce( $_POST['homepage_slider_noncename'], plugin_basename(__FILE__) )) {
         return $post->ID;
@@ -171,4 +171,17 @@ function ncherm_homepage_slider_save_meta($post_id, $post) {
     }
 }
 
-add_action('save_post', 'ncherm_homepage_slider_save_meta', 1, 2);
+add_action('save_post', 'lmf_homepage_slider_save_meta', 1, 2);
+
+
+/*************************************************************
+ * WooCommerce Change Number of Results Per Page
+ *************************************************************/
+function lmf_new_loop_shop_per_page( $cols ) {
+    // $cols contains the current number of products per page based on the value stored on Options -> Reading
+    // Return the number of products you wanna show per page.
+    $cols = 16;
+    return $cols;
+}
+
+add_filter( 'loop_shop_per_page', 'lmf_new_loop_shop_per_page', 20 );

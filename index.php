@@ -50,7 +50,7 @@ get_header(); ?>
             <div class="title">contact us</div>
             <div class="datum contact">Click <a href="" title="">here</a> to contact us</div>
             <div class="title">twitter</div>
-            <div class="datum twitter"><a href="" title="">@LMFnola</a></div>
+            <div class="datum twitter"><a href="https://twitter.com/LMFnola" title="Twitter" target="_blank">@LMFnola</a></div>
         </div>
         <div id="right">
             <div class="videoWrapper"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.5913818380377!2d-90.05972168488681!3d29.962429981912184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8620a60d6e3b12a3%3A0xac5f43d4770bffb8!2sLouisiana+Music+Factory!5e0!3m2!1sen!2sus!4v1497963094760" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
