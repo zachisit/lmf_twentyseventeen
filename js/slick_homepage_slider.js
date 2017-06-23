@@ -15,16 +15,16 @@ jQuery(document).ready(function(){
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        dots: true,
-        arrows: true,
+        dots: false,
+        arrows: false,
         autoplaySpeed: 5500,
     });
 
     jQuery('.slider-for').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: true,
-        fade: true,
+        arrows: false,
+        fade: false,
         asNavFor: '.slider-for'
     });
 
@@ -32,8 +32,8 @@ jQuery(document).ready(function(){
         slidesToShow: 3,
         slidesToScroll: 1,
         asNavFor: '.slider-nav',
-        dots: true,
-        arrows: true,
+        dots: false,
+        arrows: false,
         centerMode: true,
         focusOnSelect: true
     });

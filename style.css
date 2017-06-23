@@ -19,6 +19,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 # Client Brand Colors
 # Normalize
 # Header
+# Contact Page
 # Mobile Menu
 # Content
 # Sidebar
@@ -124,10 +125,13 @@ header #right #top #two #phone {
 }
 header #right #top #two #phone::before {
     content:"\f095";
-    font-size:1.250em;
+    font-size:1em;
     padding:0 0.625em 0 0;
     font-family:"FontAwesome";
     color:#3385c3;
+}
+header #right #top #two #phone:hover::before,header #right #top #three #contact:hover::before, header #right #top #four #login:hover::before {
+    color:#096cc8;
 }
 header #right #top #three {
     float:left;
@@ -141,7 +145,7 @@ header #right #top #three #contact {
 }
 header #right #top #three #contact::before {
     content:"\f003";
-    font-size:1.250em;
+    font-size:1em;
     padding:0 0.625em 0 0;
     font-family:"FontAwesome";
     color:#3385c3;
@@ -157,7 +161,7 @@ header #right #top #four #login {
 }
 header #right #top #four #login::before {
     content:"\f090";
-    font-size:1.250em;
+    font-size:1em;
     padding:0 0.625em 0 0;
     font-family:"FontAwesome";
     color:#3385c3;
@@ -187,6 +191,7 @@ header #right #bottom #menu ul li .sub-menu {
     width:100%;
     background:red;
     height:300px;
+    margin:0 0 0.3em 0;
     text-align:center;
     font-size:3em;
     color:white;
@@ -242,12 +247,17 @@ header #right #bottom #menu ul li .sub-menu {
 }
 #home_two_cta a:hover {
     text-decoration:none;
+    background:#3385c3;
+    transition:background 0.8s ease;
 }
 #home_two_cta a::after {
     content:"\f061";
     font-family:"FontAwesome";
     font-size:1.1em;
     padding:0 0 0 .5em;
+}
+#home_two_cta a:hover::after {
+    padding:0 0 0 .8em;
 }
 #home_two_cta #one #left {
     float:left;
@@ -333,6 +343,9 @@ header #right #bottom #menu ul li .sub-menu {
     float:right;
     width:50%;
 }
+#home_intouch #right .videoWrapper {
+    margin:1em 0 0 0;
+}
 #home_look {
     float:left;
     width:100%;
@@ -357,6 +370,11 @@ header #right #bottom #menu ul li .sub-menu {
     font-size:1em;
     text-transform:uppercase;
 }
+#home_look #right a:hover {
+     text-decoration:none;
+     background:#096cc8;
+     transition:background 0.8s ease;
+ }
 #home_look #right a::after {
     content:"\f061";
     font-family:"FontAwesome";
@@ -423,7 +441,10 @@ header #right #bottom #menu ul li .sub-menu {
     float:left;
     margin:6em 0.625em 0 0;
     width:23%;
-    height:400px;
+    height:auto;
+}
+#content .products li:nth-child(1), #content .products li:nth-child(2), #content .products li:nth-child(3), #content .products li:nth-child(4) {
+    margin:3em 0.625em 0 0;
 }
 #content .products li .price {
     width:100%;
@@ -431,7 +452,7 @@ header #right #bottom #menu ul li .sub-menu {
     display:block;
 }
 #content .products li .add_to_cart_button, #content .products li .product_type_simple {
-    padding:0.300em 0.350em;
+    padding:0.600em 0.350em;
     text-align:center;
     font-size:0.925em;
     display:block;
@@ -440,29 +461,41 @@ header #right #bottom #menu ul li .sub-menu {
     margin:0.625em 0 0 0;
     background:#3385c3;
     color:white;
+    -webkit-border-radius:0.5em;
+    -moz-border-radius:0.5em;
+    border-radius:0.5em;
 }
 #content .products li .add_to_cart_button:hover, #content .products li .product_type_simple:hover {
     background:#096cc8;
     text-decoration:none;
+    transition:background 0.9s ease;
 }
 #content .products li .add_to_cart_button::after, #content .products li .product_type_simple::after {
     content:"\f0da";
     font-family:"FontAwesome";
-    padding:0 0 0 0.535em;
-    font-size:0.925em;
+    padding:0 0 0 0.735em;
+    font-size:1em;
+    color:white;
+}
+#content .products li .add_to_cart_button:hover::after, #content .products li .product_type_simple:hover::after {
+    content:"\f0d7";
+    font-family:"FontAwesome";
+    padding:0 0 0 0.485em;
+    font-size:1em;
     color:white;
 }
 #content .products li h2.woocommerce-loop-product__title {
     font-size:1em;
+    font-weight:500;
     color:#333;
     text-align:center;
-    height:auto;
+    height:90px;
 }
 #content .products li .woocommerce-LoopProduct-link {
     height:100px;
 }
 #content .products li .woocommerce-LoopProduct-link .onsale {
-    background:#3385c3;
+    background:#b30917;
     color:white;
     font-size:1.1em;
     padding:1.1em;
@@ -474,7 +507,7 @@ header #right #bottom #menu ul li .sub-menu {
 }
 #content .products li .woocommerce-LoopProduct-link img {
     width:100%;
-    height:auto;
+    height:155px;
 }
 #content .woocommerce-pagination {
     float:left;
@@ -491,7 +524,18 @@ header #right #bottom #menu ul li .sub-menu {
     display:inline;
     margin:0 0.4em 0 0;
 }
-#content .woocommerce-breadcrumb, #content .woocommerce-result-count {
+#content .woocommerce-breadcrumb {
+    margin:0 0 0.3em 0;
+    padding:0;
+}
+#content .woocommerce-breadcrumb::before {
+    content:"\f041";
+    font-family:"FontAwesome";
+    font-size:1em;
+    color:#096cc8;
+    margin:0 0.5em 0 1em;
+}
+#content .woocommerce-result-count {
     margin:0 0 0 0.625em;
 }
 h1.woocommerce-products-header__title {
@@ -508,17 +552,43 @@ h1.woocommerce-products-header__title::before {
 .widget-area {
     width:26%;
     background:#FCFCFC;
-    border:1px solid #ccc;
+    border-right:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    border-left:1px solid #ccc;
+    border-top:0.375em solid #3385c3;
     float:right;
-    margin:1.125em 0.8em 0 0;
+    margin:1.5em 0.8em 0 0;
 }
 .widget-area .widgetblock {
     padding:1em;
 }
 .widget-area .widgetblock h2 {
-    font-size:1.750em;
+    font-size:1.5em;
     font-weight:500;
     color:#313131;
+    border-bottom:1px solid #b30917;
+    padding:0 0 0.3em 0;
+}
+.widget-area .widgetblock:nth-child(1) h2::before {
+    content:"\f218";
+    font-family:"FontAwesome";
+    padding:0 0.3em 0 0;
+    font-size:1em;
+}
+.widget-area .widgetblock:nth-child(2) h2::before {
+    content:"\f002";
+    font-family:"FontAwesome";
+    padding:0 0.3em 0 0;
+    font-size:1em;
+}
+.widget-area .widgetblock:nth-child(3) h2::before {
+    content:"\f0fe";
+    font-family:"FontAwesome";
+    padding:0 0.3em 0 0;
+    font-size:0.9em;
+}
+.widget-area .widgetblock:nth-child(3) h2 {
+    font-size:1.4em;
 }
 .widget-area .widgetblock .widget_shopping_cart_content .buttons .wc-forward {
     border:1px solid #ccc;
@@ -537,6 +607,9 @@ h1.woocommerce-products-header__title::before {
     background:#3385c3;
     color:white;
 }
+.widget-area .widgetblock .widget_shopping_cart_content .buttons .checkout:hover {
+    text-decoration:none;
+}
 .widget-area .widgetblock .widget_shopping_cart_content .buttons .checkout::after {
     content:"\f0da";
     font-family:"FontAwesome";
@@ -544,7 +617,170 @@ h1.woocommerce-products-header__title::before {
     font-size:0.925em;
     color:white;
 }
-
+.widget-area .widgetblock .widget_shopping_cart_content .product_list_widget .mini_cart_item img {
+    margin:0 6em 0 0;
+}
+.widget-area .widgetblock .widget_shopping_cart_content .product_list_widget .mini_cart_item .remove {
+    color:red;
+    font-weight:900;
+}
+#content_left {}
+#content_left #header, #content_full #header {
+    float:left;
+    width:100%;
+    background:#096cc8;
+    border-bottom:0.375em solid #3385c3;
+    padding:1.5em 0;
+    margin:0 0 1em 0;
+}
+#content_left #header h2, #content_full #header h2 {
+    font-size:1.4em;
+    color:white;
+    font-weight:100;
+    margin:0 0 0 1em;
+}
+#content_left #breadcrumb, #content_full #breadcrumb {
+    float:left;
+    width:100%;
+    margin:0 0 0.3em 0;
+}
+#content_left #breadcrumb p, #content_full #breadcrumb p {
+    font-size:1em;
+    font-style:italic;
+    padding:0;
+    margin:0;
+}
+#content_left #breadcrumb p::before, #content_full #breadcrumb p::before {
+    content:"\f041";
+    font-family:"FontAwesome";
+    font-size:1em;
+    color:#096cc8;
+    margin:0 0.5em 0 1em;
+}
+    /*-------------------------------------------------------------
+    # Contact Page
+    --------------------------------------------------------------*/
+#content_full {
+    width:100%;
+    display:block;
+    float:left;
+}
+#content_full #top_quote {
+    background:#F8F8F8;
+    width:95%;
+    margin:0 auto 1em auto;
+    display:table;
+}
+#content_full #top_quote p {
+    padding:1em;
+    font-size:1.1em;
+    font-style:italic;
+    line-height:1.1em;
+    color:#04435d;
+}
+#content_full #top_quote .quote {
+    float:left;
+    margin:0.6em;
+    font-size:2.5em;
+    color:#096cc8;
+}
+#content_full #map_contact {
+    float:left;
+    width:100%;
+    display:block;
+}
+#content_full #map_contact #left {
+    width:60%;
+    float:left;
+}
+#content_full #map_contact #right {
+    width:39%;
+    float:right;
+}
+#content_full #map_contact #right h1 {
+    font-size:1.5em;
+    font-weight:100;
+    padding:0 0 0 0.625em;
+}
+#content_full #map_contact #right .title {
+    border-bottom:1px solid #ccc;
+    padding:0 0 0.325em 0;
+    color:#333;
+    font-size:1em;
+    margin:0 0 0 1em;
+}
+#content_full #map_contact #right .datum {
+    font-size:1em;
+    margin:0.3em 0 1.4em 1em;
+}
+#content_full #map_contact #right .phone::before {
+    content:"\f095";
+    font-family:"FontAwesome";
+    font-size:1.1em;
+    padding:0 0.8em 0 .5em;
+}
+#content_full #map_contact #right .address::before {
+    content:"\f041";
+    font-family:"FontAwesome";
+    font-size:1.1em;
+    padding:0 0.8em 0 .5em;
+}
+#content_full #map_contact #right .contact::before {
+    content:"\f003";
+    font-family:"FontAwesome";
+    font-size:1.1em;
+    padding:0 0.8em 0 .5em;
+}
+#content_full #map_contact #right .twitter::before {
+    content:"\f099";
+    font-family:"FontAwesome";
+    font-size:1.1em;
+    padding:0 0.8em 0 .5em;
+}
+#content_full #how_much {
+    float:left;
+    width:100%;
+    background:#3385c3;
+    padding:2em 0;
+    margin:1em 0 0 0;
+}
+#content_full #how_much #left {
+    float:left;
+    width:auto;
+    font-size:1em;
+    color:white;
+    margin:0 0 0 0.625em;
+}
+#content_full #how_much #right {
+    float:right;
+    width:auto;
+    margin:0 0.625em 0 0;
+}
+#content_full #how_much #right a {
+    color:white;
+    text-decoration:none;
+    font-size:1em;
+    text-align:center;
+    border:1px solid white;
+    padding:0.625em 1em;
+}
+#content_full #contactforrm {
+    float:left;
+    width:100%;
+    margin:1em 0;
+}
+#content_full #contactform .gform_wrapper .ginput_complex input[type=text], #content_full #contactform .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield select, #content_full #contactform .gform_wrapper textarea.medium {
+    background:#ccc;
+    border:1px solid #333;
+    font-size:1em;
+}
+#content_full #contactform .gform_wrapper .gform_footer input[type=submit] {
+    background:#096cc8;
+    color:white;
+    text-align:center;
+    padding:0.5em 1em;
+    border:none;
+}
 /*--------------------------------------------------------------
 # Mobile Menu
 ---------------------------------------------------------------*/

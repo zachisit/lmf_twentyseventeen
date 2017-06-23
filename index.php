@@ -15,7 +15,15 @@ get_header(); ?>
 
 <main>
     <div id="home_slider">
-        img slider here
+        <div class="image_slidere">
+            <?php
+            /*$query = new WP_Query( ['post_type' => 'homepage_slider', 'posts_per_page' => -1 ] );
+            while ( $query->have_posts() ) : $query->the_post(); ?>
+                <div class="asset">
+                    <?php the_post_thumbnail( 'full' ); ?>
+                </div>
+            <?php endwhile;*/ ?>
+        </div>
     </div>
     <div id="home_hours">
         <p>Hours: 11AM to 8PM Daily</p>
@@ -27,7 +35,7 @@ get_header(); ?>
             </div>
             <div id="right">
                 <h2>Free Concerts & News</h2>
-                <a href="" title="">Click to viw schedule</a>
+                <a href="<?php echo get_home_url(); ?>/lmf-news-2/" title="<?php echo get_bloginfo( 'name' ); ?> Schedule and Events">Click to view schedule</a>
             </div>
         </div>
         <div id="two">
@@ -36,7 +44,7 @@ get_header(); ?>
             </div>
             <div id="right">
                 <h2>New Releases</h2>
-                <a href="" title="">Click to viw new items</a>
+                <a href="<?php echo get_home_url(); ?>/louisiana-music/new-release/" title="<?php echo get_bloginfo( 'name' ); ?> New Releases">Click to view new items</a>
             </div>
         </div>
     </div>
@@ -48,7 +56,7 @@ get_header(); ?>
             <div class="title">our address:</div>
             <div class="datum address">Louisana Music Factory<br />421 Frenchmens St.<br />New Orleans, LA 70116</div>
             <div class="title">contact us</div>
-            <div class="datum contact">Click <a href="" title="">here</a> to contact us</div>
+            <div class="datum contact">Click <a href="<?php echo get_home_url(); ?>/contact-example-6/" title="">here</a> to contact us</div>
             <div class="title">twitter</div>
             <div class="datum twitter"><a href="https://twitter.com/LMFnola" title="Twitter" target="_blank">@LMFnola</a></div>
         </div>

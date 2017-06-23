@@ -14,14 +14,12 @@
 get_header(); ?>
 <main>
     <div id="content_left">
-        <?php
-        while ( have_posts() ) : the_post();
-            //output title, content, etc here
-            //the_post_thumbnail('full');
+        <?php while ( have_posts() ) : the_post();
+            echo '<div id="breadcrumb"><p>You are here: <a href="'. get_home_url() .'" title="Home">Home</a> - '. get_the_title() .'</p></div>';
 
-            echo '<div id="header">'. the_title() .'</div>';
+            echo '<div id="header"><h2>'. get_the_title() .'</h2></div>';
 
-            echo '<div id="breadcrumb">You are here: ...</div>';
+
             /*
              * output sample content data when first installed
              */
