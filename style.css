@@ -549,6 +549,30 @@ h1.woocommerce-products-header__title::before {
     font-size:1em;
     padding:0 0.625em 0 0 ;
 }
+h1.book::before {
+    content:"\f02d";
+    font-family:"FontAwesome";
+    font-size:1em;
+    padding:0 0.625em 0 0 ;
+}
+h1.video::before {
+    content:"\f03d";
+    font-family:"FontAwesome";
+    font-size:1em;
+    padding:0 0.625em 0 0 ;
+}
+h1.sale::before {
+    content:"\f12a";
+    font-family:"FontAwesome";
+    font-size:1em;
+    padding:0 0.625em 0 0 ;
+}
+h1.merchandise::before {
+    content:"\f1b3";
+    font-family:"FontAwesome";
+    font-size:1em;
+    padding:0 0.625em 0 0 ;
+}
 .widget-area {
     width:26%;
     background:#FCFCFC;
@@ -563,7 +587,7 @@ h1.woocommerce-products-header__title::before {
     padding:1em;
 }
 .widget-area .widgetblock h2 {
-    font-size:1.5em;
+    font-size:1.4em;
     font-weight:500;
     color:#313131;
     border-bottom:1px solid #b30917;
@@ -572,23 +596,23 @@ h1.woocommerce-products-header__title::before {
 .widget-area .widgetblock:nth-child(1) h2::before {
     content:"\f218";
     font-family:"FontAwesome";
-    padding:0 0.3em 0 0;
-    font-size:1em;
+    padding:0 0.5em 0 0;
+    font-size:0.8em;
 }
 .widget-area .widgetblock:nth-child(2) h2::before {
     content:"\f002";
     font-family:"FontAwesome";
-    padding:0 0.3em 0 0;
-    font-size:1em;
+    padding:0 0.5em 0 0;
+    font-size:0.8em;
 }
 .widget-area .widgetblock:nth-child(3) h2::before {
     content:"\f0fe";
     font-family:"FontAwesome";
-    padding:0 0.3em 0 0;
-    font-size:0.9em;
+    padding:0 0.5em 0 0;
+    font-size:0.7em;
 }
 .widget-area .widgetblock:nth-child(3) h2 {
-    font-size:1.4em;
+    font-size:1.3em;
 }
 .widget-area .widgetblock .widget_shopping_cart_content .buttons .wc-forward {
     border:1px solid #ccc;

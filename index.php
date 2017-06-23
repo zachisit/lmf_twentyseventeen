@@ -15,14 +15,14 @@ get_header(); ?>
 
 <main>
     <div id="home_slider">
-        <div class="image_slidere">
+        <div class="image_slider">
             <?php
-            /*$query = new WP_Query( ['post_type' => 'homepage_slider', 'posts_per_page' => -1 ] );
+            $query = new WP_Query( ['post_type' => 'homepage_slider', 'posts_per_page' => -1 ] );
             while ( $query->have_posts() ) : $query->the_post(); ?>
                 <div class="asset">
                     <?php the_post_thumbnail( 'full' ); ?>
                 </div>
-            <?php endwhile;*/ ?>
+            <?php endwhile; ?>
         </div>
     </div>
     <div id="home_hours">
