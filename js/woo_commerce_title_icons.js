@@ -7,10 +7,12 @@
  *
  */
 jQuery(document).ready(function() {
-    jQuery('h1.woocommerce-products-header__title:contains("Video")').addClass("video");
-    jQuery('h1.woocommerce-products-header__title:contains("All DVDs")').addClass("video");
-    jQuery('h1.woocommerce-products-header__title:contains("All Books")').addClass("book");
-    jQuery('h1.woocommerce-products-header__title:contains("All Sale Items")').addClass("sale");
-    jQuery('h1.woocommerce-products-header__title:contains("LMF Merchandise")').addClass("merchandise");
-    jQuery('h1.woocommerce-products-header__title:contains("T-shirts, Hats, etc.")').addClass("merchandise");
+    var divname = 'h1.woocommerce-products-header__title';
+
+    jQuery('' + divname + ':contains("Video")').addClass("video");
+    jQuery('' + divname + ':contains("All DVDs")').addClass("video");
+    jQuery('' + divname + ':contains("All Books")').addClass("book");
+    jQuery('' + divname + ':contains("All Sale Items")').addClass("sale");
+    jQuery('' + divname + ':contains("LMF Merchandise")').addClass("merchandise");
+    jQuery('' + divname + ':contains("T-shirts, Hats, etc.")').addClass("merchandise");
 });

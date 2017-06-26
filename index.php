@@ -15,14 +15,14 @@ get_header(); ?>
 
 <main>
     <div id="home_slider">
-        <div class="image_slider">
+        <div class="image_slidere">
             <?php
-            $query = new WP_Query( ['post_type' => 'homepage_slider', 'posts_per_page' => -1 ] );
+            /*$query = new WP_Query( ['post_type' => 'homepage_slider', 'posts_per_page' => -1 ] );
             while ( $query->have_posts() ) : $query->the_post(); ?>
                 <div class="asset">
                     <?php the_post_thumbnail( 'full' ); ?>
                 </div>
-            <?php endwhile; ?>
+            <?php endwhile;*/ ?>
         </div>
     </div>
     <div id="home_hours">
@@ -61,7 +61,8 @@ get_header(); ?>
             <div class="datum twitter"><a href="https://twitter.com/LMFnola" title="Twitter" target="_blank">@LMFnola</a></div>
         </div>
         <div id="right">
-            <div class="videoWrapper"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.5913818380377!2d-90.05972168488681!3d29.962429981912184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8620a60d6e3b12a3%3A0xac5f43d4770bffb8!2sLouisiana+Music+Factory!5e0!3m2!1sen!2sus!4v1497963094760" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+            <a href="https://www.google.com/maps/place/Louisiana+Music+Factory/@29.96243,-90.0597217,17z/data=!3m1!4b1!4m5!3m4!1s0x8620a60d6e3b12a3:0xac5f43d4770bffb8!8m2!3d29.96243!4d-90.057533?q=louisiana+music+factory&rlz=1C1CHBF_enUS731US731&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjBscjvwNvUAhUTET4KHQ2VDrcQ_AUICigB" title="Directions to LMF"><img src="<?php echo get_template_directory_uri(); ?>/images/google_mp.jpg" alt="<?php echo get_bloginfo( 'name' ); ?> - Home" /></a>
+            <p class="map_direction"><a href="https://www.google.com/maps/place/Louisiana+Music+Factory/@29.96243,-90.0597217,17z/data=!3m1!4b1!4m5!3m4!1s0x8620a60d6e3b12a3:0xac5f43d4770bffb8!8m2!3d29.96243!4d-90.057533?q=louisiana+music+factory&rlz=1C1CHBF_enUS731US731&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjBscjvwNvUAhUTET4KHQ2VDrcQ_AUICigB" title="Directions to LMF">Directions to LMF Here</a></p>
         </div>
     </div>
     <div id="home_look">
