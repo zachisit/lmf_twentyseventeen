@@ -186,3 +186,12 @@ function lmf_new_loop_shop_per_page( $cols ) {
 }
 
 add_filter( 'loop_shop_per_page', 'lmf_new_loop_shop_per_page', 20 );
+
+/*************************************************************
+ * WooCommerce Declare WC Support For Theme
+ *************************************************************/
+function lmf_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
+add_action( 'after_setup_theme', 'lmf_woocommerce_support' );
