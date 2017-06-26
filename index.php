@@ -56,9 +56,9 @@ get_header(); ?>
             <div class="title">our address:</div>
             <div class="datum address">Louisana Music Factory<br />421 Frenchmens St.<br />New Orleans, LA 70116</div>
             <div class="title">contact us</div>
-            <div class="datum contact">Click <a href="<?php echo get_home_url(); ?>/contact-example-6/" title="">here</a> to contact us</div>
+            <div class="datum contact">Click <a href="<?php echo get_home_url(); ?>/contact" title="contact <?php echo get_bloginfo( 'name' ); ?> here">here</a> to contact us</div>
             <div class="title">twitter</div>
-            <div class="datum twitter"><a href="https://twitter.com/LMFnola" title="Twitter" target="_blank">@LMFnola</a></div>
+            <div class="datum twitter"><a href="https://twitter.com/LMFnola" title="<?php echo get_bloginfo( 'name' ); ?> Twitter" target="_blank">@LMFnola</a></div>
         </div>
         <div id="right">
             <a href="https://www.google.com/maps/place/Louisiana+Music+Factory/@29.96243,-90.0597217,17z/data=!3m1!4b1!4m5!3m4!1s0x8620a60d6e3b12a3:0xac5f43d4770bffb8!8m2!3d29.96243!4d-90.057533?q=louisiana+music+factory&rlz=1C1CHBF_enUS731US731&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjBscjvwNvUAhUTET4KHQ2VDrcQ_AUICigB" title="Directions to LMF"><img src="<?php echo get_template_directory_uri(); ?>/images/google_mp.jpg" alt="<?php echo get_bloginfo( 'name' ); ?> - Home" /></a>
@@ -67,7 +67,7 @@ get_header(); ?>
     </div>
     <div id="home_look">
         <div id="left">Look at all we offer at LMF!</div>
-        <div id="right"><a href="" title="">Click for photos</a></div>
+        <div id="right"><a href="<?php echo get_home_url(); ?>/inside-louisiana-music-factory/" title="<?php echo get_bloginfo( 'name' ); ?> Photos">Click for photos</a></div>
     </div>
 </main>
 
