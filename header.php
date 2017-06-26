@@ -39,10 +39,21 @@
                 <div id="phone"><a href="tel:+15045861094">504-586-1094</a></div>
             </div>
             <div id="three">
-                <div id="contact"><a href="" title="Contact <?php echo get_bloginfo( 'name' ); ?>">Contact Us</a></div>
+                <div id="contact"><a href="<?php echo get_home_url(); ?>/contact" title="Contact <?php echo get_bloginfo( 'name' ); ?>">Contact Us</a></div>
             </div>
             <div id="four">
-                <div id="login"><a href="" title="<?php echo get_bloginfo( 'name' ); ?> Customer Login">Customer Login</a></div>
+                <div id="login">
+                    <?php
+                    if ( is_user_logged_in() ) {
+                        $current_user = wp_get_current_user();
+
+                        echo 'Welcome '. $current_user->user_login .'<br />';
+                        echo '<a href="'. get_home_url() .'/my-account-2/" title="My Account">My Account</a> | <a href="'. wp_logout_url( 'http://multisiteparent.com' ) .'">Logout</a>';
+                    } else {
+                        echo'<a href="' .get_home_url() .'/my-account-2/" title="' .get_bloginfo( 'name' ) .' Customer Login">Customer Login</a>';
+                    }
+                    ?>
+                </div>
             </div>
         </div>
         <div id="bottom">
