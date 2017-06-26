@@ -792,7 +792,7 @@ h1.merchandise::before {
     padding:1em;
     font-size:1.1em;
     font-style:italic;
-    line-height:1.1em;
+    line-height:1.3em;
     color:#04435d;
 }
 #content_full #top_quote .quote {
@@ -809,6 +809,25 @@ h1.merchandise::before {
 #content_full #map_contact #left {
     width:60%;
     float:left;
+}
+#content_full #map_contact #left img {
+    width:100%;
+    height:auto;
+}
+#content_full #map_contact #left p.map_direction {
+    float:left;
+    width:100%;
+    margin:0.625em 0;
+    text-align:center;
+}
+#content_full #map_contact #left p.map_direction::before {
+    padding:0 0.5em 0 0;
+    content:"\f041";
+    font-family:"FontAwesome";
+}
+#content_full #map_contact #left p.map_direction a {
+    font-weight:500;
+    font-size:1em;
 }
 #content_full #map_contact #right {
     width:39%;
