@@ -431,7 +431,8 @@ header #right #bottom #menu ul li:hover > .sub-menu {
 ---------------------------------------------------------------*/
 #content {
     float:left;
-    width:72%;
+    width:69%;
+    padding:0 1em;
 }
 #content .product .woocommerce-product-gallery {
     float:left;
@@ -658,7 +659,7 @@ h1.merchandise::before {
     border-left:1px solid #ccc;
     border-top:0.375em solid #3385c3;
     float:right;
-    margin:1.5em 0.8em 0 0;
+    margin:1.4em 0.8em 0 0;
 }
 .widget-area .widgetblock {
     padding:1em;
@@ -725,7 +726,9 @@ h1.merchandise::before {
     color:red;
     font-weight:900;
 }
-#content_left {}
+#content_left {
+    padding:0 1em;
+}
 #content_left #header, #content_full #header {
     float:left;
     width:100%;
@@ -762,10 +765,18 @@ h1.merchandise::before {
     float:left;
     width:100%;
 }
+#content_left .woocommerce .woocommerce-MyAccount-navigation {
+    float:left;
+    width:25%;
+}
+#content_left .woocommerce .woocommerce-MyAccount-content {
+    float:right;
+    width:70%;
+}
 
-/*-------------------------------------------------------------
- # Contact Page
---------------------------------------------------------------*/
+    /*-------------------------------------------------------------
+     # Contact Page
+    --------------------------------------------------------------*/
 #content_full {
     width:100%;
     display:block;
