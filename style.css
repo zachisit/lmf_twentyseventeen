@@ -223,6 +223,11 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     font-size:3em;
     color:white;
 }
+#home_slider #image_slider {
+    float:left;
+    width:100%;
+    display:block;
+}
 #home_hours {
     float:left;
     width:100%;
@@ -252,7 +257,7 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     float:left;
     width:100%;
     height:245px;
-    margin:0 0 1em 0;
+    margin:0;
 }
 #home_two_cta #one {
     width:49.5%;
@@ -319,9 +324,48 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     width:100%;
     height:245px;
 }
+#home_announcements {
+    float:left;
+    display:block;
+    margin:0 0 1em 0;
+    padding:1.5em 0 2.5em 0;
+    width:100%;
+    background:#F8F8F8;
+}
+#home_announcements h2 {
+    text-align:center;
+    color:#096cc8;
+    font-size:1.3em;
+    font-weight:100;
+}
+#home_announcements #message {
+    width:80%;
+    float:right;
+}
+#home_announcements #left {
+    width:20%;
+    float:left;
+}
+#home_announcements #left::before {
+    content:"\f0a1";
+    font-family:"FontAwesome";
+    font-size:6em;
+    color:#3385c3;
+    padding:1em 0 0 0.5em;
+}
+#home_announcements #message p {
+    font-size:1.313em;
+    line-height:1.1em;
+    color:#04435d;
+    font-family:Cambria, Georgia, serif;
+    font-style:italic;
+    margin:0;
+    padding:0 0 0.5em;
+}
 #home_intouch {
     float:left;
     width:100%;
+    margin:0 0 2em 0;
 }
 #home_intouch #left {
     float:left;
@@ -343,29 +387,40 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     font-size:1em;
     margin:0.3em 0 1.4em 1em;
 }
+#home_intouch #left .address p {
+    padding:0 0 0 3.1em;
+    margin:0;
+}
+#home_intouch #left .address p:nth-child(1) {
+    margin:-18px 0 0 0;
+}
 #home_intouch #left .phone::before {
     content:"\f095";
     font-family:"FontAwesome";
-    font-size:1.1em;
-    padding:0 0.8em 0 .5em;
+    font-size:1.40em;
+    padding:0.5em 0.9em 0 .5em;
+    color:#333;
 }
 #home_intouch #left .address::before {
     content:"\f041";
     font-family:"FontAwesome";
-    font-size:1.1em;
-    padding:0 0.8em 0 .5em;
+    font-size:1.40em;
+    padding:0.5em 0.8em 0 .5em;
+    color:#333;
 }
 #home_intouch #left .contact::before {
     content:"\f003";
     font-family:"FontAwesome";
-    font-size:1.1em;
-    padding:0 0.8em 0 .5em;
+    font-size:1.40em;
+    padding:0.5em 0.7em 0 .5em;
+    color:#333;
 }
 #home_intouch #left .twitter::before {
     content:"\f099";
     font-family:"FontAwesome";
-    font-size:1.1em;
-    padding:0 0.8em 0 .5em;
+    font-size:1.40em;
+    padding:0.5em 0.8em 0 .5em;
+    color:#333;
 }
 #home_intouch #right {
     float:right;
@@ -449,9 +504,27 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     float:left;
     display:block;
     margin:2em 0 0 0;
-    border-top:1px solid #ccc;
     padding:0.5em 0 0 0;
     width:100%;
+}
+#content .product .woocommerce-tabs .wc-tabs {
+    display:none;
+}
+#content .product .woocommerce-tabs h2 {
+    color:#3385c3;
+    border-bottom:1px solid #3385c3;
+    padding:0 0 0.5em 0;
+    margin:0 0 1em 0;
+}
+#content .product .woocommerce-tabs .wp-playlist {
+    background:#3385c3;
+    color:white;
+}
+.wp-playlist-item .wp-playlist-item-title, .wp-playlist-item .wp-playlist-item-artist, .wp-playlist-light .wp-playlist-caption, .wp-playlist-current-item .wp-playlist-item-title, .wp-playlist-current-item .wp-playlist-item-album, .wp-playlist-current-item .wp-playlist-item-artist  {
+    color:white;
+}
+.wp-playlist-playing .wp-playlist-item-title {
+    color:black !important;
 }
 #content .product .up-sells {
     float:left;
@@ -459,6 +532,9 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     margin:2em 0 3em 0;
     border-top:1px solid #ccc;
     padding:0.5em 0 0 0;
+}
+.wp-playlist-light .wp-playlist-caption {
+    color:white;
 }
 #content .product .up-sells h2 {
     text-align:center;
@@ -496,7 +572,7 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     float:left;
     margin:6em 0.625em 0 0;
     width:23%;
-    height:auto;
+    height:309px;
 }
 #content .products li:nth-child(1), #content .products li:nth-child(2), #content .products li:nth-child(3), #content .products li:nth-child(4) {
     margin:3em 0.625em 0 0;
@@ -520,6 +596,7 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     -webkit-border-radius:0.5em;
     -moz-border-radius:0.5em;
     border-radius:0.5em;
+    cursor:pointer;
 }
 #content .products li .add_to_cart_button, #content .products li .product_type_simple {
     padding:0.600em 0.350em;
@@ -577,7 +654,7 @@ header #right #bottom #menu ul li:hover > .sub-menu {
 }
 #content .products li .woocommerce-LoopProduct-link img {
     width:100%;
-    height:155px;
+    height:auto;
 }
 #content .product .related {
     display:none;
@@ -635,21 +712,21 @@ h1.video::before {
     font-family:"FontAwesome";
     font-size:1em;
     float:left;
-    width:45px;
+    width:55px;
 }
 h1.sale::before {
     content:"\f12a";
     font-family:"FontAwesome";
     font-size:1em;
     float:left;
-    width:45px;
+    width:30px;
 }
 h1.merchandise::before {
     content:"\f1b3";
     font-family:"FontAwesome";
     font-size:1em;
     float:left;
-    width:45px;
+    width:57px;
 }
 .widget-area {
     width:26%;
@@ -787,10 +864,12 @@ h1.merchandise::before {
     width:95%;
     margin:0 auto 1em auto;
     display:table;
+    padding:1em 0;
 }
 #content_full #top_quote p {
-    padding:1em;
-    font-size:1.1em;
+    padding:0 1em 1em 1em;
+    margin:0;
+    font-size:1.3em;
     font-style:italic;
     line-height:1.3em;
     color:#04435d;
@@ -845,33 +924,44 @@ h1.merchandise::before {
     font-size:1em;
     margin:0 0 0 1em;
 }
-#content_full #map_contact #right .datum {
-    font-size:1em;
-    margin:0.3em 0 1.4em 1em;
+#content_full #map_contact #right .address p {
+    padding:0 0 0 3.1em;
+    margin:0;
+}
+#content_full #map_contact #right .address p:nth-child(1) {
+    margin:-18px 0 0 0;
 }
 #content_full #map_contact #right .phone::before {
     content:"\f095";
     font-family:"FontAwesome";
-    font-size:1.1em;
-    padding:0 0.8em 0 .5em;
+    font-size:1.40em;
+    padding:0.5em 0.9em 0 .5em;
+    color:#333;
 }
 #content_full #map_contact #right .address::before {
     content:"\f041";
     font-family:"FontAwesome";
-    font-size:1.1em;
-    padding:0 0.8em 0 .5em;
+    font-size:1.40em;
+    padding:0.5em 0.8em 0 .5em;
+    color:#333;
 }
 #content_full #map_contact #right .contact::before {
     content:"\f003";
     font-family:"FontAwesome";
-    font-size:1.1em;
-    padding:0 0.8em 0 .5em;
+    font-size:1.40em;
+    padding:0.5em 0.7em 0 .5em;
+    color:#333;
 }
 #content_full #map_contact #right .twitter::before {
     content:"\f099";
     font-family:"FontAwesome";
-    font-size:1.1em;
-    padding:0 0.8em 0 .5em;
+    font-size:1.40em;
+    padding:0.5em 0.8em 0 .5em;
+    color:#333;
+}
+#content_full #map_contact #right .datum {
+    font-size:1em;
+    margin:0.3em 0 1.4em 1em;
 }
 #content_full #how_much {
     float:left;
@@ -883,7 +973,7 @@ h1.merchandise::before {
 #content_full #how_much #left {
     float:left;
     width:auto;
-    font-size:1em;
+    font-size:1.2em;
     color:white;
     margin:0 0 0 0.625em;
 }
@@ -901,9 +991,13 @@ h1.merchandise::before {
     padding:0.625em 1em;
 }
 #content_full #contactforrm {
-    float:left;
-    width:100%;
-    margin:1em 0;
+    float:none;
+    width:90%;
+    margin:3em auto;
+    display:table;
+}
+#content_full #contactforrm h2 {
+    font-size:2em;
 }
 #content_full #contactform .gform_wrapper .ginput_complex input[type=text], #content_full #contactform .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield select, #content_full #contactform .gform_wrapper textarea.medium {
     background:#ccc;

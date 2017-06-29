@@ -39,9 +39,13 @@ get_header(); ?>
                     <div class="title">phone number</div>
                     <div class="datum phone"><a href="tel:+15045861094">504-586-1094</a></div>
                     <div class="title">our address:</div>
-                    <div class="datum address">Louisana Music Factory<br />421 Frenchmens St.<br />New Orleans, LA 70116</div>
+                    <div class="datum address">
+                        <p>Louisana Music Factory</p>
+                        <p>421 Frenchmens St.</p>
+                        <p>New Orleans, LA 70116</p>
+                    </div>
                     <div class="title">contact us</div>
-                    <div class="datum contact">Click <a href="" title="">here</a> to contact us</div>
+                    <div class="datum contact">Click <a href="<?php get_home_url(); ?>/contact-example-6/#contact" title="contact LMF">here</a> to contact us</div>
                     <div class="title">twitter</div>
                     <div class="datum twitter"><a href="https://twitter.com/LMFnola" title="Twitter" target="_blank">@LMFnola</a></div>
                 </div>
@@ -51,6 +55,9 @@ get_header(); ?>
                 <div id="right"><a href="" title="Click Here For Shipping Rates">Click Here For Shipping Rates</a></div>
             </div>
             <div id="contactforrm">
+                <a name="contact"></a>
+                <h2>Contact Us</h2>
+                <p>Please use the form below to contact us</p>
                 <?php echo do_shortcode('[gravityform id="2" title="false" description="false"]'); ?>
             </div>
     </div>

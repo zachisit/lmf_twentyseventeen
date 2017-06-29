@@ -28,7 +28,7 @@
     </div>
     <div id="bottom">
         <p>&copy; 2012-<?php echo date("Y"); ?> <?php echo get_bloginfo( 'name' ); ?></p>
-        <p>Hosting provided by <a href="" title="Handsome Cat Hosting">Handsome Cat Hosting</a></p>
+        <p>Hosting provided by <a href="http://www.handsomecathosting.com" title="Handsome Cat Hosting" target="_blank">Handsome Cat Hosting</a></p>
     </div>
 </footer>
 </div><!--/wrapper-->
