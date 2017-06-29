@@ -12,17 +12,19 @@
  * @package tater
  */
 get_header(); ?>
-
-<main>
     <div id="home_slider">
-        <div class="image_slidere">
+        <div class="image_slider">
+                <!--<div class="asset"><img src="https://www.petfinder.com/wp-content/uploads/2012/11/91615172-find-a-lump-on-cats-skin-632x475.jpg"></div>
+                <div class="asset"><img src="https://s-media-cache-ak0.pinimg.com/736x/e8/90/0a/e8900a07923cafc72c252e982163af0f.jpg"></div>
+                <div class="asset"><img src="https://www.petfinder.com/wp-content/uploads/2012/11/125950112-adopt-second-cat-632x475.jpg"></div>-->
+
             <?php
-            /*$query = new WP_Query( array('post_type' => 'homepage_slider', 'posts_per_page' => -1 ) );
+            $query = new WP_Query( array('post_type' => 'homepage_slider', 'posts_per_page' => -1 ) );
             while ( $query->have_posts() ) : $query->the_post(); ?>
                 <div class="asset">
                     <?php the_post_thumbnail( 'full' ); ?>
                 </div>
-            <?php endwhile; */?>
+            <?php endwhile; ?>
         </div>
     </div>
     <div id="home_hours">
@@ -83,6 +85,5 @@ get_header(); ?>
         <div id="left">Look at all we offer at LMF!</div>
         <div id="right"><a href="<?php echo get_home_url(); ?>/inside-louisiana-music-factory/" title="<?php echo get_bloginfo( 'name' ); ?> Photos">Click for photos</a></div>
     </div>
-</main>
 
 <?php get_footer(); ?>

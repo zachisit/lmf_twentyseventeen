@@ -46,9 +46,12 @@ html {
     -webkit-text-size-adjust:100%;
     -ms-text-size-adjust:100%;
     background:#f8f8f8;
+    padding:0;
+    margin:0;
 }
 body {
     margin: 0;
+    padding:0;
     font-family:Arial, Arial, Tahoma, sans-serif;
     font-weight:300;
 }
@@ -217,16 +220,27 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     float:left;
     width:100%;
     background:red;
+    max-height:854px;
     height:300px;
-    margin:0 0 0.3em 0;
-    text-align:center;
-    font-size:3em;
-    color:white;
+    z-index:1;
+    overflow:hidden;
+    margin:0;
 }
-#home_slider #image_slider {
+#home_slider .image_slider {
     float:left;
+    width:1000px;
+    height:auto;
+    max-height:854px;
+    margin:0;
+}
+#home_slider .image_slider .asset {
+    height:auto;
+    position:relative;
+}
+#home_slider .image_slider .asset img {
+    height:auto;
     width:100%;
-    display:block;
+    z-index:1;
 }
 #home_hours {
     float:left;
