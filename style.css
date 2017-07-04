@@ -198,6 +198,7 @@ header #right #bottom #menu ul li .sub-menu {
     border:1px solid #ccc;
     padding:0;
     width:200px;
+    z-index:2;
 }
 header #right #bottom #menu ul li .sub-menu li {
     display:block;
@@ -219,7 +220,7 @@ header #right #bottom #menu ul li:hover > .sub-menu {
 #home_slider {
     float:left;
     width:100%;
-    background:red;
+    background:#b30917;
     max-height:854px;
     height:300px;
     z-index:1;
@@ -236,6 +237,7 @@ header #right #bottom #menu ul li:hover > .sub-menu {
 #home_slider .image_slider .asset {
     height:auto;
     position:relative;
+    z-index:1;
 }
 #home_slider .image_slider .asset img {
     height:auto;
