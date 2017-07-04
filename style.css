@@ -221,8 +221,8 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     float:left;
     width:100%;
     background:#b30917;
-    max-height:854px;
-    height:300px;
+    max-height:400px;
+    height:400px;
     z-index:1;
     overflow:hidden;
     margin:0 0 1em 0;
@@ -231,7 +231,7 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     float:left;
     width:1000px;
     height:auto;
-    max-height:854px;
+    max-height:400px;
     margin:0;
 }
 #home_slider .image_slider .asset {

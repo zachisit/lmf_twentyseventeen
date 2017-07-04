@@ -16,8 +16,11 @@ get_header(); ?>
         <div class="image_slider">
             <?php
             $query = new WP_Query( array('post_type' => 'homepage_slider', 'posts_per_page' => -1 ) );
-            while ( $query->have_posts() ) : $query->the_post(); ?>
+            while ( $query->have_posts() ) : $query->the_post();
+
+                $homepage_slider_top_text = get_post_meta( $post->ID, '_homepage_slider_top_text', true ); ?>
                 <div class="asset">
+                    <h1><?php echo $homepage_slider_top_text; ?></h1>
                     <?php the_post_thumbnail( 'full' ); ?>
                 </div>
             <?php endwhile; ?>
