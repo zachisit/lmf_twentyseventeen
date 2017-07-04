@@ -14,10 +14,6 @@
 get_header(); ?>
     <div id="home_slider">
         <div class="image_slider">
-                <!--<div class="asset"><img src="https://www.petfinder.com/wp-content/uploads/2012/11/91615172-find-a-lump-on-cats-skin-632x475.jpg"></div>
-                <div class="asset"><img src="https://s-media-cache-ak0.pinimg.com/736x/e8/90/0a/e8900a07923cafc72c252e982163af0f.jpg"></div>
-                <div class="asset"><img src="https://www.petfinder.com/wp-content/uploads/2012/11/125950112-adopt-second-cat-632x475.jpg"></div>-->
-
             <?php
             $query = new WP_Query( array('post_type' => 'homepage_slider', 'posts_per_page' => -1 ) );
             while ( $query->have_posts() ) : $query->the_post(); ?>
@@ -30,33 +26,15 @@ get_header(); ?>
     <div id="home_hours">
         <p>Hours: 11AM to 8PM Daily</p>
     </div>
-    <div id="home_two_cta">
-        <div id="one">
-            <div id="left">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/home_two_cta_one_left.jpg" alt="<?php echo get_bloginfo( 'name' ); ?> - Home" />
-            </div>
-            <div id="right">
-                <h2>Free Concerts & News</h2>
-                <a href="<?php echo get_home_url(); ?>/lmf-news-2/" title="<?php echo get_bloginfo( 'name' ); ?> Schedule and Events">Click to view schedule</a>
-            </div>
-        </div>
-        <div id="two">
-            <div id="left">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/home_two_cta_two_left.jpg" alt="<?php echo get_bloginfo( 'name' ); ?> - Home" />
-            </div>
-            <div id="right">
-                <h2>New Releases</h2>
-                <a href="<?php echo get_home_url(); ?>/louisiana-music/new-release/" title="<?php echo get_bloginfo( 'name' ); ?> New Releases">Click to view new items</a>
-            </div>
-        </div>
-    </div>
     <div id="home_announcements">
         <h2>Latest Announcements</h2>
         <div id="left"></div>
         <div id="message">
-            <p>We are @ the LA Cajun-Zydeco Fest Today - Armstrong Park.</p>
-            <p>It did rain yesterday but we enjoyed the music & food!</p>
-            <p>Store is Opened Today 11-8</p>
+            <?php
+            $query = new WP_Query( array('post_type' => 'announcements', 'posts_per_page' => 1 ) );
+            while ( $query->have_posts() ) : $query->the_post();
+                the_content();
+            endwhile; ?>
         </div>
 
     </div>
