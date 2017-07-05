@@ -18,9 +18,11 @@ get_header(); ?>
             $query = new WP_Query( array('post_type' => 'homepage_slider', 'posts_per_page' => -1 ) );
             while ( $query->have_posts() ) : $query->the_post();
 
-                $homepage_slider_top_text = get_post_meta( $post->ID, '_homepage_slider_top_text', true ); ?>
+                $homepage_slider_top_text = get_post_meta( $post->ID, '_homepage_slider_top_text', true );
+                $homepage_slider_second_level_text = get_post_meta($post->ID, '_homepage_slider_second_level_text', true); ?>
                 <div class="asset">
                     <h1><?php echo $homepage_slider_top_text; ?></h1>
+                    <h2><?php echo $homepage_slider_second_level_text; ?></h2>
                     <?php the_post_thumbnail( 'full' ); ?>
                 </div>
             <?php endwhile; ?>

@@ -239,6 +239,40 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     position:relative;
     z-index:1;
 }
+#home_slider .image_slider .asset h1 {
+    color:white;
+    position:absolute;
+    bottom:40px;
+    text-align:center;
+    font-size:2.5em;
+    padding:0;
+    margin:0;
+    line-height:1.2em;
+    text-shadow:1px 1px 1px #ccc;
+    float:left;
+    width:100%;
+    display:block;
+    font-weight:100;
+    font-family:Arial, Arial, Tahoma, sans-serif;
+    background:rgba(179, 9, 23, 0.7);
+}
+#home_slider .image_slider .asset h2 {
+    color:white;
+    position:absolute;
+    bottom:10px;
+    text-align:center;
+    font-size:1.7em;
+    padding:0;
+    margin:0;
+    line-height:1.2em;
+    text-shadow:1px 1px 1px #ccc;
+    float:left;
+    width:100%;
+    display:block;
+    font-weight:100;
+    font-family:Arial, Arial, Tahoma, sans-serif;
+    background:rgba(179, 9, 23, 0.7);
+}
 #home_slider .image_slider .asset img {
     height:auto;
     width:100%;
@@ -254,20 +288,22 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     margin:0 0 0.625em 0;
 }
 #home_hours p {
-    background:#F8F8F8;
-    color:#04435d;
-    font-size:1.313em;
+    background:#3385c3;
+    color:white;
+    font-size:1.613em;
     padding:0.9em 0;
     font-family:Cambria, Georgia, serif;
     font-style:italic;
-    width:95%;
+    width:97%;
     margin:auto;
 }
 #home_hours p::before {
     content:"\f10e";
+    /*content:"\f017";*/
     font-family:"FontAwesome";
-    font-size:1.5em;
-    padding:0.2em 0.500em 0 1em;
+    font-size:1.2em;
+    color:white;
+    padding:0.4em 0.500em 0 1em;
 }
 #home_two_cta {
     float:left;
@@ -350,7 +386,7 @@ header #right #bottom #menu ul li:hover > .sub-menu {
 }
 #home_announcements h2 {
     text-align:center;
-    color:#52C640;
+    color:wheat;
     font-size:1.3em;
     font-weight:500;
 }
