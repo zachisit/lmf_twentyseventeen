@@ -211,6 +211,9 @@ header #right #bottom #menu ul li .sub-menu li {
 header #right #bottom #menu ul li .sub-menu li a {
     color:white;
 }
+header #right #bottom #menu ul li .sub-menu li a:hover {
+    color:#fdd207;
+}
 header #right #bottom #menu ul li:hover > .sub-menu {
     display:block;
 }
@@ -282,11 +285,7 @@ header #right #bottom #menu ul li:hover > .sub-menu {
 #home_hours {
     float:left;
     width:100%;
-}
-#home_hours {
-    float:left;
-    width:100%;
-    margin:0 0 0.625em 0;
+    margin:0 0 1em 0;
 }
 #home_hours p {
     background:#3385c3;
@@ -533,6 +532,9 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     font-size:1.1em;
     padding:0 0 0 .5em;
 }
+#home_look #right a::after:hover {
+    color:#fdd207;
+}
 
 /*--------------------------------------------------------------
 # Content
@@ -773,6 +775,7 @@ h1.woocommerce-products-header__title::before {
     font-size:1em;
     float:left;
     width:45px;
+    color:#fdd207;
 }
 h1.book::before {
     content:"\f02d";
@@ -780,6 +783,7 @@ h1.book::before {
     font-size:1em;
     float:left;
     width:45px;
+    color:#fdd207;
 }
 h1.video::before {
     content:"\f03d";
@@ -787,6 +791,7 @@ h1.video::before {
     font-size:1em;
     float:left;
     width:55px;
+    color:#fdd207;
 }
 h1.sale::before {
     content:"\f12a";
@@ -794,6 +799,7 @@ h1.sale::before {
     font-size:1em;
     float:left;
     width:30px;
+    color:#fdd207;
 }
 h1.merchandise::before {
     content:"\f1b3";
@@ -801,6 +807,7 @@ h1.merchandise::before {
     font-size:1em;
     float:left;
     width:57px;
+    color:#fdd207;
 }
 .widget-area {
     width:26%;
