@@ -36,6 +36,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 * light blue: #3385c3;
 * white: #ffffff;
 * red: #b30917;
+* gold: #fdd207;
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -240,7 +241,7 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     z-index:1;
 }
 #home_slider .image_slider .asset h1 {
-    color:white;
+    color:#333;
     position:absolute;
     bottom:40px;
     text-align:center;
@@ -248,13 +249,13 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     padding:0;
     margin:0;
     line-height:1.2em;
-    text-shadow:1px 1px 1px #ccc;
+    text-shadow:1px 1px 1px #fff;
     float:left;
     width:100%;
     display:block;
     font-weight:100;
     font-family:Arial, Arial, Tahoma, sans-serif;
-    background:rgba(179, 9, 23, 0.7);
+    background:rgba(253, 210, 7, 0.7);
 }
 #home_slider .image_slider .asset h2 {
     color:white;
@@ -302,7 +303,7 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     /*content:"\f017";*/
     font-family:"FontAwesome";
     font-size:1.2em;
-    color:white;
+    color:#fdd207;
     padding:0.4em 0.500em 0 1em;
 }
 #home_two_cta {
@@ -382,11 +383,11 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     margin:0 0 1em 0;
     padding:1.5em 0 2.5em 0;
     width:100%;
-    background:#b30917;
+    background:#fdd207;
 }
 #home_announcements h2 {
     text-align:center;
-    color:wheat;
+    color:#52C640;
     font-size:1.3em;
     font-weight:500;
 }
@@ -408,7 +409,7 @@ header #right #bottom #menu ul li:hover > .sub-menu {
 #home_announcements #message p {
     font-size:1.313em;
     line-height:1.1em;
-    color:white;
+    color:#333;
     font-family:Cambria, Georgia, serif;
     font-style:italic;
     margin:0;
