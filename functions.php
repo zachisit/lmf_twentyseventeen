@@ -70,3 +70,10 @@ add_action( 'wp_enqueue_scripts', 'lmf_theme_scripts' );
  * featured images in Page Edit
  **************************************************/
 add_theme_support( 'post-thumbnails' );
+
+
+/*************************************************
+ * Enable Product Opening In Lightbox
+ **************************************************/
+add_theme_support( 'wc-product-gallery-lightbox' );
+add_theme_support( 'wc-product-gallery-slider' );
