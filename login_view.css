@@ -1,0 +1,19 @@
+/**
+ * File login_view.css
+ *
+ * css to brand the /wp-login.php screen for client
+ *
+ */
+body {
+    background:#b30917 !important;
+}
+.login #backtoblog a:focus, .login #nav a:focus, .login h1 a:focus, .login #backtoblog a, .login #nav a {
+    color:white !important;
+}
+body.login div#login h1 a {
+    background:white url(images/logo.png) no-repeat;
+    background-size:319px;
+    height:66px;
+    background-size:320px;
+    width:322px;
+}

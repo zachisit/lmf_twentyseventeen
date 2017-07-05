@@ -66,6 +66,13 @@ function lmf_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'lmf_theme_scripts' );
 
+//wordpress login landing page re-branding
+function lmf_login_script() {
+    wp_enqueue_style( 'login_custom_style', get_stylesheet_directory_uri(). '/login_view.css', ['login'] );
+}
+
+add_action( 'login_enqueue_scripts', 'lmf_login_script', 1 );
+
 /*************************************************
  * featured images in Page Edit
  **************************************************/
