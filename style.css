@@ -545,6 +545,27 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     float:left;
     width:45%;
 }
+.woocommerce-message {
+    background:#3385c3;
+    border-top-color:#52C640;
+    float:left;
+    width:87%;
+    display:block;
+    color:white;
+}
+.woocommerce-message a {
+    color:white;
+    font-weight:900;
+}
+.woocommerce-message::before {
+    content:"\f06a";
+    font-family:"FontAwesome";
+    color:white;
+    font-size:2em;
+    position:absolute;
+    top:11px;
+    left:13px;
+}
 #content .product .entry-summary {
     float:right;
     width:43%;
