@@ -16,9 +16,6 @@ function lmf_homepage_announcements_posttype() {
             'public' => true,
             'supports' => array( 'title', 'editor', ),
             'capability_type' => 'post',
-            'capabilities' => array(
-                'create_posts' => false,
-            ),
             'menu_position' => 3,
             'menu_icon' => 'dashicons-thumbs-up',
             'media_buttons' => false
