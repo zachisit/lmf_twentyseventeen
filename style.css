@@ -641,7 +641,9 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     font-size:0.8em;
 }
 #content .products {
-    margin:0 0 0 0.625em;
+    margin:0 0 5em 0.625em;
+    float:left;
+    display:block;
 }
 #content .products li {
     display:inline;
@@ -718,8 +720,8 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     height:100px;
 }
 #content .products li .woocommerce-LoopProduct-link .onsale {
-    background:#b30917;
-    color:white;
+    background:#fdd207;
+    color:red;
     font-size:1.1em;
     padding:1.1em;
     -webkit-border-radius:2.8em;
@@ -727,6 +729,7 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     border-radius:2.8em;
     position:absolute;
     margin:-0.625em 0 0 0;
+    font-weight:500;
 }
 #content .products li .woocommerce-LoopProduct-link img {
     width:100%;
@@ -889,6 +892,12 @@ h1.merchandise::before {
 .widget-area .widgetblock .widget_shopping_cart_content .product_list_widget .mini_cart_item .remove {
     color:red;
     font-weight:900;
+}
+.widget-area .widgetblock .product-categories li {
+    margin:0 0 0.5em 0;
+}
+.widget-area .widgetblock .product-categories li a {
+    font-size:1.2em;
 }
 #content_left {
     padding:0 1em;
