@@ -732,6 +732,12 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     width:100%;
     height:auto;
 }
+#content .products li.product_dvd_category {
+    height:400px;
+}
+#content .products li.product_books_category {
+    height:390px;
+}
 #content .product .related {
     display:none;
 }
