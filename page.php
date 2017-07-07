@@ -17,6 +17,8 @@ get_header(); ?>
         <?php while ( have_posts() ) : the_post();
             echo '<div id="breadcrumb"><p>You are here: <a href="'. get_home_url() .'" title="Home">Home</a> - '. get_the_title() .'</p></div>';
 
+            include 'social_share.php';
+
             echo '<div id="header"><h2>'. get_the_title() .'</h2></div>';
 
 
