@@ -88,6 +88,15 @@ add_theme_support( 'wc-product-gallery-slider' );
 
 
 /*************************************************
+ * Social Share
+ ************************************************/
+function ere() {
+    include 'social_share.php';
+}
+
+add_action('woocommerce_before_single_product', 'ere', 1);
+
+/*************************************************
  * Custom Breadcrumbs
  *************************************************
 //for general pages
