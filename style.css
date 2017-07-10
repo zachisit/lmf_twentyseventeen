@@ -397,8 +397,13 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     font-weight:500;
 }
 #home_announcements #message {
-    width:80%;
+    width:74%;
     float:right;
+    margin:0 2em 0 0;
+}
+#home_announcements #message img {
+    width:100%;
+    height:auto;
 }
 #home_announcements #left {
     width:20%;
