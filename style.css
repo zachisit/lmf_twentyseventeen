@@ -76,7 +76,9 @@ a {
 a:hover  {
     text-decoration:underline;
 }
-
+.italic {
+    font-style:italic;
+}
 
 /*--------------------------------------------------------------
 # Header
@@ -575,7 +577,7 @@ header #right #bottom #menu ul li:hover > .sub-menu {
 }
 #content .product .entry-summary {
     float:right;
-    width:43%;
+    width:53%;
 }
 #content .product .entry-summary h1, h2, h3 {
     color:#333;
@@ -927,7 +929,6 @@ h1.merchandise::before {
 }
 #content_left #breadcrumb p, #content_full #breadcrumb p {
     font-size:1em;
-    font-style:italic;
     padding:0;
     margin:0;
 }
