@@ -1275,7 +1275,12 @@ footer #bottom p:last-child {
     width: 33.3333%
 }
 .woocommerce-product-gallery--columns-4 .flex-control-thumbs li {
-    width: 25%
+    width:auto
+}
+.woocommerce-product-gallery--columns-4 .flex-control-nav {
+    margin:2em 0;
+    padding:0;
+    display:block;
 }
 .woocommerce-product-gallery--columns-5 .flex-control-thumbs li {
     width: 20%

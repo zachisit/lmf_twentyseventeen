@@ -15,7 +15,7 @@ $current_url = home_url(add_query_arg(array(),$wp->request)); ?>
             <?php
             //facebook
             //@source: https://developers.facebook.com/docs/plugins/share-button
-            echo '<div class="fb-share-button" data-href="http://www.google.com" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='. $current_url .'%2F&amp;src=sdkpreparse">Share</a></div>';
+            echo '<div class="fb-share-button" data-href="'. $current_url .'" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='. $current_url .'%2F&amp;src=sdkpreparse">Share</a></div>';
             ?>
         </li>
         <li>

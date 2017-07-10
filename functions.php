@@ -14,7 +14,7 @@ require_once "woo/woo_specifics.php";
 /*************************************************
  * hide wp admin bar
  *************************************************/
-show_admin_bar( false );
+show_admin_bar( true );
 
 /*************************************************
  * widgetize theme
