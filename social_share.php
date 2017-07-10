@@ -34,5 +34,42 @@ $current_url = home_url(add_query_arg(array(),$wp->request)); ?>
 </a>';
             ?>
         </li>
+        <li>
+            <?php
+            //reddit
+            //@source; https://www.reddit.com/buttons/
+            echo '<a href="//www.reddit.com/submit" onclick="window.location = \'//www.reddit.com/submit?url=\' + encodeURIComponent(window.location); return false"> <img src="//www.redditstatic.com/spreddit7.gif" alt="submit to reddit" border="0" /> </a>';
+            ?>
+        </li>
+        <li>
+            <?php
+            //google +
+            //@source; https://developers.google.com/+/web/share/
+            ?>
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <g:plus action="share"></g:plus>
+        </li>
+        <li>
+            <?php
+            //pinterest
+            //@source; https://developers.pinterest.com/docs/widgets/save/
+            ?>
+            <script
+                    type="text/javascript"
+                    async defer
+                    src="//assets.pinterest.com/js/pinit.js"
+            ></script>
+            <a href="https://www.pinterest.com/pin/create/button/">
+                <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" />
+            </a>
+        </li>
+        <li>
+            <?php
+            //tumblr
+            //@source;https://www.tumblr.com/docs/en/share_button
+            ?>
+            <a class="tumblr-share-button" href="https://www.tumblr.com/share"></a>
+            <script id="tumblr-js" async src="https://assets.tumblr.com/share-button.js"></script>
+        </li>
     </ul>
 </div>
