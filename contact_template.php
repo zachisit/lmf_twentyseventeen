@@ -17,9 +17,7 @@ get_header(); ?>
 <main>
     <div id="content_full">
         <?php global $post; ?>
-        <div id="breadcrumb">
-            <p>You are here: <a href="<?php echo get_home_url(); ?>" title="Home">Home</a> - <?php echo get_the_title($post->ID); ?></p>
-        </div>
+        <?php include 'breadcrumbs.php'; ?>
         <div id="header">
             <h2><?php echo get_the_title($post->ID); ?></h2>
         </div>
