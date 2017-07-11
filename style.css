@@ -385,36 +385,18 @@ header #right #bottom #menu ul li:hover > .sub-menu {
 #home_announcements {
     float:left;
     display:block;
-    margin:0 0 1em 0;
-    padding:1.5em 0 2.5em 0;
+    margin:0;
+    padding:1.5em 0 0 0;
     width:100%;
-    background:#fdd207;
-}
-#home_announcements h2 {
-    text-align:center;
-    color:#1CAA3C;
-    font-size:1.3em;
-    font-weight:700;
 }
 #home_announcements #message {
-    width:74%;
-    float:right;
+    width:100%;
+    float:left;
     margin:0 2em 0 0;
 }
 #home_announcements #message img {
     width:100%;
     height:auto;
-}
-#home_announcements #left {
-    width:20%;
-    float:left;
-}
-#home_announcements #left::before {
-    content:"\f0a1";
-    font-family:"FontAwesome";
-    font-size:6em;
-    color:#1CAA3C;
-    padding:1em 0 0 0.5em;
 }
 #home_announcements #message p {
     font-size:1.313em;

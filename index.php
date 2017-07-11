@@ -32,8 +32,6 @@ get_header(); ?>
         <p>Hours: 11AM to 8PM Daily</p>
     </div>
     <div id="home_announcements">
-        <h2>Latest Announcements</h2>
-        <div id="left"></div>
         <div id="message">
             <?php
             $query = new WP_Query( array('post_type' => 'announcements', 'posts_per_page' => 1 ) );

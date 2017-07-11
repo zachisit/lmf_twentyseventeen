@@ -6,12 +6,12 @@ function lmf_homepage_announcements_posttype() {
     register_post_type( 'announcements',
         array(
             'labels' => array(
-                'name' => __( 'Announcement' ),
-                'singular_name' => __( 'Announcement' ),
-                'view_item' => __( 'View Announcement' ),
-                'search_items' => __( 'Search Announcement' ),
-                'not_found' => __( 'No Announcement found' ),
-                'not_found_in_trash' => __( 'No Announcement found in trash' ),
+                'name' => __( 'Homepage CTAs' ),
+                'singular_name' => __( 'Homepage CTAs' ),
+                'view_item' => __( 'View Homepage CTAs' ),
+                'search_items' => __( 'Search Homepage CTAs' ),
+                'not_found' => __( 'No Homepage CTAs found' ),
+                'not_found_in_trash' => __( 'No Homepage CTAs found in trash' ),
             ),
             'public' => true,
             'supports' => array( 'title', 'editor', ),
