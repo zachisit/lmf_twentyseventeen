@@ -392,9 +392,9 @@ header #right #bottom #menu ul li:hover > .sub-menu {
 }
 #home_announcements h2 {
     text-align:center;
-    color:#52C640;
+    color:#1CAA3C;
     font-size:1.3em;
-    font-weight:500;
+    font-weight:700;
 }
 #home_announcements #message {
     width:74%;
@@ -413,7 +413,7 @@ header #right #bottom #menu ul li:hover > .sub-menu {
     content:"\f0a1";
     font-family:"FontAwesome";
     font-size:6em;
-    color:#52C640;
+    color:#1CAA3C;
     padding:1em 0 0 0.5em;
 }
 #home_announcements #message p {
@@ -561,7 +561,7 @@ header #right #bottom #menu ul li:hover > .sub-menu {
 }
 .woocommerce-message {
     background:#3385c3;
-    border-top-color:#52C640;
+    border-top-color:#1CAA3C;
     float:left;
     width:87%;
     display:block;
