@@ -46,7 +46,6 @@ $current_url = home_url(add_query_arg(array(),$wp->request)); ?>
             //google +
             //@source; https://developers.google.com/+/web/share/
             ?>
-            <script src="https://apis.google.com/js/platform.js" async defer></script>
             <g:plus action="share"></g:plus>
         </li>
         <li>
