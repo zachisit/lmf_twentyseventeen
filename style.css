@@ -948,16 +948,24 @@ h1.merchandise::before {
     float:left;
     display:block;
     margin:1em 0;
+    padding:0.5em;
+    background:rgba(51, 133, 195, 0.3);
+    width:100%;
+    height:21px;
 }
 #content_left #social_share ul, #content #social_share ul {
     list-style-type:none;
-    margin:0;
+    margin:auto;
+    display:table;
     padding:0;
 }
 #content_left #social_share ul li, #content #social_share ul li {
     float:left;
     display:inline;
     padding:0 1em 0 0;
+}
+#content_left #social_share ul li a, #content #social_share ul li a {
+    color:white;
 }
 #content_left #social_share ul li:nth-child(1),  #content #social_share ul li:nth-child(1) {
     min-width:84px;
