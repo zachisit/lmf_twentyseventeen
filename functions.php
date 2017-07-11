@@ -95,31 +95,3 @@ function ere() {
 }
 
 add_action('woocommerce_before_single_product', 'ere', 1);
-
-/*************************************************
- * Custom Breadcrumbs
- *************************************************
-//for general pages
-function lmf_site_breadcrumbs(){
-    echo '<div id="breadcrumb"><p>You are here: <a href="'. get_home_url() .'" title="Home">Home</a> - <span class="italic">'. get_the_title() .'</span></p></div>';
-}
-
-add_action( 'woocommerce_before_single_product_summary', 'lmf_site_breadcrumbs', 1);
-
-//for woocommerce pages
-function lmf_woocommerce_breadcrumb(){
-
-
-    $product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
-
-    if ( $product_cats && ! is_wp_error ( $product_cats ) ){
-
-        $single_cat = array_shift( $product_cats );
-
-        echo '<h2 itemprop="name" class="product_category_title"><span>'. $single_cat->name .'</span></h2>';
-
-    }
-}
-
-add_action( 'woocommerce_breadcrumb', 'lmf_woocommerce_breadcrumb', 1);
-*/
