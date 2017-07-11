@@ -744,13 +744,19 @@ header #right #bottom #menu ul li:hover > .sub-menu {
 }
 #content .products li .woocommerce-LoopProduct-link img {
     width:100%;
-    height:auto;
+    height:150px;
 }
 #content .products li.product_dvd_category {
-    height:400px;
+    height:350px;
+}
+#content .products li.product_dvd_category img {
+    height:200px;
 }
 #content .products li.product_books_category {
     height:390px;
+}
+#content .products li.product_books_category img {
+    height:200px;
 }
 #content .product .related {
     display:none;
