@@ -223,10 +223,22 @@ header #right #bottom #menu ul li .sub-menu li a:hover {
 header #right #bottom #menu ul li:hover > .sub-menu {
     display:block;
 }
-
-/*--------------------------------------------------------------
-# Homepage
----------------------------------------------------------------*/
+header #right #bottom #search {
+    float:left;
+    width:auto;
+}
+header #right #bottom #search .screen-reader-text {
+    display:none;
+}
+header #right #bottom #search input[type="submit"] {
+    background:#3385c3;
+    border:none;
+    color:white;
+    padding:0.3em 1em;
+}
+    /*--------------------------------------------------------------
+    # Homepage
+    ---------------------------------------------------------------*/
 #home_slider {
     float:left;
     width:100%;

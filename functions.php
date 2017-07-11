@@ -31,6 +31,16 @@ function arphabet_widgets_init() {
         'after_title'   => '</h2>',
     ) );
 
+    register_sidebar( array(
+        'name' => 'Header Search',
+        'id'   => 'header-search',
+        'description'   => 'Header search specifically',
+        'before_widget' => '<div class="widgetblock">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2>',
+        'after_title'   => '</h2>',
+    ) );
+
     //additional sidebars here
 }
 add_action( 'widgets_init', 'arphabet_widgets_init' );

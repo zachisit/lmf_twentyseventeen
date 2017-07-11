@@ -66,6 +66,15 @@
             </div>
         </div>
         <div id="bottom">
+            <div id="search">
+                <?php
+                if ( ! is_active_sidebar( 'header-search' ) ) {
+                    echo "please set up the search widget in your theme under 'header-search'";
+                } else {
+                    dynamic_sidebar( 'header-search' );
+                }
+                ?>
+            </div>
                 <a href="javascript:void(0);" id="menu_btn"><div class="mobilemenubars"></div><div class="mobilemenubars"></div><div class="mobilemenubars"></div></a>
                 <div id="menu"><a href="#" id="menu_close">X</a>
                     <?php wp_nav_menu( array( 'theme_location' => 'header_menu', 'menu_id' => 'primary-menu' ) ); ?>
