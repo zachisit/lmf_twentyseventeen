@@ -837,7 +837,7 @@ h1.merchandise::before {
     border-left:1px solid #ccc;
     border-top:0.375em solid #3385c3;
     float:right;
-    margin:1.4em 0.8em 0 0;
+    margin:0em 0.8em 0 0;
 }
 .widget-area .widgetblock {
     padding:1em;
