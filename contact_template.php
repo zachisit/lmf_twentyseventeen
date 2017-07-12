@@ -50,7 +50,7 @@ get_header(); ?>
             </div>
             <div id="how_much">
                 <div id="left">WANT TO KNOW HOW MUCH IT WILL COST?</div>
-                <div id="right"><a href="" title="Click Here For Shipping Rates">Click Here For Shipping Rates</a></div>
+                <div id="right"><a href="<?php echo get_home_url(); ?>/shipping-rates/" title="Click Here For Shipping Rates">Click Here For Shipping Rates</a></div>
             </div>
             <div id="contactforrm">
                 <a name="contact"></a>

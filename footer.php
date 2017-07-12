@@ -20,10 +20,10 @@
     </div>
     <div id="right">
         <ul>
-            <li><a href="" title="LMF Home">LMF Home</a></li>
-            <li><a href="" title="Shipping Rates">Shipping Rates</a></li>
-            <li><a href="" title="Inside Louisiana Music Factory">Inside Louisiana Music Factory</a></li>
-            <li><a href="" title="Louisiana Music Factory events and updates!">Louisiana Music Factory events and updates!</a></li>
+            <li><a href="<?php echo get_home_url(); ?>" title="LMF Home">LMF Home</a></li>
+            <li><a href="<?php echo get_home_url(); ?>/shipping-rates/" title="Shipping Rates">Shipping Rates</a></li>
+            <li><a href="<?php echo get_home_url(); ?>/inside-louisiana-music-factory/" title="Inside Louisiana Music Factory">Inside Louisiana Music Factory</a></li>
+            <li><a href="<?php echo get_home_url(); ?>/lmf-news/" title="Louisiana Music Factory events and updates!">Louisiana Music Factory events and updates!</a></li>
         </ul>
     </div>
     <div id="bottom">
