@@ -944,7 +944,7 @@ h1.merchandise::before {
     color:#096cc8;
     margin:0 0.5em 0 1em;
 }
-#content_left #social_share, #content #social_share {
+#content #social_share {
     float:left;
     display:block;
     margin:1em 0;
@@ -953,32 +953,35 @@ h1.merchandise::before {
     width:100%;
     height:21px;
 }
-#content_left #social_share ul, #content #social_share ul {
+#content #social_share ul {
     list-style-type:none;
     margin:auto;
     display:table;
     padding:0;
 }
-#content_left #social_share ul li, #content #social_share ul li {
+#content #social_share ul li {
     float:left;
     display:inline;
     padding:0 1em 0 0;
 }
-#content_left #social_share ul li a, #content #social_share ul li a {
+#content #social_share ul li a {
     color:white;
 }
-#content_left #social_share ul li:nth-child(1),  #content #social_share ul li:nth-child(1) {
+#content #social_share ul li:nth-child(1) {
     min-width:84px;
 }
-#content_left #social_share ul li:nth-child(2), #content #social_share ul li:nth-child(2) {
+#content #social_share ul li:nth-child(2) {
     min-width:60px;
 }
-#content_left #social_share .share_email_button, #content #social_share .share_email_button {
+#content #social_share .share_email_button {
     background:#096cc8;
     padding:0.2em 1em;
     color:white;
     text-decoration:none;
     font-size:0.8em;
+}
+#content_left #social_share {
+    display:none;
 }
 #content_left .woocommerce {
     float:left;
