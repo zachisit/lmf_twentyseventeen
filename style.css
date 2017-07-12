@@ -992,7 +992,18 @@ h1.merchandise::before {
     float:right;
     width:70%;
 }
-
+#content .product .onsale {
+    background: #fdd207;
+    color: red;
+    font-size: 1.1em;
+    padding: 1.1em;
+    -webkit-border-radius: 2.8em;
+    -moz-border-radius: 2.8em;
+    border-radius: 2.8em;
+    position: absolute;
+    margin: -0.625em 0 0 0;
+    font-weight: 500;
+}
     /*-------------------------------------------------------------
      # Contact Page
     --------------------------------------------------------------*/
