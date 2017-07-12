@@ -17,17 +17,14 @@ get_header(); ?>
 <main>
     <div id="content_full">
         <?php global $post; ?>
-        <?php include 'breadcrumbs.php'; ?>
         <div id="header">
             <h2><?php echo get_the_title($post->ID); ?></h2>
         </div>
-
-
-            <div id="top_quote">
-                <div class="quote"><i class="fa fa-quote-left" aria-hidden="true"></i></div>
-                <p>Hello friends and thanks for visiting us! New items are added daily. If you don’t see what you’re looking for you can always call us at 504-586-1094 or send us a message using the link below. Please let us know if you have any problems with the website. We appreciate your business!</p>
-            </div>
-            <div id="map_contact">
+         <div id="top_quote">
+             <div class="quote"><i class="fa fa-quote-left" aria-hidden="true"></i></div>
+             <p>Hello friends and thanks for visiting us! New items are added daily. If you don’t see what you’re looking for you can always call us at 504-586-1094 or send us a message using the link below. Please let us know if you have any problems with the website. We appreciate your business!</p>
+         </div>
+        <div id="map_contact">
                 <div id="left">
                     <a href="https://www.google.com/maps/place/Louisiana+Music+Factory/@29.96243,-90.0597217,17z/data=!3m1!4b1!4m5!3m4!1s0x8620a60d6e3b12a3:0xac5f43d4770bffb8!8m2!3d29.96243!4d-90.057533?q=louisiana+music+factory&rlz=1C1CHBF_enUS731US731&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjBscjvwNvUAhUTET4KHQ2VDrcQ_AUICigB" title="Directions to LMF"><img src="<?php echo get_template_directory_uri(); ?>/images/google_mp.jpg" alt="<?php echo get_bloginfo( 'name' ); ?> - Home" /></a>
                     <p class="map_direction"><a href="https://www.google.com/maps/place/Louisiana+Music+Factory/@29.96243,-90.0597217,17z/data=!3m1!4b1!4m5!3m4!1s0x8620a60d6e3b12a3:0xac5f43d4770bffb8!8m2!3d29.96243!4d-90.057533?q=louisiana+music+factory&rlz=1C1CHBF_enUS731US731&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjBscjvwNvUAhUTET4KHQ2VDrcQ_AUICigB" title="Directions to LMF">Directions to LMF Here</a></p>
