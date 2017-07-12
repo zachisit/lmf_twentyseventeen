@@ -48,7 +48,7 @@
                 <div id="phone"><a href="tel:+15045861094">504-586-1094</a></div>
             </div>
             <div id="three">
-                <div id="contact"><a href="<?php echo get_home_url(); ?>/contact" title="Contact <?php echo get_bloginfo( 'name' ); ?>">Contact Us</a></div>
+                <div id="contact"><a href="<?php echo get_home_url(); ?>/contact#contact" title="Contact <?php echo get_bloginfo( 'name' ); ?>">Contact Us</a></div>
             </div>
             <div id="four">
                 <div id="login">
