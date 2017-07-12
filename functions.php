@@ -101,8 +101,8 @@ add_theme_support( 'wc-product-gallery-slider' );
 /*************************************************
  * Social Share
  ************************************************/
-function ere() {
+function lmf_social_share() {
     include 'social_share.php';
 }
 
-add_action('woocommerce_before_single_product', 'ere', 1);
+add_action('woocommerce_before_single_product', 'lmf_social_share', 1);
