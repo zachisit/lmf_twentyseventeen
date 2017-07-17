@@ -28,6 +28,9 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 <div id="wrapper">
+    <div id="top_mobile_directions">
+        <p><a href="<?php echo get_home_url(); ?>/contact" title="Directions">Directions</a></p>
+    </div>
 <header>
     <div id="logo">
         <a href="<?php echo get_home_url(); ?>" title="Home"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php echo get_bloginfo( 'name' ); ?> - Home" /></a>
