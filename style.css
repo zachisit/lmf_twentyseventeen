@@ -83,6 +83,19 @@ a:hover  {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+#top_mobile_directions {
+    display:none;
+    float:left;
+    width:100%;
+    background:#096cc8;
+}
+#top_mobile_directions p {
+    text-align:center;
+}
+#top_mobile_directions p a {
+    color:gold;
+    text-decoration:none;
+}
 header {
     float:left;
     width:100%;
@@ -1356,7 +1369,7 @@ a.woocommerce-product-gallery__trigger {
 # Responsive (iphone/android)
 ---------------------------------------------------------------*/
 @media only screen and (max-width:500px) {
-    .container {
+    .container, #wrapper {
         float:left;
         display: block;
         width:100%;
@@ -1366,5 +1379,34 @@ a.woocommerce-product-gallery__trigger {
     img {
         width:100%;
         height:auto;
+    }
+    footer #left, footer #right {
+        width:auto;
+        margin:auto;
+        display:table;
+    }
+    #top_mobile_directions {
+        display:block;
+    }
+    #home_look #right {
+        margin:1em auto;
+        display:table;
+        width:auto;
+    }
+    #home_look #left {
+        float:none;
+        margin:auto;
+        text-align:center;
+    }
+    #home_slider .image_slider {
+        max-height:none;
+        height:auto;
+    }
+    #home_slider {
+        margin:0;
+        height:160px;
+    }
+    #home_slider .image_slider .asset h1 {
+        font-size:1.5em;
     }
 }

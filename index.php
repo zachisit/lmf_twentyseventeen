@@ -22,7 +22,7 @@ get_header(); ?>
                 $homepage_slider_second_level_text = get_post_meta($post->ID, '_homepage_slider_second_level_text', true); ?>
                 <div class="asset">
                     <h1><?php echo $homepage_slider_top_text; ?></h1>
-                    <h2><?php echo $homepage_slider_second_level_text; ?></h2>
+                    <?php if (!empty ($homepage_slider_second_level_text) ) { ?><h2><?php echo $homepage_slider_second_level_text; ?></h2><?php } ?>
                     <?php the_post_thumbnail( 'full' ); ?>
                 </div>
             <?php endwhile; ?>
