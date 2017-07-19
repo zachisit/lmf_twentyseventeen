@@ -1369,7 +1369,7 @@ a.woocommerce-product-gallery__trigger {
 # Responsive (iphone/android)
 ---------------------------------------------------------------*/
 @media only screen and (max-width:500px) {
-    .container, #wrapper {
+    .container, #wrapper, #home_intouch #left, #home_intouch #right, #content_full #map_contact #right, #content_full #map_contact #left {
         float:left;
         display: block;
         width:100%;
@@ -1380,7 +1380,15 @@ a.woocommerce-product-gallery__trigger {
         width:100%;
         height:auto;
     }
-    footer #left, footer #right {
+    footer #left {
+        width:100%;
+        display:block;
+    }
+    footer #left ul {
+        width:auto;
+        margin:auto;
+    }
+    footer #right {
         width:auto;
         margin:auto;
         display:table;
@@ -1389,13 +1397,13 @@ a.woocommerce-product-gallery__trigger {
         display:block;
     }
     #home_look #right {
-        margin:1em auto;
-        display:table;
-        width:auto;
+        margin:auto;
+        width:84%;
     }
     #home_look #left {
         float:none;
-        margin:auto;
+        margin:0 auto 1em auto;
+        width:80%;
         text-align:center;
     }
     #home_slider .image_slider {
