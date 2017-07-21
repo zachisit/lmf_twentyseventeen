@@ -53,7 +53,7 @@ get_header(); ?>
                 <p>New Orleans, LA 70116</p>
             </div>
             <div class="title">contact us</div>
-            <div class="datum contact">Click <a href="<?php echo get_home_url(); ?>/contact" title="contact <?php echo get_bloginfo( 'name' ); ?> here">here</a> to contact us</div>
+            <div class="datum contact">Click <a href="<?php echo get_home_url(); ?>/contact/#contactforrm" title="contact <?php echo get_bloginfo( 'name' ); ?> here">here</a> to contact us</div>
             <div class="title">twitter</div>
             <div class="datum twitter"><a href="https://twitter.com/LMFnola" title="<?php echo get_bloginfo( 'name' ); ?> Twitter" target="_blank">@LMFnola</a></div>
         </div>
