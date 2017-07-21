@@ -40,7 +40,7 @@ get_header(); ?>
                         <p>New Orleans, LA 70116</p>
                     </div>
                     <div class="title">contact us</div>
-                    <div class="datum contact">Click <a href="<?php get_home_url(); ?>/contact-example-6/#contact" title="contact LMF">here</a> to contact us</div>
+                    <div class="datum contact">Click <a href="<?php get_home_url(); ?>/contact/#contactforrm" title="contact LMF">here</a> to contact us</div>
                     <div class="title">twitter</div>
                     <div class="datum twitter"><a href="https://twitter.com/LMFnola" title="Twitter" target="_blank">@LMFnola</a></div>
                 </div>

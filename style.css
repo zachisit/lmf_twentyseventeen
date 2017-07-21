@@ -1016,6 +1016,7 @@ h1.merchandise::before {
     position:relative;
     margin:-0.625em 0 0 -63px;
     font-weight:500;
+    z-index:1;
 }
     /*-------------------------------------------------------------
      # Contact Page
