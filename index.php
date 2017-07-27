@@ -32,14 +32,13 @@ get_header(); ?>
         <p>Hours: 11AM to 8PM Daily</p>
     </div>
     <div id="home_announcements">
-        <div id="message">
+        <div id="message" class="homepage_cta_ga_click">
             <?php
             $query = new WP_Query( array('post_type' => 'announcements', 'posts_per_page' => 1 ) );
             while ( $query->have_posts() ) : $query->the_post();
                 the_content();
             endwhile; ?>
         </div>
-
     </div>
     <div id="home_intouch">
         <div id="left">
@@ -66,5 +65,4 @@ get_header(); ?>
         <div id="left">Look at all we offer at LMF!</div>
         <div id="right"><a href="<?php echo get_home_url(); ?>/inside-louisiana-music-factory/" title="<?php echo get_bloginfo( 'name' ); ?> Photos">Click for photos</a></div>
     </div>
-
 <?php get_footer(); ?>
