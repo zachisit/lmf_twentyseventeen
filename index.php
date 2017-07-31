@@ -37,7 +37,7 @@ get_header(); ?>
             /**
              * this is the GA tracking script used for event tracking
              * currently this is hard coded into the CPT text value, added to the link:
-             * onClick="ga(‘send’, ‘event’, ‘Homepage CTA Block’, ‘Click’, ‘Homepage CTA Block-Bottom’);"
+             * onClick="ga('send', 'event', { eventCategory: 'internal_click', eventAction: 'click', eventLabel: 'homepage_cta_click_top'});"
              *
              */
             $query = new WP_Query( array('post_type' => 'announcements', 'posts_per_page' => 1 ) );
