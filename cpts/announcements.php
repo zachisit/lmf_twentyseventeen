@@ -14,7 +14,7 @@ function lmf_homepage_announcements_posttype() {
                 'not_found_in_trash' => __( 'No Homepage CTAs found in trash' ),
             ),
             'public' => true,
-            'supports' => array( 'title', 'editor', ),
+            'supports' => array( 'title', 'editor', 'revisions'),
             'capability_type' => 'post',
             'menu_position' => 3,
             'menu_icon' => 'dashicons-thumbs-up',
