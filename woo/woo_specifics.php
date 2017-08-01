@@ -131,15 +131,15 @@ function custom_cpost_column( $column, $post_id ) {
     $line_total = $item_data['total'];
     $line_total_tax = $item_data['total_tax'];
 
-    echo '<p></p>';
-    echo '<strong>product name:</strong>'. $product_name . '<br /><br />';
-    echo '<strong>product id:</strong>'. $product_id . '<br /><br />';
-    echo '<strong>product qty:</strong>'. $quantity . '<br /><br />';
-    echo '<strong>product tax:</strong>'. $tax_class . '<br /><br />';
-    echo '<strong>product sub:</strong>'. $line_subtotal . '<br /><br />';
-    echo '<strong>product total:</strong>'. $line_subtotal_tax . '<br /><br />';
-    echo '<strong>product total:</strong>'. $line_total . '<br /><br />';
-    echo '<strong>product tax:</strong>'. $line_total_tax . '<br /><br />';
+    echo $product_name;
+    echo $product_id;
+    echo $variation_id;
+    echo $quantity;
+    echo $tax_class;
+    echo $line_subtotal;
+    echo $line_subtotal_tax;
+    echo $line_total;
+    echo $line_total_tax;
 
         endforeach;
         ?>
@@ -148,16 +148,7 @@ function custom_cpost_column( $column, $post_id ) {
                 window.print();
             });//@todo turn into button not alink
         </script>
-    <style>
-        #print {
-            display:block;
-            margin:2em 0;
-            float:left;
-        }
-        </style>
-        <div id="print">
-        <a href="#" class=".printMe"><i class="fa fa-print" aria-hidden="true"></i> print this</a>
-    </div>
+        <a href="#" class=".printMe">print this</a>
     </p>
 </div>
 <?php
