@@ -27,4 +27,28 @@ function lmf_remove_wc_breadcrumbs() {
     remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 }
 
+/*************************************************************
+ * Print Order Detail
+ * Backend of Orders Table
+ ************************************************************
 add_action( 'init', 'lmf_remove_wc_breadcrumbs' );
+
+add_filter( 'manage_shop_order_posts_columns', 'set_custom_edit_post_columns',99,1 );
+function set_custom_edit_post_columns($columns) {
+    $columns['custom-columns'] = __( 'Print Order Details', 'print_order_details' );
+    return $columns;
+}
+add_action( 'manage_shop_order_posts_custom_column' , 'custom_cpost_column', 99, 2 );
+function custom_cpost_column( $column, $post_id ) {
+    switch ( $column ) {
+
+        case 'custom-columns'://new-title=your column slug :
+            //echo 'custom columns value' ;
+            $order = wc_get_order( $post_id );
+            $order_data = $order->get_data(); // The Order data
+            $order_payment_method = $order_data['payment_method'];
+            echo $order_payment_method;
+            break;
+    }
+}
+ */
