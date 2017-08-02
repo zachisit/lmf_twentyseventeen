@@ -880,6 +880,18 @@ h1.merchandise::before {
     padding:0 0.5em 0 0;
     font-size:0.9em;
 }
+.widget-area .widgetblock:nth-child(4) h2::before {
+    content:"\f06a";
+    font-family:"FontAwesome";
+    padding:0 0.5em 0 0;
+    font-size:0.9em;
+}
+.widget-area .widgetblock:nth-child(5) h2::before {
+    content:"\f234 ";
+    font-family:"FontAwesome";
+    padding:0 0.5em 0 0;
+    font-size:0.9em;
+}
 .widget-area .widgetblock:nth-child(3) h2 {
     font-size:1.3em;
 }
@@ -1024,6 +1036,25 @@ h1.merchandise::before {
     #sidebar_cta_block img {
         width:100%;
         height:auto;
+    }
+
+    /*-------------------------------------------------------------
+    # Newsletter
+    --------------------------------------------------------------*/
+    #newsletter_signup {
+        float:left;
+        width:100%;
+        padding:1em 0;
+        background:rgba(51, 133, 195, 0.3);
+    }
+    #newsletter_signup .title {
+        font-size:1em;
+        line-height:1.2em;
+        color:#3385c3;
+        text-align:center;
+        width:80%;
+        margin:0 auto 1em auto;
+        display:table;
     }
 
     /*-------------------------------------------------------------
