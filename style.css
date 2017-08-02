@@ -1045,6 +1045,7 @@ h1.merchandise::before {
         float:left;
         width:100%;
         padding:1em 0;
+        margin:0 0 2em 0;
         background:#3385c3;
     }
     #newsletter_signup .title {
