@@ -1070,6 +1070,17 @@ h1.merchandise::before {
     #newsletter_signup #mc_embed_signup .button {
         background-color:orange;
     }
+    #newsletter_signup #mc_embed_signup #mce-responses {
+        padding:1em;
+    }
+    #newsletter_signup #mc_embed_signup #mce-responses #mce-success-response {
+        background:green;
+        color:white;
+    }
+    #newsletter_signup #mc_embed_signup #mce-responses #mce-error-response {
+        background:red;
+        color:white;
+    }
     .widgetblock .textwidget #newsletter_signup .title {
         font-size:1em;
     }
