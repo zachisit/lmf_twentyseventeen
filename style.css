@@ -1045,16 +1045,32 @@ h1.merchandise::before {
         float:left;
         width:100%;
         padding:1em 0;
-        background:rgba(51, 133, 195, 0.3);
+        background:#3385c3;
     }
     #newsletter_signup .title {
-        font-size:1em;
+        font-size:1.3em;
         line-height:1.2em;
-        color:#3385c3;
+        color:white;
         text-align:center;
-        width:80%;
+        width:90%;
         margin:0 auto 1em auto;
         display:table;
+    }
+    #newsletter_signup #mc_embed_signup {
+        background:none;
+    }
+    #newsletter_signup #mc_embed_signup .mc-field-group label {
+        color:white;
+        font-weight:500;
+    }
+    #newsletter_signup #mc_embed_signup .indicates-required {
+        display:none;
+    }
+    #newsletter_signup #mc_embed_signup .button {
+        background-color:orange;
+    }
+    .widgetblock .textwidget #newsletter_signup .title {
+        font-size:1em;
     }
 
     /*-------------------------------------------------------------
