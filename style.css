@@ -1076,10 +1076,12 @@ h1.merchandise::before {
     #newsletter_signup #mc_embed_signup #mce-responses #mce-success-response {
         background:green;
         color:white;
+        padding:1em;
     }
     #newsletter_signup #mc_embed_signup #mce-responses #mce-error-response {
         background:red;
         color:white;
+        padding:1em;
     }
     .widgetblock .textwidget #newsletter_signup .title {
         font-size:1em;

@@ -168,3 +168,13 @@ function action_woocommerce_after_single_product(  ) {
 
 // add the action
 add_action( 'woocommerce_after_single_product', 'action_woocommerce_after_single_product', 10, 0 );
+
+/**
+ * @snippet       WooCommerce add text to the thank you page
+ * @testedwith    WooCommerce 2.6.7
+ */
+function bbloomer_add_content_thankyou() {
+    include_once "thankyou_cta.html";
+}
+
+add_action( 'woocommerce_thankyou', 'bbloomer_add_content_thankyou', 5 );//5 denotes the order
