@@ -81,7 +81,7 @@ function shop_order_print_render()
         </script>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-        <div id="print"><a href="" id="print"><i class="fa fa-info-circle" aria-hidden="true"></i></a></div>
+        <div id="print"><a id="print"><i class="fa fa-info-circle" aria-hidden="true"></i> Print Order</a></div>
         <div id="order_detail_view">
             <p>
                 <?php
@@ -119,15 +119,23 @@ function shop_order_print_render()
                 ];
 
                 //$order_payment_method = $order_data['payment_method'];
+                echo '<ul>';
                 foreach ($data_order_created as $key => $value){
-                    echo $value."\n\n";
+                    echo '<li>'. $value. "</li>";
                 }
+                echo '</ul>';
+
+                echo '<ul>';
                 foreach ($data_shipping as $key => $value){
-                    echo $value."\n\n";
+                    echo '<li>'. $value. "</li>";
                 }
+                echo '</ul>';
+
+                echo '<ul>';
                 foreach ($data_billing as $key => $value){
-                    echo $value."\n\n";
+                    echo '<li>'. $value. "</li>";
                 }
+                echo '</ul>';
 
                 /*-------------
                 order details
@@ -159,16 +167,17 @@ function shop_order_print_render()
                     $line_total = $item_data['total'];
                     $line_total_tax = $item_data['total_tax'];
 
-                    echo $product_name."\n\n";
-                    echo $product_id."\n\n";
-                    echo $variation_id."\n\n";
-                    echo $quantity."\n\n";
-                    echo $tax_class."\n\n";
-                    echo $line_subtotal."\n\n";
-                    echo $line_subtotal_tax."\n\n";
-                    echo $line_total."\n\n";
-                    echo $line_total_tax."\n\n";
-
+                    echo '<ul>';
+                    echo '<li>'. $product_name."</li>";
+                    echo '<li>'. $product_id."</li>";
+                    echo '<li>'. $variation_id."</li>";
+                    echo '<li>'. $quantity."</li>";
+                    echo '<li>'. $tax_class."</li>";
+                    echo '<li>'. $line_subtotal."</li>";
+                    echo '<li>'. $line_subtotal_tax."</li>";
+                    echo '<li>'. $line_total."</li>";
+                    echo '<li>'. $line_total_tax."</li>";
+                    echo '</ul>';
                 endforeach;
                 ?>
             </p>
@@ -199,3 +208,14 @@ function bbloomer_add_content_thankyou() {
 }
 
 add_action( 'woocommerce_thankyou', 'bbloomer_add_content_thankyou', 5 );//5 denotes the order
+
+// Remove Open Sans that WP adds from frontend
+if (!function_exists('remove_wp_open_sans')) :
+    function remove_wp_open_sans() {
+        wp_deregister_style( 'open-sans' );
+        wp_register_style( 'open-sans', false );
+    }
+    //add_action('wp_enqueue_scripts', 'remove_wp_open_sans');
+    // Uncomment below to remove from admin
+    add_action('admin_enqueue_scripts', 'remove_wp_open_sans');
+endif;
