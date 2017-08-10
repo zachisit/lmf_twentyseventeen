@@ -73,9 +73,15 @@ function shop_order_print_render()
                 color:#999;
             }
         </style>
+        <script>
+            jQuery('#print').click(function(){
+                window.print();
+                console.log('print fired');
+            });
+        </script>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-        <a href="#TB_inline?width=600&height=550&inlineId=order_detail_view" class="thickbox"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+        <div id="print"><a href="" id="print"><i class="fa fa-info-circle" aria-hidden="true"></i></a></div>
         <div id="order_detail_view">
             <p>
                 <?php
@@ -114,13 +120,13 @@ function shop_order_print_render()
 
                 //$order_payment_method = $order_data['payment_method'];
                 foreach ($data_order_created as $key => $value){
-                    echo $value."\n";
+                    echo $value."\n\n";
                 }
                 foreach ($data_shipping as $key => $value){
-                    echo $value."\n";
+                    echo $value."\n\n";
                 }
                 foreach ($data_billing as $key => $value){
-                    echo $value."\n";
+                    echo $value."\n\n";
                 }
 
                 /*-------------
@@ -153,24 +159,18 @@ function shop_order_print_render()
                     $line_total = $item_data['total'];
                     $line_total_tax = $item_data['total_tax'];
 
-                    echo $product_name;
-                    echo $product_id;
-                    echo $variation_id;
-                    echo $quantity;
-                    echo $tax_class;
-                    echo $line_subtotal;
-                    echo $line_subtotal_tax;
-                    echo $line_total;
-                    echo $line_total_tax;
+                    echo $product_name."\n\n";
+                    echo $product_id."\n\n";
+                    echo $variation_id."\n\n";
+                    echo $quantity."\n\n";
+                    echo $tax_class."\n\n";
+                    echo $line_subtotal."\n\n";
+                    echo $line_subtotal_tax."\n\n";
+                    echo $line_total."\n\n";
+                    echo $line_total_tax."\n\n";
 
                 endforeach;
                 ?>
-                <script>
-
-                    // window.print();
-                    $("#printdiv").printThis();
-
-                </script>
             </p>
         </div>
 
