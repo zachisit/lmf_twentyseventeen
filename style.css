@@ -435,7 +435,7 @@ header #right #bottom #search input[type="submit"] {
 #home_intouch {
     float:left;
     width:100%;
-    margin:0 0 2em 0;
+    margin:4em 0 2em 0;
 }
 #home_intouch #left {
     float:left;
@@ -868,31 +868,31 @@ h1.merchandise::before {
     padding:0 0.5em 0 0;
     font-size:1em;
 }
-.widget-area .widgetblock:nth-child(2) h2::before {
+.widget-area .widgetblock:nth-child(3) h2::before {
     content:"\f002";
     font-family:"FontAwesome";
     padding:0 0.5em 0 0;
     font-size:1em;
 }
-.widget-area .widgetblock:nth-child(3) h2::before {
+.widget-area .widgetblock:nth-child(4) h2::before {
     content:"\f0fe";
     font-family:"FontAwesome";
     padding:0 0.5em 0 0;
     font-size:0.9em;
 }
-.widget-area .widgetblock:nth-child(4) h2::before {
+.widget-area .widgetblock:nth-child(5) h2::before, .widget-area .widgetblock:nth-child(2) h2::before {
     content:"\f06a";
     font-family:"FontAwesome";
     padding:0 0.5em 0 0;
     font-size:0.9em;
 }
-.widget-area .widgetblock:nth-child(5) h2::before {
+.widget-area .widgetblock:nth-child(6) h2::before {
     content:"\f234 ";
     font-family:"FontAwesome";
     padding:0 0.5em 0 0;
     font-size:0.9em;
 }
-.widget-area .widgetblock:nth-child(3) h2 {
+.widget-area .widgetblock:nth-child(4) h2 {
     font-size:1.3em;
 }
 .widget-area .widgetblock .widget_shopping_cart_content .buttons .wc-forward {
@@ -934,6 +934,19 @@ h1.merchandise::before {
 }
 .widget-area .widgetblock .product-categories li a {
     font-size:1.2em;
+}
+.widget-area .widgetblock .sidebar_cta {
+    margin:0 0 3em 0;
+    float:left;
+    width:100%;
+}
+.widget-area .widgetblock .sidebar_cta p {
+    margin:0;
+    padding:0;
+}
+.widget-area .widgetblock .sidebar_cta img {
+    width:100%;
+    height:auto;
 }
 #content_left {
     padding:0 1em;
@@ -1439,7 +1452,7 @@ a.woocommerce-product-gallery__trigger {
 # Responsive (iphone/android)
 ---------------------------------------------------------------*/
 @media only screen and (max-width:500px) {
-    .container, #wrapper, #home_intouch #left, #home_intouch #right, #content_full #map_contact #right, #content_full #map_contact #left, #home_slider .image_slider {
+    .container, #wrapper, #home_intouch #left, #home_intouch #right, #content_full #map_contact #right, #content_full #map_contact #left, #home_slider .image_slider, header #right, header #right #top, header #right #top #one, header #right #top #two, header #right #top #three, header #right #top #four, #content, .widget-area {
         float:left;
         display: block;
         width:100%;
@@ -1449,6 +1462,10 @@ a.woocommerce-product-gallery__trigger {
     img, #home_slider .image_slider img {
         width:100%;
         height:auto;
+    }
+    footer #bottom img {
+        height:auto;
+        width:auto;
     }
     footer #left {
         width:100%;
@@ -1496,5 +1513,10 @@ a.woocommerce-product-gallery__trigger {
     header #logo {
         width:100%;
         margin:1.8em 0;
+    }
+    footer #right ul li {
+        float:left;
+        width:100%;
+        text-align:center;
     }
 }

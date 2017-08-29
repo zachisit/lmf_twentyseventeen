@@ -32,18 +32,24 @@ get_header(); ?>
         <p>Hours: 11AM to 8PM Daily</p>
     </div>
     <div id="home_announcements">
-        <div id="message" class="homepage_cta_ga_click">
-            <?php
-            /**
-             * this is the GA tracking script used for event tracking
-             * currently this is hard coded into the CPT text value, added to the link:
-             * onClick="ga('send', 'event', { eventCategory: 'internal_click', eventAction: 'click', eventLabel: 'homepage_cta_click_top'});"
-             *
-             */
-            $query = new WP_Query( array('post_type' => 'announcements', 'posts_per_page' => 1 ) );
-            while ( $query->have_posts() ) : $query->the_post();
-                the_content();
-            endwhile; ?>
+        <div id="message" class="homepage_top_cta_ga_click">
+                <?php
+                /**
+                 * this is the GA tracking script used for event tracking
+                 * currently this is hard coded into the CPT text value, added to the link:
+                 * onClick="ga('send', 'event', { eventCategory: 'internal_click', eventAction: 'click', eventLabel: 'homepage_cta_click_top'});"
+                 *
+                 */
+                echo do_shortcode('[homepage_top_cta]'); ?>
+            <div id="message" class="homepage_bottom_cta_ga_click">
+                <?php
+                /**
+                 * this is the GA tracking script used for event tracking
+                 * currently this is hard coded into the CPT text value, added to the link:
+                 * onClick="ga('send', 'event', { eventCategory: 'internal_click', eventAction: 'click', eventLabel: 'homepage_cta_click_top'});"
+                 *
+                 */
+                echo do_shortcode('[homepage_bottom_cta]'); ?>
         </div>
     </div>
     <div id="home_intouch">
