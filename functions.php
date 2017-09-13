@@ -61,7 +61,7 @@ function lmf_theme_scripts() {
     wp_enqueue_script('jquery');
 
     //css
-    wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'theme-style', get_stylesheet_uri(), time() );
     wp_enqueue_style( 'slick_carousel_css', 'https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css');
     wp_enqueue_style( 'slick_carousell_theme_css' , get_template_directory_uri() . '/slick-theme.css' );
     wp_enqueue_style( 'slick_css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css' );
@@ -107,3 +107,25 @@ function lmf_social_share() {
 }
 
 add_action('woocommerce_before_single_product', 'lmf_social_share', 1);
+
+/*
+ * infinite scrolling
+ */
+/*add_theme_support( 'infinite-scroll', array(
+    'container' => 'content',
+    'footer' => 'page',
+) );*/
+function mytheme_infinite_scroll_init() {
+    add_theme_support( 'infinite-scroll', array(
+        'container' => 'content',
+        'render'    => 'mytheme_infinite_scroll_render',
+        'footer'    => 'wrapper',
+    ) );
+}
+add_action( 'init', 'mytheme_infinite_scroll_init' );
+function mytheme_infinite_scroll_render() {
+    //get_template_part( 'loop' );
+    //wc_get_template_part( 'content', 'archive-product' );
+    //get_template_part('archive-product');
+    wc_get_template_part( 'product','archive-product' );
+}
