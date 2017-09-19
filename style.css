@@ -4,7 +4,7 @@ Theme URI: https://g.co/kgs/yL2Gqj
 Author: Zachary Smith
 Author URI: https://g.co/kgs/yL2Gqj
 Description: Starter WordPress theme with 99% of what you will need to get going on your WP install
-Version: 1.0.0
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: tater
@@ -313,29 +313,6 @@ header #right #bottom #search input[type="submit"] {
     width:100%;
     z-index:1;
 }
-#home_hours {
-    float:left;
-    width:100%;
-    margin:0 0 1em 0;
-}
-#home_hours p {
-    background:#3385c3;
-    color:white;
-    font-size:1.613em;
-    padding:0.9em 0;
-    font-family:Cambria, Georgia, serif;
-    font-style:italic;
-    width:97%;
-    margin:auto;
-}
-#home_hours p::before {
-    content:"\f10e";
-    /*content:"\f017";*/
-    font-family:"FontAwesome";
-    font-size:1.2em;
-    color:#fdd207;
-    padding:0.4em 0.500em 0 1em;
-}
 #home_two_cta {
     float:left;
     width:100%;
@@ -439,23 +416,35 @@ header #right #bottom #search input[type="submit"] {
 }
 #home_intouch #left {
     float:left;
-    width:50%;
+    width:48%;
 }
 #home_intouch #left h1 {
     font-size:1.5em;
     font-weight:100;
-    padding:0 0 0 0.625em;
+    padding:0.4em 0;
+    background:#3385c3;
+    text-align:center;
+    color:#fdd207;
+    margin:0;
 }
 #home_intouch #left .title {
     border-bottom:1px solid #ccc;
-    padding:0 0 0.325em 0;
-    color:#333;
-    font-size:1em;
+    padding:0.5em 0 0.225em 0;
+    color:#3385c3;
+    font-size:1.3em;
     margin:0 0 0 1em;
+    font-weight:100;
 }
 #home_intouch #left .datum {
     font-size:1em;
-    margin:0.3em 0 1.4em 1em;
+    margin:0.3em 0 1em 1em;
+}
+#home_intouch #left .clock::before {
+    content:"\f017";
+    font-family:"FontAwesome";
+    font-size:1.40em;
+    padding:0.5em 0.9em 0 .5em;
+    color:#3385c3;
 }
 #home_intouch #left .address p {
     padding:0 0 0 3.1em;
@@ -469,28 +458,56 @@ header #right #bottom #search input[type="submit"] {
     font-family:"FontAwesome";
     font-size:1.40em;
     padding:0.5em 0.9em 0 .5em;
-    color:#333;
+    color:#3385c3;
 }
 #home_intouch #left .address::before {
     content:"\f041";
     font-family:"FontAwesome";
     font-size:1.40em;
     padding:0.5em 0.8em 0 .5em;
-    color:#333;
+    color:#3385c3;
 }
 #home_intouch #left .contact::before {
     content:"\f003";
     font-family:"FontAwesome";
     font-size:1.40em;
     padding:0.5em 0.7em 0 .5em;
-    color:#333;
+    color:#3385c3;
 }
 #home_intouch #left .twitter::before {
     content:"\f099";
     font-family:"FontAwesome";
     font-size:1.40em;
     padding:0.5em 0.8em 0 .5em;
-    color:#333;
+    color:#3385c3;
+}
+#home_intouch #left .instagram::before {
+    content:"\f16d";
+    font-family:"FontAwesome";
+    font-size:1.40em;
+    padding:0.5em 0.8em 0 .5em;
+    color:#3385c3;
+}
+#home_intouch #left .youtube::before {
+    content:"\f167";
+    font-family:"FontAwesome";
+    font-size:1.40em;
+    padding:0.5em 0.8em 0 .5em;
+    color:#3385c3;
+}
+#home_intouch #left .facebook::before {
+    content:"\f230";
+    font-family:"FontAwesome";
+    font-size:1.40em;
+    padding:0.5em 0.8em 0 .5em;
+    color:#3385c3;
+}
+#home_intouch #left .newsletter::before {
+    content:"\f118";
+    font-family:"FontAwesome";
+    font-size:1.40em;
+    padding:0.5em 0.8em 0 .5em;
+    color:#3385c3;
 }
 #home_intouch #right {
     float:right;
@@ -514,44 +531,6 @@ header #right #bottom #search input[type="submit"] {
 #home_intouch #right p.map_direction a {
     font-weight:500;
     font-size:1em;
-}
-#home_look {
-    float:left;
-    width:100%;
-    background:#3385c3;
-    padding:1.4em 0;
-    color:white;
-}
-#home_look #left {
-    float:left;
-    margin:0 0 0 3em;
-    font-size:1.5em;
-    text-transform:uppercase;
-}
-#home_look #right {
-    float:right;
-    margin:0 1em 0 0;
-}
-#home_look #right a {
-    color:white;
-    border:1px solid white;
-    padding:0.4em 1.2em;
-    font-size:1em;
-    text-transform:uppercase;
-}
-#home_look #right a:hover {
-     text-decoration:none;
-     background:#096cc8;
-     transition:background 0.8s ease;
- }
-#home_look #right a::after {
-    content:"\f061";
-    font-family:"FontAwesome";
-    font-size:1.1em;
-    padding:0 0 0 .5em;
-}
-#home_look #right a::after:hover {
-    color:#fdd207;
 }
 
 /*--------------------------------------------------------------
@@ -1505,10 +1484,6 @@ a.woocommerce-product-gallery__trigger {
     #home_slider .image_slider .asset h1 {
         font-size:1.2em;
         bottom:0;
-    }
-    #home_hours p {
-        font-size:1.3em;
-        width:100%;
     }
     header #logo {
         width:100%;
