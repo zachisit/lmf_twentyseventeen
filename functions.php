@@ -107,25 +107,3 @@ function lmf_social_share() {
 }
 
 add_action('woocommerce_before_single_product', 'lmf_social_share', 1);
-
-/*
- * infinite scrolling
- */
-/*add_theme_support( 'infinite-scroll', array(
-    'container' => 'content',
-    'footer' => 'page',
-) );*/
-function mytheme_infinite_scroll_init() {
-    add_theme_support( 'infinite-scroll', array(
-        'container' => 'content',
-        'render'    => 'mytheme_infinite_scroll_render',
-        'footer'    => 'wrapper',
-    ) );
-}
-add_action( 'init', 'mytheme_infinite_scroll_init' );
-function mytheme_infinite_scroll_render() {
-    //get_template_part( 'loop' );
-    //wc_get_template_part( 'content', 'archive-product' );
-    //get_template_part('archive-product');
-    wc_get_template_part( 'product','archive-product' );
-}
