@@ -11,9 +11,8 @@ body {
     color:white !important;
 }
 body.login div#login h1 a {
-    background:white url(images/logo.png) no-repeat;
+    background:white url(images/logo-twentyseventeen.png) no-repeat;
     background-size:319px;
     height:66px;
-    background-size:320px;
     width:322px;
 }

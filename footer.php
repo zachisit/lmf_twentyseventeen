@@ -8,24 +8,17 @@
  */
 ?>
 <footer>
-    <div id="left">
-        <ul>
+    <ul>
             <li><a href="https://www.facebook.com/LouisianaMusicFactory" title="<?php echo get_bloginfo( 'name' ); ?> Facebook" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i>
                 </a></li>
             <li><a href="https://twitter.com/LMFnola" title="<?php echo get_bloginfo( 'name' ); ?> Twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>
                 </a></li>
             <li><a href="http://www.youtube.com/user/LAMUSICFACTORY" title="<?php echo get_bloginfo( 'name' ); ?> YouTube" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i>
                 </a></li>
+        <li><a href="https://www.instagram.com/louisianamusicfactory/" title="<?php echo get_bloginfo( 'name' ); ?> Instagram" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i>
+            </a></li>
         </ul>
-    </div>
-    <div id="right">
-        <ul>
-            <li><a href="<?php echo get_home_url(); ?>" title="LMF Home">LMF Home</a></li>
-            <li><a href="<?php echo get_home_url(); ?>/shipping-rates/" title="Shipping Rates">Shipping Rates</a></li>
-            <li><a href="<?php echo get_home_url(); ?>/inside-louisiana-music-factory/" title="Inside Louisiana Music Factory">Inside Louisiana Music Factory</a></li>
-            <li><a href="<?php echo get_home_url(); ?>/lmf-news/" title="Louisiana Music Factory events and updates!">Louisiana Music Factory events and updates!</a></li>
-        </ul>
-    </div>
+    <?php wp_nav_menu( [ 'theme_location' => 'footer_menu' ] ); ?>
     <div id="bottom">
         <p>&copy; 2012-<?php echo date("Y"); ?> <?php echo get_bloginfo( 'name' ); ?></p>
         <p>Hosting provided by <a href="http://www.handsomecathosting.com" title="Handsome Cat Hosting" target="_blank">Handsome Cat Hosting</a> - Made in the USA <img src="<?php echo get_template_directory_uri(); ?>/images/usa_flag.jpg" alt="<?php echo get_bloginfo( 'name' ); ?> - USA" /></p>

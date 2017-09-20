@@ -38,6 +38,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 * white: #ffffff;
 * red: #b30917;
 * gold: #fdd207;
+* orange: #F2730D;
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -99,12 +100,12 @@ a:hover  {
 header {
     float:left;
     width:100%;
-    margin:0 0 2em 0;
+    margin:0 0 1em 0;
 }
 header #logo {
     float:left;
     width:307px;
-    margin:1.875em 0 0 1.875em;
+    margin:0 0 0 0.875em;
 }
 header #right {
     float:right;
@@ -189,27 +190,38 @@ header #right #top #four #login::before {
     font-family:"FontAwesome";
     color:#3385c3;
 }
-header #right #bottom {
+header #bottom {
+    width:800px;
+    background:#3385c3;
+    padding:0.4em 0.8em;
+    margin:0.4em 0 0 6em;
     float:left;
-    width:100%;
 }
-header #right #bottom #menu {
+header #bottom #menu {
     float:right;
     width:auto;
     margin:0;
     position:relative;
 }
-header #right #bottom #menu ul li {
+header #bottom #menu ul li {
     display:inline;
     padding:0 0.625em 0 0;
 }
-header #right #bottom #menu ul li a {
-    color:#333;
+header #bottom #menu ul li:after {
+    content:"\f005";
+    font-family:"FontAwesome";
+    font-size:1.1em;
+    color:#fdd207;
+    padding:0 0 0 .5em;
 }
-header #right #bottom #menu ul li a:hover {
+header #bottom #menu ul li a {
+    color:white;
+    font-size:1.2em;
+}
+header #bottom #menu ul li a:hover {
     text-decoration:none;
 }
-header #right #bottom #menu ul li .sub-menu {
+header #bottom #menu ul li .sub-menu {
     display:none;
     position:absolute;
     top:100%;
@@ -220,38 +232,42 @@ header #right #bottom #menu ul li .sub-menu {
     width:200px;
     z-index:2;
 }
-header #right #bottom #menu ul li .sub-menu li {
+header #bottom #menu ul li .sub-menu li {
     display:block;
     float:left;
     padding:0.5em;
     width:100%;
     border-bottom:1px solid white;
 }
-header #right #bottom #menu ul li .sub-menu li a {
-    color:white;
+header #bottom #menu ul li .sub-menu li:after {
+    display:none;
 }
-header #right #bottom #menu ul li .sub-menu li a:hover {
+header #bottom #menu ul li .sub-menu li a {
+    color:white;
+    font-size:1em;
+}
+header #bottom #menu ul li .sub-menu li a:hover {
     color:#fdd207;
 }
-header #right #bottom #menu ul li:hover > .sub-menu {
+header #bottom #menu ul li:hover > .sub-menu {
     display:block;
 }
-header #right #bottom #search {
+header #bottom #search {
     float:left;
     width:auto;
 }
-header #right #bottom #search .screen-reader-text {
+header #bottom #search .screen-reader-text {
     display:none;
 }
-header #right #bottom #search input[type="submit"] {
-    background:#3385c3;
+header #bottom #search input[type="submit"] {
+    background:#096cc8;
     border:none;
     color:white;
     padding:0.3em 1em;
 }
     /*--------------------------------------------------------------
-    # Homepage
-    ---------------------------------------------------------------*/
+ # Homepage
+ ---------------------------------------------------------------*/
 #home_slider {
     float:left;
     width:100%;
@@ -283,7 +299,6 @@ header #right #bottom #search input[type="submit"] {
     padding:0;
     margin:0;
     line-height:1.2em;
-    text-shadow:1px 1px 1px #fff;
     float:left;
     width:100%;
     display:block;
@@ -312,6 +327,38 @@ header #right #bottom #search input[type="submit"] {
     height:auto;
     width:100%;
     z-index:1;
+}
+#home_slider .slick-next {
+    right:0 !important;
+    background:rgba(255,255,255,0.3);
+    height:85px;
+    width:70px;
+}
+
+#home_slider .slick-next:hover {
+    background:rgba(255,255,255,0.7);
+}
+#home_slider .slick-next:before {
+    color:#F2730D;
+    font-size:55px;
+    content:"\f0da";
+    font-family:"FontAwesome";
+}
+#home_slider .slick-prev {
+    left:0 !important;
+    z-index:999;
+    background:rgba(255,255,255,0.3);
+    height:85px;
+    width:70px;
+}
+#home_slider .slick-prev:hover {
+    background:rgba(255,255,255,0.7);
+}
+#home_slider .slick-prev:before {
+    color:#F2730D;
+    font-size:55px;
+    content:"\f0d9";
+    font-family:"FontAwesome";
 }
 #home_two_cta {
     float:left;
@@ -412,7 +459,7 @@ header #right #bottom #search input[type="submit"] {
 #home_intouch {
     float:left;
     width:100%;
-    margin:4em 0 2em 0;
+    margin:1em 0 2em 0;
 }
 #home_intouch #left {
     float:left;
@@ -531,6 +578,9 @@ header #right #bottom #search input[type="submit"] {
 #home_intouch #right p.map_direction a {
     font-weight:500;
     font-size:1em;
+}
+#home_intouch #right #newsletter_signup {
+    margin:4em 0 0 0;
 }
 
 /*--------------------------------------------------------------
@@ -1049,8 +1099,13 @@ h1.merchandise::before {
         margin:0 auto 1em auto;
         display:table;
     }
+    #newsletter_signup #newsletter_header {
+        margin:-72px 0 0 0;
+    }
     #newsletter_signup #mc_embed_signup {
         background:none;
+        margin:auto;
+        width:62%;
     }
     #newsletter_signup #mc_embed_signup .mc-field-group label {
         color:white;
@@ -1061,6 +1116,13 @@ h1.merchandise::before {
     }
     #newsletter_signup #mc_embed_signup .button {
         background-color:orange;
+        border:none;
+        outline:none;
+        margin:auto;
+        display:table;
+        padding:0.5em 1em;
+        font-size:1em;
+        color:#333;
     }
     #newsletter_signup #mc_embed_signup #mce-responses {
         padding:1em;
@@ -1306,26 +1368,20 @@ footer {
     background:#f8f8f8;
     padding:1.4em 0 0 0;
 }
-footer #right {
+footer ul {
+    margin:0 auto 0.9em auto;
     width:auto;
-    float:right;
-    margin:0 1em 0 0;
+    display:table;
 }
-footer #right ul li {
-    display:inline;
-    padding:0 0.5em 0 0;
+footer ul li {
+    display:inline-block;
+    padding:0 0.4em 0 0;
 }
-footer #right ul li a {
-    font-size:0.8em;
+footer ul li:last-child {
+    padding:0;
 }
-footer #left {
-    width:auto;
-    float:left;
-    margin:0 0 0 1em;
-}
-footer #left ul li {
-    display:inline;
-    padding:0 0.5em 0 0;
+footer ul li .fa {
+    font-size:1.6em;
 }
 footer #bottom {
     float:left;

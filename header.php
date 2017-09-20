@@ -44,7 +44,7 @@
     </div>
 <header>
     <div id="logo">
-        <a href="<?php echo get_home_url(); ?>" title="Home"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php echo get_bloginfo( 'name' ); ?> - Home" /></a>
+        <a href="<?php echo get_home_url(); ?>" title="Home"><img src="<?php echo get_template_directory_uri(); ?>/images/logo-twentyseventeen.png" alt="<?php echo get_bloginfo( 'name' ); ?> - Home" /></a>
     </div>
     <div id="right">
         <div id="top">
@@ -79,19 +79,14 @@
                 </div>
             </div>
         </div>
-        <div id="bottom">
-            <div id="search">
-                <?php
-                if ( ! is_active_sidebar( 'header-search' ) ) {
-                    echo "please set up the search widget in your theme under 'header-search'";
-                } else {
-                    dynamic_sidebar( 'header-search' );
-                }
-                ?>
-            </div>
-                <a href="javascript:void(0);" id="menu_btn"><div class="mobilemenubars"></div><div class="mobilemenubars"></div><div class="mobilemenubars"></div></a>
-                <div id="menu"><a href="#" id="menu_close">X</a>
-                    <?php wp_nav_menu( array( 'theme_location' => 'header_menu', 'menu_id' => 'primary-menu' ) ); ?>
-                </div>
+    </div>
+    <div id="bottom">
+        <div id="search">
+            <?php dynamic_sidebar( 'header-search' );?>
+        </div>
+        <a href="javascript:void(0);" id="menu_btn"><div class="mobilemenubars"></div><div class="mobilemenubars"></div><div class="mobilemenubars"></div></a>
+        <div id="menu"><a href="#" id="menu_close">X</a>
+            <?php wp_nav_menu( array( 'theme_location' => 'header_menu', 'menu_id' => 'primary-menu' ) ); ?>
+        </div>
     </div>
 </header>
