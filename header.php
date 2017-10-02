@@ -15,6 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <title><?php if ( !is_front_page() ) { wp_title( '|', true, 'right' ); } bloginfo( 'name' ); ?></title>
+    <style type="text/css">
+        #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+    </style>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -38,7 +41,7 @@
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-<div id="wrapper">
+<div id="wrapper" class="<?php if ( is_home() ) { echo 'home_wrapper';} else { echo 'internal_wrapper'; }?>">
     <div id="top_mobile_directions">
         <p><a href="<?php echo get_home_url(); ?>/contact" title="Directions">Directions</a></p>
     </div>
@@ -55,6 +58,8 @@
                     <li><a href="https://twitter.com/LMFnola" title="<?php echo get_bloginfo( 'name' ); ?> Twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>
                         </a></li>
                     <li><a href="http://www.youtube.com/user/LAMUSICFACTORY" title="<?php echo get_bloginfo( 'name' ); ?> YouTube" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i>
+                        </a></li>
+                    <li><a href="https://www.instagram.com/louisianamusicfactory/" title="<?php echo get_bloginfo( 'name' ); ?> Instagram" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i>
                         </a></li>
                 </ul>
             </div>
@@ -84,7 +89,6 @@
         <div id="search">
             <?php dynamic_sidebar( 'header-search' );?>
         </div>
-        <a href="javascript:void(0);" id="menu_btn"><div class="mobilemenubars"></div><div class="mobilemenubars"></div><div class="mobilemenubars"></div></a>
         <div id="menu"><a href="#" id="menu_close">X</a>
             <?php wp_nav_menu( array( 'theme_location' => 'header_menu', 'menu_id' => 'primary-menu' ) ); ?>
         </div>

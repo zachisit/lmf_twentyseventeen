@@ -22,6 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
+<div id="product_left_sidebar">
+    <?php dynamic_sidebar( 'product-archive-left' );?>
+</div>
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.
@@ -126,5 +129,4 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_sidebar' );
 	?>
-
 <?php get_footer( 'shop' ); ?>

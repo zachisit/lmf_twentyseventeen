@@ -21,7 +21,7 @@ show_admin_bar( true );
  **************************************************/
 function arphabet_widgets_init() {
 
-    register_sidebar( array(
+    register_sidebar( [
         'name' => 'Internal Sidebar',
         'id'   => 'internal-sidebar',
         'description'   => 'Widgetized sidebar for all internal pages.',
@@ -29,9 +29,9 @@ function arphabet_widgets_init() {
         'after_widget'  => '</div>',
         'before_title'  => '<h2>',
         'after_title'   => '</h2>',
-    ) );
+    ] );
 
-    register_sidebar( array(
+    register_sidebar( [
         'name' => 'Header Search',
         'id'   => 'header-search',
         'description'   => 'Header search specifically',
@@ -39,9 +39,17 @@ function arphabet_widgets_init() {
         'after_widget'  => '</div>',
         'before_title'  => '<h2>',
         'after_title'   => '</h2>',
-    ) );
+    ] );
 
-    //additional sidebars here
+    register_sidebar( [
+        'name' => 'Product Archive Left',
+        'id'   => 'product-archive-left',
+        'description'   => 'Shown on left sidebar for Product archive screens',
+        'before_widget' => '<div class="widgetblock">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2>',
+        'after_title'   => '</h2>',
+    ] );
 }
 add_action( 'widgets_init', 'arphabet_widgets_init' );
 
