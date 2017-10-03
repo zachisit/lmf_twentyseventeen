@@ -1,14 +1,7 @@
-<?php
-?>
 <div id="newsletter_signup">
+    <img id="newsletter_header" src="<?php echo get_template_directory_uri(); ?>/images/newsletter_header.png" alt="<?php echo get_bloginfo( 'name' ); ?> - Newsletter" />
     <div class="title">Stay up to date with latest news and concert information, latest sale items available only to newsletter subscribers, and more!</div>
     <!-- Begin MailChimp Signup Form -->
-    <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
-        #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-        /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-    </style>
     <div id="mc_embed_signup">
         <form action="//louisianamusicfactory.us16.list-manage.com/subscribe/post?u=201af0f36fe74776bafcf96bb&amp;id=2e2910f014" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
             <div id="mc_embed_signup_scroll">

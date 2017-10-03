@@ -7,7 +7,7 @@
 get_header(); ?>
 <main>
     <div id="content_full">
-        <?php include_once "woo/mailchimp_newsletter_signup.php"; ?>
+        <?php echo do_shortcode('[show_newsletter_signup]') ?>
     </div>
 </main>
 <?php get_footer(); ?>

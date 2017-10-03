@@ -77,7 +77,6 @@ function lmf_theme_scripts() {
     wp_enqueue_style( 'font_awesome_css', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
 
     //js
-    wp_enqueue_script( 'mobile-menu', get_template_directory_uri() . '/js/mobile_menu.js', array(), '20180428', true );
     wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/966d4a5f64.js', array(), '20170621' );
     wp_enqueue_script( 'slick_carousel_js', 'https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', [], '20170920', true );
     wp_enqueue_script( 'slick_carousel_declaractions_js', get_template_directory_uri() . '/js/slick_homepage_slider.js', [], '20170920' );
@@ -116,3 +115,16 @@ function lmf_social_share() {
 }
 
 add_action('woocommerce_before_single_product', 'lmf_social_share', 1);
+
+/**
+ * Returns Newsletter Signup
+ * used globally:
+ * on sidebar widget
+ * on single product underneath
+ * on homepage
+ */
+function lmf_show_newsletter_signup() {
+    include 'woo/mailchimp_newsletter_signup.php';
+}
+
+add_shortcode('show_newsletter_signup', 'lmf_show_newsletter_signup');
