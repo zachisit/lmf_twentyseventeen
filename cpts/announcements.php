@@ -145,12 +145,10 @@ function lmf_sidebar_top_cta_output() {
     );
     while ( $query->have_posts() ) : $query->the_post();
 
-        if ( has_post_thumbnail() ) :
     echo '<div class="sidebar_cta sidebar_top_cta">';
     the_content();
     echo '</div>';
 
-    endif;
     endwhile;
 }
 
