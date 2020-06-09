@@ -60,7 +60,7 @@ get_header(); ?>
                 <a name="contact"></a>
                 <h2>Contact Us</h2>
                 <p>Please use the form below to contact us</p>
-                <?php echo do_shortcode('[gravityform id="2" title="false" description="false"]'); ?>
+                <?php echo do_shortcode('[contact-form-7 id="9936" title="Contact form 1"]'); ?>
             </div>
     </div>
 </main>
