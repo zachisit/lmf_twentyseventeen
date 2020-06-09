@@ -14,7 +14,7 @@
 get_header(); ?>
 <main>
     <div id="content_left">
-        <?php while ( have_posts() ) : the_post();
+        <?php while ( have_posts() ) : the_post(); 
 
             echo '<div id="header"><h2>'. get_the_title() .'</h2></div>';
 

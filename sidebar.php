@@ -12,5 +12,7 @@ if ( ! is_active_sidebar( 'internal-sidebar' ) ) {
 ?>
 
 <aside id="main" class="widget-area" role="complementary">
+	<?=do_shortcode('[sidebar_top_cta]')?>
     <?php dynamic_sidebar( 'internal-sidebar' ); ?>
+	<?=do_shortcode('[sidebar_bottom_cta]')?>
 </aside><!-- #secondary -->

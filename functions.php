@@ -12,6 +12,11 @@ require_once "cpts/homepage_slider.php";
 require_once "woo/woo_specifics.php";
 
 /*************************************************
+ * disable xml logins
+*************************************************/
+add_filter( 'xmlrpc_enabled', '__return_false' );
+
+/*************************************************
  * hide wp admin bar
  *************************************************/
 show_admin_bar( true );
@@ -126,5 +131,34 @@ add_action('woocommerce_before_single_product', 'lmf_social_share', 1);
 function lmf_show_newsletter_signup() {
     include 'woo/mailchimp_newsletter_signup.php';
 }
-
 add_shortcode('show_newsletter_signup', 'lmf_show_newsletter_signup');
+ 
+
+/**
+ * mega hack:
+ * since we are not using <body <?=body_class()?>; none of the default
+ * WC body classes are added to page
+ * and all of my page styling is set to something other than body class
+ * when i enable, it breaks all my styling
+ * so for now we just hardcode the internal product layout and move on with life
+ * 
+ * this may be reason why when some WC updates it breaks the layout?
+ **/
+function bbloomer_single_product_pages() {
+ if ( is_product() ) { ?>
+	<style>
+		.content-area .site-main {
+			width:75% !important;
+		}
+</style>
+<?php }
+}
+add_action( 'woocommerce_before_main_content', 'bbloomer_single_product_pages' );
+
+//add_filter('woocommerce_available_payment_gateways','filter_gateways',1);
+//function filter_gateways($gateways){
+//    if (!current_user_can('administrator'))
+//        unset($gateways['cod']);
+//
+//    return $gateways;
+//}
