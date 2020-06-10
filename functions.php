@@ -10,6 +10,7 @@
 require_once "cpts/announcements.php";
 require_once "cpts/homepage_slider.php";
 require_once "woo/woo_specifics.php";
+require_once 'woo/international_shipping_alert_product_settings.php';
 
 /*************************************************
  * disable xml logins
@@ -89,6 +90,13 @@ function lmf_theme_scripts() {
     wp_enqueue_script( 'woo_commece_product_listing', get_template_directory_uri() . '/js/woo_commerce_product_listing.js', array(), '20170706', true );
     wp_enqueue_script( 'google_plus_share', 'https://apis.google.com/js/platform.js', array(), '20170711', true );
     wp_enqueue_script( 'google_analytics_events', get_template_directory_uri() . '/js/google_analytics_events.js', time(), true );
+
+    if (is_page('checkout')) {
+        wp_register_script( "checkout_international_alert", get_template_directory_uri() . '/js/checkout_international_alert.js', array('jquery') );
+        wp_enqueue_script( 'checkout_international_alert', get_template_directory_uri() . '/js/checkout_international_alert.js', time(), true );
+        wp_localize_script( 'checkout_international_alert', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
+        wp_enqueue_script( 'checkout_international_alert' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'lmf_theme_scripts' );
 
@@ -132,7 +140,21 @@ function lmf_show_newsletter_signup() {
     include 'woo/mailchimp_newsletter_signup.php';
 }
 add_shortcode('show_newsletter_signup', 'lmf_show_newsletter_signup');
- 
+
+
+function checkout_international_alert() {
+    echo json_encode([
+        'status' => 200,
+        'msg' => [
+            'show_alert' => get_option('international_shipping_alert_radio'),
+            'alert_message' => get_option('international_shipping_alert_message')
+        ]
+    ]);
+    die();
+}
+add_action("wp_ajax_checkout_international_alert", "checkout_international_alert");
+add_action("wp_ajax_nopriv_checkout_international_alert", "checkout_international_alert");
+
 
 /**
  * mega hack:
