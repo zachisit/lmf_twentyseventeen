@@ -9,42 +9,35 @@ add_filter( 'woocommerce_get_sections_shipping', 'add_international_shipping_ale
 
 // Add Settings for new section
 function add_international_shipping_alert_settings( $settings, $current_section ) {
-
-    // make sure we're looking only at our section
-    if ( 'international_shipping_alert' === $current_section ) {
-        $my_settings = array(
-            array(
-                'title'     => __( 'International Shipping Alert', 'my-textdomain' ),
-                'type'      => 'title',
-                'id'        => 'international_shipping_alert_section',
-            ),
-
-            array(
-                'id'       => 'international_shipping_alert_radio',
-                'type'     => 'radio',
-                'title'    => __( 'Show Alert Message?', 'my-textdomain' ),
-                'options'  => array(
-                    'true'  => __( 'Yes, please show alert', 'my-textdomain' ),
+    if ('international_shipping_alert' === $current_section) {
+        return [
+            [
+                'title' => __( 'International Shipping Alert', 'my-textdomain' ),
+                'type' => 'title',
+                'id' => 'international_shipping_alert_section',
+            ],
+            [
+                'id' => 'international_shipping_alert_radio',
+                'type' => 'radio',
+                'title' => __( 'Show Alert Message?', 'my-textdomain' ),
+                'options' => [
+                    'true' => __( 'Yes, please show alert', 'my-textdomain' ),
                     'false' => __( 'No, do not show alert', 'my-textdomain' ),
-                ),
-                'default'  => 'true',
-                'desc'     => __( 'Select this option to show the alert message on checkout. If this is not selected, a message will not show', 'my-textdomain' ),
+                ],
+                'default' => 'true',
+                'desc' => __( 'Select this option to show the alert message on checkout. If this is not selected, a message will not show', 'my-textdomain' ),
                 'desc_tip' => true,
-            ),
-            array(
-                'id'       => 'international_shipping_alert_message',
-                'type'     => 'textarea',
-                'title'    => __( 'Alert Message', 'my-textdomain' )
-            ),
-
-            array(
-                'type'  => 'sectionend',
-                'id'    => 'international_shipping_alert_section',
-            ),
-        );
-
-        return $my_settings;
-
+            ],
+            [
+                'id' => 'international_shipping_alert_message',
+                'type' => 'textarea',
+                'title' => __( 'Alert Message', 'my-textdomain' )
+            ],
+            [
+                'type' => 'sectionend',
+                'id' => 'international_shipping_alert_section',
+            ],
+        ];
     } else {
         // otherwise give us back the other settings
         return $settings;
