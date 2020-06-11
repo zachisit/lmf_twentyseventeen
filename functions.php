@@ -78,7 +78,6 @@ function lmf_theme_scripts() {
     //wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
     wp_enqueue_style( 'theme-styles', get_stylesheet_directory_uri() . '/style.css', [], time() );
     wp_enqueue_style( 'slick_carousel_css', 'https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css');
-    wp_enqueue_style( 'slick_carousell_theme_css' , get_template_directory_uri() . '/slick-theme.css' );
     wp_enqueue_style( 'slick_css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css' );
     wp_enqueue_style( 'font_awesome_css', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
 
@@ -156,6 +155,14 @@ function checkout_international_alert() {
 add_action("wp_ajax_checkout_international_alert", "checkout_international_alert");
 add_action("wp_ajax_nopriv_checkout_international_alert", "checkout_international_alert");
 
+function headerUserStatusMessage(): string
+{
+    if (is_user_logged_in()) {
+        return '<a href="/my-account-2/" title="My Account">My Account</a> | <a href="'.wp_logout_url().'">Logout</a>';
+    } else {
+        return'<a href="'.get_home_url().'/my-account-2/" title="'.get_bloginfo('name').' Customer Login">Customer Login</a>';
+    }
+}
 
 /**
  * mega hack:

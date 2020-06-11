@@ -74,16 +74,7 @@
                 </div>
                 <div id="four">
                     <div id="login">
-                        <?php
-                        if ( is_user_logged_in() ) {
-                            $current_user = wp_get_current_user();
-
-                            echo 'Welcome '. $current_user->user_login .'<br />';
-                            echo '<a href="'. get_home_url() .'/my-account-2/" title="My Account">My Account</a> | <a href="'. wp_logout_url( 'http://multisiteparent.com' ) .'">Logout</a>';
-                        } else {
-                            echo'<a href="' .get_home_url() .'/my-account-2/" title="' .get_bloginfo( 'name' ) .' Customer Login">Customer Login</a>';
-                        }
-                        ?>
+                        <?=headerUserStatusMessage()?>
                     </div>
                 </div>
             </div>
