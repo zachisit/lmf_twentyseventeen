@@ -1794,13 +1794,13 @@ a.woocommerce-product-gallery__trigger {
   }
 }
 .site-main {
-  float: left;
+  display:inline-block; //
   width: 57%;
   .products {
     margin: 1em 0 3em 0;
     li {
       display:inline-block;
-      width: 23%;
+      width: 22.7%;
       margin: 0 0.7em 0 0;
       min-height: 350px;
       position: relative;
@@ -1878,6 +1878,7 @@ a.woocommerce-product-gallery__trigger {
 .content-area {
   .site-main {
     width: 76%;
+    //width:60%;
   }
 }
 .woocommerce-pagination {

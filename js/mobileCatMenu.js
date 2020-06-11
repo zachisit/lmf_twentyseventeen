@@ -12,30 +12,35 @@
 document.addEventListener("DOMContentLoaded", function(){
     console.log('cat menu handler')
 
-    if (document.getElementsByClassName('product-categories')[0]) {
-        console.log('-- has cat menu')
-        const catMenu = document.getElementsByClassName('product-categories')[0];
-        //let catArray = catMenu.querySelectorAll('li').forEach((item) => {console.log(item)})
-        const catArray = [];
-        catMenu.querySelectorAll('li').forEach((item) => {
-            //console.log(item)
-            const aLink = item.querySelector('a');
-            //console.log(aLink)
-            catArray.push({'link':aLink.getAttribute("href"),'title':aLink.innerText})
-        })
-        console.log(catArray)
+    //window.addEventListener("resize", displayWindowSize);
 
-        const select = document.createElement('select');
+    if (document.documentElement.clientWidth < 500) {
+        if (document.getElementsByClassName('product-categories')[0]) {
+            console.log('-- has cat menu')
+            const catMenu = document.getElementsByClassName('product-categories')[0];
+            //let catArray = catMenu.querySelectorAll('li').forEach((item) => {console.log(item)})
+            const catArray = [];
+            catMenu.querySelectorAll('li').forEach((item) => {
+                //console.log(item)
+                const aLink = item.querySelector('a');
+                //console.log(aLink)
+                catArray.push({'link':aLink.getAttribute("href"),'title':aLink.innerText})
+            })
+            //console.log(catArray)
 
-        catArray.forEach((value, index) => {
-            const option = document.createElement('option');
-            console.log(value.title)
-            option.setAttribute('title',value.title)
-            option.setAttribute('text',value.title)
-            select.appendChild(option)
-        })
-        catMenu.parentNode.insertBefore(select, catMenu.nextSibling);
+            const select = document.createElement('select');
 
-        catMenu.style.display = 'none';
+            catArray.forEach((value, index) => {
+                const option = document.createElement('option');
+                //console.log(value.title)
+                option.setAttribute('title',value.title)
+                option.setAttribute('text',value.title)
+                select.appendChild(option)
+            })
+            catMenu.parentNode.insertBefore(select, catMenu.nextSibling);
+
+            catMenu.style.display = 'none';
+        }
     }
+
 });
