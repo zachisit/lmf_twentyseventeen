@@ -24,7 +24,7 @@ function add_international_shipping_alert_settings( $settings, $current_section 
                     'true' => __( 'Yes, please show alert', 'my-textdomain' ),
                     'false' => __( 'No, do not show alert', 'my-textdomain' ),
                 ],
-                'default' => 'true',
+                'default' => 'false',
                 'desc' => __( 'Select this option to show the alert message on checkout. If this is not selected, a message will not show', 'my-textdomain' ),
                 'desc_tip' => true,
             ],
