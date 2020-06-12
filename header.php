@@ -29,6 +29,7 @@
     <!-- End Google Tag Manager -->
     <?php wp_head(); ?>
 </head>
+<!--<body --><?php //body_class(); ?><!---->
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CPS5KN"

@@ -30,8 +30,10 @@ ul {
   max-width:1000px;
 }
 .internal_wrapper {
-  //min-width: 80%;
-  max-width:1080px;
+  max-width:1230px;
+  @include media-query-size(1095px,1229px) {
+    max-width:90%;
+  }
 }
 a {
   color: $brand_blue;
@@ -171,17 +173,25 @@ header {
       padding: 0.4em 0.8em;
       margin: auto;
       display: table;
-
       @include media-query--phone {
         width:auto;
         padding:10px 0;
       }
-
+      @include media-query-size(600px,1110px) {
+        width:95%;
+      }
       #menu {
         float: right;
         width: auto;
         margin: 0;
         position: relative;
+        @include media-query-size(600px,944px) {
+          width:100%;
+          display:block;
+          float:left;
+          margin-top:5px;
+          text-align: center;
+        }
         ul {
           li {
             display: inline;
@@ -241,6 +251,10 @@ header {
       #search {
         float: left;
         width: auto;
+        @include media-query-size(600px,944px) {
+          width:100%;
+          display:block;
+        }
         .screen-reader-text {
           display: none;
         }
@@ -250,6 +264,9 @@ header {
           color: black;
           padding: 0.3em 1em;
           width:256px;
+          @include media-query-size(600px,944px) {
+            width:89%;
+          }
         }
         button[type="submit"] {
           background:white;
@@ -1071,7 +1088,7 @@ h3 {
   }
 }
 h1.woocommerce-products-header__title {
-  font-size: 2.2em;
+  font-size: 1.9vw;
   font-weight: 100;
   padding: 0 0 0 0.5em;
   &::before {
@@ -1130,8 +1147,10 @@ h1.merchandise {
   border-bottom: 1px solid #ccc;
   border-left: 1px solid #ccc;
   border-top: 0.375em solid $brand_blue;
-  float: right;
-  margin: 0 0.8em 0 0;
+  display:inline-block;
+  margin: 0 10px 0 0;
+  vertical-align: top;
+  float:right;
   .widgetblock {
     padding: 1em;
     h2 {
@@ -1242,9 +1261,9 @@ h1.merchandise {
     height: auto;
   }
   .sidebar_cta {
-    float: left;
-    width: 100%;
-    margin: 0 0 2em 0;
+    p {
+      margin:0;
+    }
     img {
       width: 100%;
       height: auto;
@@ -1526,21 +1545,32 @@ h1.merchandise {
     height: auto;
   }
 }
+#primary {
+  display: inline-block;
+  width: 58%;
+  @include media-query--phone {
+    width:100%;
+  }
+}
 #product_left_sidebar {
-  float: left;
+  display:inline-block;
   width: 18%;
   background: #FCFCFC;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   border-left: 1px solid #ccc;
   border-top: 0.375em solid $brand_blue;
-  margin: 0 0.8em 0 0;
+  margin: 0 10px;
+  vertical-align: top;
   h2 {
-    font-size: 1.4em;
+    font-size: 1.4vw;
     font-weight: 500;
     color: #313131;
     border-bottom: 5px solid #fdd207;
     padding: 0 0 0.3em 0;
+    @include media-query-size(0,880px) {
+      font-size:2vw;
+    }
     &::before {
       content: "\f0fe";
       font-family: "FontAwesome";
@@ -1610,6 +1640,13 @@ h1.merchandise {
   }
 }
 .widgetblock {
+  .category-dropdown {
+    width:100%;
+  }
+  .product-categories li {
+    margin-bottom:5px;
+    line-height:1.4;
+  }
   #newsletter_header {
     display: initial !important;
   }
@@ -1794,13 +1831,11 @@ a.woocommerce-product-gallery__trigger {
   }
 }
 .site-main {
-  display:inline-block; //
-  width: 57%;
   .products {
     margin: 1em 0 3em 0;
     li {
       display:inline-block;
-      width: 22.7%;
+      width: 22.4%;
       margin: 0 0.7em 0 0;
       min-height: 350px;
       position: relative;
@@ -1873,12 +1908,6 @@ a.woocommerce-product-gallery__trigger {
     width: 100%;
     display: block;
     position: relative;
-  }
-}
-.content-area {
-  .site-main {
-    width: 76%;
-    //width:60%;
   }
 }
 .woocommerce-pagination {
@@ -2377,20 +2406,6 @@ div.wpcf7 {
   }
   nav.woocommerce-breadcrumb {
     padding: 0;
-  }
-  .widgetblock {
-    .product-categories {
-      li {
-        margin: 0 0 5px;
-        a {
-          display: block;
-          font-size: 0.95em;
-        }
-        .children {
-          margin: 5px 0 0;
-        }
-      }
-    }
   }
   footer {
     ul {

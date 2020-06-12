@@ -127,7 +127,7 @@ function lmf_social_share() {
     include 'social_share.php';
 }
 
-add_action('woocommerce_before_single_product', 'lmf_social_share', 1);
+//add_action('woocommerce_before_single_product', 'lmf_social_share', 1);
 
 /**
  * Returns Newsletter Signup

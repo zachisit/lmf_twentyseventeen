@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     //window.addEventListener("resize", displayWindowSize);
 
-    if (document.documentElement.clientWidth < 500) {
+    if (document.documentElement.clientWidth < 673) {
         if (document.getElementsByClassName('product-categories')[0]) {
             console.log('-- has cat menu')
             const catMenu = document.getElementsByClassName('product-categories')[0];
@@ -29,17 +29,27 @@ document.addEventListener("DOMContentLoaded", function(){
             //console.log(catArray)
 
             const select = document.createElement('select');
+            select.classList.add('category-dropdown');
 
             catArray.forEach((value, index) => {
                 const option = document.createElement('option');
                 //console.log(value.title)
-                option.setAttribute('title',value.title)
-                option.setAttribute('text',value.title)
-                select.appendChild(option)
+                //console.log(value)
+                option.value = value.title;
+                option.text = value.title;
+                option.setAttribute('data-linkto',value.link);
+                select.appendChild(option);
             })
             catMenu.parentNode.insertBefore(select, catMenu.nextSibling);
+            document.getElementsByClassName('category-dropdown')[0].addEventListener('change',(event)=>selectChange(event));
 
             catMenu.style.display = 'none';
+        }
+    }
+
+    function selectChange(event) {
+        if (event.target.options[event.target.selectedIndex].dataset.linkto) {
+            window.location.replace(event.target.options[event.target.selectedIndex].dataset.linkto);
         }
     }
 
