@@ -24,7 +24,12 @@ ul {
   background: white;
   margin: 5px auto;
   box-shadow: 0 0 0.188em rgba(0, 0, 0, 0.1);
-  display: table;
+  display: block;
+  padding:0;
+  @include media-query--phone {
+    //padding:10px !important;
+    box-shadow: none;
+  }
 }
 .home_wrapper {
   max-width:1000px;
@@ -33,6 +38,10 @@ ul {
   max-width:1230px;
   @include media-query-size(1095px,1229px) {
     max-width:90%;
+  }
+  @include media-query--phone {
+    width:auto;
+    max-width:unset;
   }
 }
 a {
@@ -62,13 +71,22 @@ a {
 header {
   margin: 0 0 1em 0;
   #top {
-    float: left;
+    display:inline-block;
     width: 100%;
     margin: 0 0 0.5em 0;
     #logo {
-      float: left;
+      display:inline-block;
       width: 307px;
       margin: 0 0 0 0.875em;
+      @include media-query-size(0px,950px){
+        width:100%;
+        display:block;
+        margin-bottom:10px;
+        img {
+          display:block;
+          margin:auto;
+        }
+      }
     }
     #right {
       float: right;
@@ -76,10 +94,13 @@ header {
       @include media-query--phone {
         display:none !important;
       }
+      @include media-query-size(600px,950px){
+        width:100%;
+        text-align: center;
+        display:block;
+      }
       #top {
-        float: left;
-        width: 100%;
-        height: 80px;
+        display:block;
         border-top: 3px solid #096cc8;
         .fa {
           font-size: 26px;
@@ -104,6 +125,7 @@ header {
           display:inline-block;
           border-right: 2px solid #ccc;
           padding: 12px 7px 0 7px;
+          vertical-align: top;
           #phone {
             &::before {
               content: "\f095";
@@ -123,6 +145,7 @@ header {
           display:inline-block;
           border-right: 0.125em solid #ccc;
           padding: 12px 7px 0 7px;
+          vertical-align: top;
           #contact {
             &:hover {
               &::before {
@@ -143,6 +166,7 @@ header {
         #four {
           display:inline-block;
           padding: 12px 7px 0 7px;
+          vertical-align: top;
           #login {
             &:hover {
               &::before {
@@ -263,9 +287,23 @@ header {
           border: none;
           color: black;
           padding: 0.3em 1em;
-          width:256px;
-          @include media-query-size(600px,944px) {
+          width:467px;
+          @include media-query--phone {
+            width:100%;
+            padding:10px 20px;
+            font-size:1em;
+          }
+          @include media-query-size(500px,944px) {
             width:89%;
+          }
+          @include media-query-size(945px,1000px) {
+            width:262px;
+          }
+          @include media-query-size(1001px,1110px) {
+            width:300px;
+          }
+          @include media-query-size(1111px,1244px) {
+            width:260px;
           }
         }
         button[type="submit"] {
@@ -273,6 +311,13 @@ header {
           text-transform: uppercase;
           border:1px solid black;
           padding: 5px 7px;
+          @include media-query-size(500px,944px) {
+            width:10%;
+          }
+          @include media-query--phone {
+            width:100%;
+            margin-top:10px;
+          }
         }
       }
     }
@@ -621,7 +666,19 @@ header {
     color: $brand_blue;
   }
 }
-
+.woocommerce a.button {
+  @include media-query--phone {
+    width:100%;
+    padding:10px 0;
+    text-align:center;
+  }
+}
+.woocommerce-ordering .orderby {
+  @include media-query--phone {
+    width:100%;
+    font-size:1.1em;
+  }
+}
 .product {
   .related {
     display: none !important;
@@ -983,6 +1040,11 @@ header {
   border-top-color: #1CAA3C;
   display: block;
   color: white;
+  @include media-query--phone {
+    display:block;
+    text-align: center;
+    padding:10px;
+  }
   a {
     color: white;
     font-weight: 900;
@@ -995,6 +1057,14 @@ header {
     position: absolute;
     top: 11px;
     left: 13px;
+    @include media-query--phone {
+      display:block;
+      text-align: center;
+      position:relative;
+      top:unset;
+      left:unset;
+      margin-bottom:10px;
+    }
   }
 }
 h2 {
@@ -1272,6 +1342,9 @@ h1.merchandise {
 }
 #content_left {
   padding: 0 1em;
+  @include media-query--phone {
+    padding:unset;
+  }
   #header {
     float: left;
     width: 100%;
@@ -1279,11 +1352,17 @@ h1.merchandise {
     border-bottom: 0.375em solid $brand_blue;
     padding: 1.5em 0;
     margin: 0 0 1em 0;
+    @include media-query--phone {
+      text-align: center;
+    }
     h2 {
       font-size: 1.4em;
       color: white;
       font-weight: 100;
       margin: 0 0 0 1em;
+      @include media-query--phone {
+        margin:0;
+      }
     }
   }
   #breadcrumb {
@@ -1549,7 +1628,28 @@ h1.merchandise {
   display: inline-block;
   width: 58%;
   @include media-query--phone {
+    width:auto;
+    padding:10px;//this works well in archive list of products
+  }
+  @include media-query-size(0px,770px) {
     width:100%;
+    display:block;
+  }
+}
+.single_product {
+  #primary {
+    width:78%;
+    display:inline-block;
+    @include media-query--phone {
+      width:auto;
+      display:block;
+    }
+    .site-main {
+      padding:10px;
+      @include media-query--phone {
+        padding:unset;
+      }
+    }
   }
 }
 #product_left_sidebar {
@@ -1562,6 +1662,10 @@ h1.merchandise {
   border-top: 0.375em solid $brand_blue;
   margin: 0 10px;
   vertical-align: top;
+  @include media-query-size(0px,770px) {
+    width:100%;
+    display:block;
+  }
   h2 {
     font-size: 1.4vw;
     font-weight: 500;
@@ -1586,9 +1690,8 @@ h1.merchandise {
   float: left;
   width: 100%;
   padding: 1em 0;
-  margin: 0 0 2em 0;
+  margin: 80px 0 2em 0;
   background: $brand_blue;
-  margin-top: 80px;
   .title {
     font-size: 1.3em;
     line-height: 1.2em;
@@ -1597,15 +1700,27 @@ h1.merchandise {
     width: 90%;
     margin: 0 auto 1em auto;
     display: table;
+    @include media-query-size(0px,820px){
+      font-size:1em;
+      line-height:1.3;
+    }
   }
   #newsletter_header {
     margin: -72px auto 0 auto;
     display: table;
+    @include media-query-size(0px,820px){
+      width:100%;
+      height:auto;
+    }
   }
   #mc_embed_signup {
     background: none;
     margin: auto;
     width: 62%;
+    @include media-query-size(0px,820px){
+      width:100%;
+      display:block;
+    }
     .mc-field-group {
       label {
         color: white;
@@ -1642,6 +1757,8 @@ h1.merchandise {
 .widgetblock {
   .category-dropdown {
     width:100%;
+    padding:10px;
+    font-size:1.1em;
   }
   .product-categories li {
     margin-bottom:5px;
@@ -1692,6 +1809,13 @@ footer {
   width: 100%;
   background: #f8f8f8;
   padding: 1.4em 0 0 0;
+  .menu-footer-menu-container ul li {
+    &:not(:last-child):after {
+      content:'/';
+      color:#ccc;
+      padding:0 3px 0 10px;
+    }
+  }
   ul {
     margin: 0 auto 0.9em auto;
     width: auto;
@@ -1708,17 +1832,19 @@ footer {
     }
   }
   #bottom {
-    float: left;
-    width: 100%;
+    display:block;
+    text-align: center;
     p {
-      &:first-child {
-        font-size: 0.8em;
+      &.copyright {
+        font-size:12px;
+        font-style: italic;
+
+      }
+      &.hosting-and-version {
+        font-size: 11px;
         font-style: italic;
         text-align: center;
-      }
-      &:last-child {
-        font-size: 0.9em;
-        text-align: center;
+
       }
     }
   }
@@ -1839,10 +1965,34 @@ a.woocommerce-product-gallery__trigger {
       margin: 0 0.7em 0 0;
       min-height: 350px;
       position: relative;
+      vertical-align: top;
+      @include media-query-size(501px,980px) {
+        width:30%;
+        &:nth-of-type(3n) {
+          margin: 0;
+        }
+      }
       &:nth-of-type(4n) {
         margin: 0;
+        @include media-query--phone {
+          margin-bottom:16px;
+        }
       }
       a {
+        &.button {
+          background: $brand_blue !important;
+          color: white !important;
+          border: none !important;
+          text-decoration: none;
+          float: left;
+          width: 100%;
+          padding: 0.3em 0;
+          text-align: center;
+          @include media-query--phone {
+            padding:10px 0;
+            font-size:1em;
+          }
+        }
         .woocommerce-loop-product__title {
           font-size: 1em;
           text-align: center;
@@ -1879,6 +2029,10 @@ a.woocommerce-product-gallery__trigger {
         width: 100%;
         padding: 0.3em 0;
         text-align: center;
+        @include media-query--phone {
+          padding:10px 0;
+          font-size:1em;
+        }
       }
       .ajax_add_to_cart {
         background: white;
@@ -1889,6 +2043,10 @@ a.woocommerce-product-gallery__trigger {
         width: 100%;
         padding: 0.3em 0;
         text-align: center;
+        @include media-query--phone {
+          padding:10px 0;
+          font-size:1em;
+        }
       }
       .price {
         float: left;
@@ -1897,11 +2055,6 @@ a.woocommerce-product-gallery__trigger {
         margin: 0 0 0.4em 0;
       }
     }
-  }
-  .type-product {
-    margin: 0 0 0 1em;
-    display: block;
-    position: relative;
   }
   .up-sells {
     float: left;
@@ -1915,9 +2068,7 @@ a.woocommerce-product-gallery__trigger {
   width: 100%;
   height: 70px;
   .page-numbers {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
+    text-align: center;
     li {
       display: inline-block;
       position: relative;
@@ -1956,8 +2107,13 @@ a.woocommerce-product-gallery__trigger {
 }
 nav.woocommerce-breadcrumb {
   margin: 0 0 10px;
-  padding: 0 0 0 15px;
   font-size: 14px;
+  border-bottom:1px solid $brand_blue;
+  padding-bottom:10px;
+  @include media-query--phone {
+    margin:10px 0;
+    padding-bottom:10px;
+  }
   a {
     font-size: 15px;
   }
@@ -1977,13 +2133,6 @@ div.wpcf7 {
     display: block !important;
   }
   .container {
-    float: left;
-    display: block;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  #wrapper {
     float: left;
     display: block;
     width: 100%;
@@ -2055,35 +2204,30 @@ div.wpcf7 {
       margin: 0;
       padding: 0;
       #top {
-        float: left;
-        display: block;
+        display:inline-block;
         width: 100%;
         margin: 0;
         padding: 0;
         #one {
-          float: left;
-          display: block;
+          display:inline-block;
           width: 100%;
           margin: 0;
           padding: 0;
         }
         #two {
-          float: left;
-          display: block;
+          display:inline-block;
           width: 100%;
           margin: 0;
           padding: 0;
         }
         #three {
-          float: left;
-          display: block;
+          display:inline-block;
           width: 100%;
           margin: 0;
           padding: 0;
         }
         #four {
-          float: left;
-          display: block;
+          display:inline-block;
           width: 100%;
           margin: 0;
           padding: 0;
@@ -2098,19 +2242,22 @@ div.wpcf7 {
       margin: 0;
       width: 100%;
       padding: 0;
+      float:none;
       #box {
         margin: 0;
-        width: 100%;
-        padding: 0;
+        display:block;
+        padding: 10px;
         #menu {
           float: left;
           width: 100%;
           ul {
             li {
-              float: left;
               text-align: center;
-              width: 100%;
-              margin: 0 0 0.5em 0;
+              display:block;
+              margin-bottom:10px;
+              @include media-query--phone {
+                padding:0;
+              }
               a {
                 text-align: center;
               }
@@ -2126,6 +2273,9 @@ div.wpcf7 {
           float: none;
           display: table;
           margin: 0.9em auto;
+          @include media-query--phone {
+            display:block;
+          }
         }
       }
     }
@@ -2181,13 +2331,6 @@ div.wpcf7 {
     }
   }
   .widget-area {
-    float: left;
-    display: block;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  #product_left_sidebar {
     float: left;
     display: block;
     width: 100%;
@@ -2260,64 +2403,64 @@ div.wpcf7 {
         max-width: 250px;
       }
       float: none;
-      float: none;
-      #right {
-        float: none;
-        width: 100%;
-        overflow: hidden;
-        #top {
-          float: none;
-          width: 100%;
-          height: auto;
-          padding: 0.625em 0;
-          text-align: center;
-          margin: 0;
-          #one {
-            float: none;
-            width: 25%;
-            margin: 0;
-            display: inline-block;
-            vertical-align: middle;
-            margin: 0 -3px;
-            ul {
-              display: block;
-            }
-          }
-          #two {
-            float: none;
-            width: 25%;
-            margin: 0;
-            display: inline-block;
-            vertical-align: middle;
-            margin: 0 -3px;
-            #phone {
-              display: block;
-            }
-          }
-          #three {
-            float: none;
-            width: 25%;
-            margin: 0;
-            display: inline-block;
-            vertical-align: middle;
-            margin: 0 -3px;
-            #contact {
-              display: block;
-            }
-          }
-          #four {
-            float: none;
-            width: 25%;
-            margin: 0;
-            display: inline-block;
-            vertical-align: middle;
-            margin: 0 -3px;
-            #login {
-              display: block;
-            }
-          }
-        }
-      }
+      //#right {
+      //  float: none;
+      //  width: 100%;
+      //  overflow: hidden;
+      //  #top {
+      //    float: none;
+      //    width: 100%;
+      //    height: auto;
+      //    padding: 0.625em 0;
+      //    text-align: center;
+      //    margin: 0;
+      //
+      //    //#one {
+      //    //  float: none;
+      //    //  width: 25%;
+      //    //  margin: 0;
+      //    //  display: inline-block;
+      //    //  vertical-align: middle;
+      //    //  margin: 0 -3px;
+      //    //  ul {
+      //    //    display: block;
+      //    //  }
+      //    //}
+      //    //#two {
+      //    //  float: none;
+      //    //  width: 25%;
+      //    //  margin: 0;
+      //    //  display: inline-block;
+      //    //  vertical-align: middle;
+      //    //  margin: 0 -3px;
+      //    //  #phone {
+      //    //    display: block;
+      //    //  }
+      //    //}
+      //    //#three {
+      //    //  float: none;
+      //    //  width: 25%;
+      //    //  margin: 0;
+      //    //  display: inline-block;
+      //    //  vertical-align: middle;
+      //    //  margin: 0 -3px;
+      //    //  #contact {
+      //    //    display: block;
+      //    //  }
+      //    //}
+      //    //#four {
+      //    //  float: none;
+      //    //  width: 25%;
+      //    //  margin: 0;
+      //    //  display: inline-block;
+      //    //  vertical-align: middle;
+      //    //  margin: 0 -3px;
+      //    //  #login {
+      //    //    display: block;
+      //    //  }
+      //    //}
+      //  }
+      //}
     }
     #bottom {
       #box {
@@ -2346,33 +2489,29 @@ div.wpcf7 {
       }
     }
   }
-  #product_left_sidebar {
-    width: 30%;
-    h2 {
-      font-size: 1.2em;
-      margin: 0 0 10px;
-      border-bottom: 3px solid #fdd207;
-    }
-  }
   .content-area {
     .site-main {
       width: 67.7%;
+      @include media-query-size(0px,770px) {
+        width:100%;
+        display:block;
+      }
     }
   }
-  .widget-area {
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0 0 20px;
-    .sidebar_cta {
-      float: none;
-      width: 100%;
-      margin: 0;
-    }
-    .widgetblock {
-      width: 100%;
-      box-sizing: border-box;
-    }
-  }
+  //.widget-area {
+  //  width: 100%;
+  //  box-sizing: border-box;
+  //  margin: 0 0 20px;
+  //  .sidebar_cta {
+  //    float: none;
+  //    width: 100%;
+  //    margin: 0;
+  //  }
+  //  .widgetblock {
+  //    width: 100%;
+  //    box-sizing: border-box;
+  //  }
+  //}
   .site-main {
     .products {
       li {
@@ -2403,9 +2542,6 @@ div.wpcf7 {
     &::before {
       width: 30px;
     }
-  }
-  nav.woocommerce-breadcrumb {
-    padding: 0;
   }
   footer {
     ul {
@@ -2451,29 +2587,29 @@ div.wpcf7 {
     #top {
       #right {
         #top {
-          #four {
-            width: 100% !important;
-            margin: 15px 0 0 !important;
-            #login {
-              br {
-                display: none;
-              }
-              a {
-                display: inline-block;
-                margin: 0 8px;
-              }
-            }
-          }
-          #one {
-            width: 33%;
-          }
-          #two {
-            width: 33%;
-          }
-          #three {
-            width: 33%;
-            border-right: none;
-          }
+          //#four {
+          //  width: 100% !important;
+          //  margin: 15px 0 0 !important;
+          //  #login {
+          //    br {
+          //      display: none;
+          //    }
+          //    a {
+          //      display: inline-block;
+          //      margin: 0 8px;
+          //    }
+          //  }
+          //}
+          //#one {
+          //  width: 33%;
+          //}
+          //#two {
+          //  width: 33%;
+          //}
+          //#three {
+          //  width: 33%;
+          //  border-right: none;
+          //}
         }
       }
     }

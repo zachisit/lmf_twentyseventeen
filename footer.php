@@ -21,9 +21,8 @@
         </ul>
     <?php wp_nav_menu( [ 'theme_location' => 'footer_menu' ] ); ?>
     <div id="bottom">
-        <p>&copy; 2012-<?php echo date("Y"); ?> <?php echo get_bloginfo( 'name' ); ?></p>
-        <p style="text-align:center">Hosting provided by <a href="http://www.handsomecathosting.com" title="Handsome Cat Hosting" target="_blank">Handsome Cat Hosting</a> - Made in the USA <img src="<?php echo get_template_directory_uri(); ?>/images/usa_flag.jpg" alt="<?php echo get_bloginfo( 'name' ); ?> - USA" /></p>
-        <p>v3.90.170</p>
+        <p class="copyright">&copy; 2012-<?php echo date("Y"); ?> <?php echo get_bloginfo( 'name' ); ?></p>
+        <p class="hosting-and-version">Hosting provided by <a href="http://www.handsomecathosting.com" title="Handsome Cat Hosting" target="_blank">Handsome Cat Hosting</a> - v<?=THEME_VERSION?> - Made in the USA <img src="<?php echo get_template_directory_uri(); ?>/images/usa_flag.jpg" alt="<?php echo get_bloginfo( 'name' ); ?> - USA" /></p>
     </div>
 </footer>
 </div><!--/wrapper-->

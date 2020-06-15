@@ -51,11 +51,10 @@ function new_loop_shop_per_page( $cols ) {
 add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
 
 
-function add_custom_body_class($classes){
-    if (is_product()) {
-        $classes[] = 'single-product';
+function lmf_body_class(){
+    $class = null;
+    if (is_product()){
+        $class = 'single_product';
     }
-    return $classes;
+    return $class;
 }
-add_filter('body_class', 'add_custom_body_class');
-
