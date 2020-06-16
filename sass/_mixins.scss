@@ -26,3 +26,20 @@
     @content;
   }
 }
+@mixin orangeButton {
+  @include border-radius(10px);
+  background-color: $brand_orange;
+  border: none;
+  outline: none;
+  margin: auto;
+  display: table;
+  font-size: 1em;
+  color: white;
+  text-align:center;
+}
+@mixin blueButton {
+  @include border-radius(10px);
+  background:$brand_blue;
+  color:white;
+  padding:6px 16px;
+}

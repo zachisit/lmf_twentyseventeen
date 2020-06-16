@@ -28,6 +28,7 @@ ul {
   padding:0;
   @include media-query--phone {
     //padding:10px !important;
+    margin:0;
     box-shadow: none;
   }
 }
@@ -57,9 +58,11 @@ a {
 }
 #top_mobile_directions {
   display: none;
-  float: left;
-  width: 100%;
   background: #096cc8;
+  padding:10px 0;
+  @include media-query--phone {
+    display:block;
+  }
   p {
     text-align: center;
     a {
@@ -74,14 +77,18 @@ header {
     display:inline-block;
     width: 100%;
     margin: 0 0 0.5em 0;
+    @include media-query--phone {
+      width:auto;
+      display:block;
+      margin:10px 0;
+    }
     #logo {
       display:inline-block;
       width: 307px;
       margin: 0 0 0 0.875em;
       @include media-query-size(0px,950px){
-        width:100%;
         display:block;
-        margin-bottom:10px;
+        margin:0 auto 10px auto;
         img {
           display:block;
           margin:auto;
@@ -91,13 +98,14 @@ header {
     #right {
       float: right;
       width: auto;
-      @include media-query--phone {
-        display:none !important;
-      }
       @include media-query-size(600px,950px){
-        width:100%;
+        width:auto;
+        float:none;
         text-align: center;
         display:block;
+      }
+      @include media-query--phone {
+        float:none;
       }
       #top {
         display:block;
@@ -109,6 +117,9 @@ header {
           display:inline-block;
           border-right: 2px solid #ccc;
           padding: 12px 7px 0 7px;
+          @include media-query--phone {
+            display:none;
+          }
           ul {
             margin: auto;
             display: table;
@@ -126,6 +137,9 @@ header {
           border-right: 2px solid #ccc;
           padding: 12px 7px 0 7px;
           vertical-align: top;
+          @include media-query--phone {
+            display:none !important;
+          }
           #phone {
             &::before {
               content: "\f095";
@@ -146,6 +160,9 @@ header {
           border-right: 0.125em solid #ccc;
           padding: 12px 7px 0 7px;
           vertical-align: top;
+          @include media-query--phone {
+            display:none !important;
+          }
           #contact {
             &:hover {
               &::before {
@@ -167,6 +184,9 @@ header {
           display:inline-block;
           padding: 12px 7px 0 7px;
           vertical-align: top;
+          @include media-query--phone {
+            display:block;
+          }
           #login {
             &:hover {
               &::before {
@@ -188,8 +208,7 @@ header {
     }
   }
   #bottom {
-    width: 100%;
-    float: left;
+    display:block;
     margin: 0 0 1em 0;
     #box {
       width: 90%;
@@ -224,7 +243,7 @@ header {
               content: "\f005";
               font-family: "FontAwesome";
               font-size: 1.1em;
-              color: #fdd207;
+              color: $brand_yellow;
               padding: 0 0 0 .5em;
             }
             a {
@@ -259,7 +278,7 @@ header {
                   font-size: 1em;
                   padding: 0.5em 0;
                   &:hover {
-                    color: #fdd207;
+                    color: $brand_yellow;
                   }
                 }
               }
@@ -535,7 +554,7 @@ header {
       padding: 0.4em 0;
       background: $brand_blue;
       text-align: center;
-      color: #fdd207;
+      color: $brand_yellow;
       margin: 0;
     }
     .title {
@@ -684,7 +703,7 @@ header {
     display: none !important;
   }
   .onsale {
-    background: #fdd207;
+    background: $brand_yellow;
     padding: 0.9em;
     border-radius: 71%;
     position: absolute;
@@ -703,6 +722,7 @@ header {
     }
     h1 {
       margin: 0 0 20px;
+      font-size:1.4em;
       color:#333;
       @include media-query--phone {
         font-size:1.2em;
@@ -774,7 +794,7 @@ header {
     h2 {
       text-align: center;
       font-size: 1.5em;
-      color: $brand_blue;
+      color: $brand_orange;
       margin: 1em 0 0 0;
       padding: 0;
     }
@@ -783,7 +803,7 @@ header {
     display: none;
   }
   .onsale {
-    background: #fdd207;
+    background: $brand_yellow;
     color: red;
     font-size: 1.1em;
     padding: 1.1em;
@@ -938,7 +958,7 @@ header {
       .woocommerce-LoopProduct-link {
         height: 100px;
         .onsale {
-          background: #fdd207;
+          background: $brand_yellow;
           color: red;
           font-size: 1.1em;
           padding: 1.1em;
@@ -992,43 +1012,6 @@ header {
       font-size: 1em;
       color: #096cc8;
       margin: 0 0.5em 0 1em;
-    }
-  }
-  .woocommerce-result-count {
-    margin: 0 0 0 0.625em;
-  }
-  #social_share {
-    display: block;
-    margin: 0 0 1em 0;
-    padding: 0.5em;
-    background: $brand_blue;
-    height: 21px;
-    ul {
-      list-style-type: none;
-      margin: auto;
-      display: table;
-      padding: 0;
-      li {
-        float: left;
-        display: inline;
-        padding: 0 1em 0 0;
-        a {
-          color: white;
-        }
-        &:nth-child(1) {
-          min-width: 84px;
-        }
-        &:nth-child(2) {
-          min-width: 60px;
-        }
-      }
-    }
-    .share_email_button {
-      background: #096cc8;
-      padding: 0.2em 1em;
-      color: white;
-      text-decoration: none;
-      font-size: 0.8em;
     }
   }
   #newsletter_signup {
@@ -1134,6 +1117,7 @@ h3 {
   }
 }
 .single_add_to_cart_button {
+  @include border-radius(10px);
   padding: 0.700em 0.650em;
   margin: 1.5em 0;
   text-align: center;
@@ -1143,11 +1127,9 @@ h3 {
   border: none;
   text-transform: uppercase;
   background: $brand_orange;
-  color: black;
-  -webkit-border-radius: 0.5em;
-  -moz-border-radius: 0.5em;
-  border-radius: 0.5em;
+  color: white;
   cursor: pointer;
+  outline: none;
   margin-bottom: 35px;
   @include media-query--phone {
     width:100%;
@@ -1158,56 +1140,52 @@ h3 {
   }
 }
 h1.woocommerce-products-header__title {
-  font-size: 1.9vw;
+  font-size: 1.2em;
   font-weight: 100;
-  padding: 0 0 0 0.5em;
+  padding: 0;
+  line-height:1.1;
+  @include media-query--phone {
+    text-align: center;
+  }
   &::before {
     content: "\f001";
     font-family: "FontAwesome";
     font-size: 1em;
-    float: left;
-    width: 45px;
-    color: #fdd207;
+    padding:0 10px 0 0;
+    color: $brand_yellow;
+  }
+  &.book {
+    &::before {
+      content: "\f02d";
+      font-family: "FontAwesome";
+    }
+  }
+  &.video {
+    &::before {
+      content: "\f03d";
+      font-family: "FontAwesome";
+    }
+  }
+  &.sale {
+    &::before {
+      content: "\f12a";
+      font-family: "FontAwesome";
+    }
+  }
+  &.merchandise {
+    &::before {
+      content: "\f1b3";
+      font-family: "FontAwesome";
+    }
   }
 }
-h1.book {
-  &::before {
-    content: "\f02d";
-    font-family: "FontAwesome";
-    font-size: 1em;
-    float: left;
-    width: 45px;
-    color: #fdd207;
-  }
-}
-h1.video {
-  &::before {
-    content: "\f03d";
-    font-family: "FontAwesome";
-    font-size: 1em;
-    float: left;
-    width: 55px;
-    color: #fdd207;
-  }
-}
-h1.sale {
-  &::before {
-    content: "\f12a";
-    font-family: "FontAwesome";
-    font-size: 1em;
-    float: left;
-    width: 30px;
-    color: #fdd207;
-  }
-}
-h1.merchandise {
-  &::before {
-    content: "\f1b3";
-    font-family: "FontAwesome";
-    font-size: 1em;
-    float: left;
-    width: 57px;
-    color: #fdd207;
+.woocommerce-result-count {
+  font-size:13px;
+  font-style: italic;
+  margin:0 0 5px 0;
+  @include media-query--phone {
+    font-size:12px;
+    text-align: center;
   }
 }
 .widget-area {
@@ -1221,14 +1199,31 @@ h1.merchandise {
   margin: 0 10px 0 0;
   vertical-align: top;
   float:right;
+  @include media-query--phone {
+    float: none;
+    display: block;
+    width: auto;
+    margin: 0;
+    padding: 10px;
+  }
   .widgetblock {
     padding: 1em;
     h2 {
-      font-size: 1.3em;
+      font-size: 1.2em;
       font-weight: 500;
+      line-height:1.1;
       color: #313131;
-      border-bottom: 5px solid #fdd207;
+      border-bottom: 5px solid $brand_yellow;
       padding: 0 0 0.3em 0;
+      @include media-query-size(950px,1210px) {
+        font-size:1em;
+      }
+      @include media-query-size(877px,949px) {
+        font-size:0.9em;
+      }
+      @include media-query-size(550px,876px) {
+        font-size:0.9em;
+      }
     }
     &:nth-child(1) {
       h2 {
@@ -1251,6 +1246,10 @@ h1.merchandise {
       }
     }
     .widget_shopping_cart_content {
+      img {
+        width:100%;
+        height:auto;
+      }
       .woocommerce-mini-cart__buttons .button {
         display:block;
         text-align: center;
@@ -1258,6 +1257,7 @@ h1.merchandise {
         &.wc-forward {
           background:$brand_orange;
           margin-bottom:5px;
+          color:white;
           &:hover {
             color:$brand_blue;
           }
@@ -1266,7 +1266,7 @@ h1.merchandise {
             font-family: "FontAwesome";
             padding: 0 0 0 0.535em;
             font-size: 0.925em;
-            color: $brand_blue;
+            color: white;
           }
         }
         &.checkout {
@@ -1286,6 +1286,7 @@ h1.merchandise {
       }
       .product_list_widget {
         .mini_cart_item {
+          margin-bottom:10px;
           .remove {
             color: red;
             font-weight: 900;
@@ -1346,8 +1347,7 @@ h1.merchandise {
     padding:unset;
   }
   #header {
-    float: left;
-    width: 100%;
+    display:block;
     background: #096cc8;
     border-bottom: 0.375em solid $brand_blue;
     padding: 1.5em 0;
@@ -1382,9 +1382,53 @@ h1.merchandise {
       }
     }
   }
+  .woocommerce-form, .checkout_coupon {
+    @include media-query--phone {
+      .form-row {
+        width:auto;
+        float:unset;
+        input, select, textarea, .input-text {
+          font-size:1em;
+          padding:5px;
+        }
+      }
+    }
+  }
+  .woocommerce-button, .woocommerce-form-coupon .button {
+    @include blueButton;
+  }
+  .woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+    font-size:1em;
+    padding:5px 10px;
+    color:#333;
+  }
+  .woocommerce-checkout {
+    #place_order {
+      @include orangeButton;
+    }
+    .woocommerce-shipping-fields__field-wrapper, .woocommerce-billing-fields__field-wrapper, .woocommerce-form-login, .checkout_coupon, .woocommerce-form-coupon, .woocommerce-form {
+      .form-row {
+        @include media-query--phone {
+          width:auto;
+          float:unset;
+        }
+        input, select, textarea, .input-text {
+          font-size:1em;
+          padding:5px 10px;
+          color:#333;
+        }
+      }
+    }
+  }
   .woocommerce {
     float: left;
     width: 100%;
+    @include media-query--phone {
+      display:block;
+      float:unset;
+      padding:10px;
+      width:auto;
+    }
     .woocommerce-MyAccount-navigation {
       float: left;
       width: 25%;
@@ -1632,8 +1676,9 @@ h1.merchandise {
     padding:10px;//this works well in archive list of products
   }
   @include media-query-size(0px,770px) {
-    width:100%;
+    width:unset;
     display:block;
+    padding:10px;
   }
 }
 .single_product {
@@ -1663,17 +1708,17 @@ h1.merchandise {
   margin: 0 10px;
   vertical-align: top;
   @include media-query-size(0px,770px) {
-    width:100%;
+    width:unset;
     display:block;
   }
   h2 {
     font-size: 1.4vw;
     font-weight: 500;
     color: #313131;
-    border-bottom: 5px solid #fdd207;
+    border-bottom: 5px solid $brand_yellow;
     padding: 0 0 0.3em 0;
     @include media-query-size(0,880px) {
-      font-size:2vw;
+      font-size:1.2em;
     }
     &::before {
       content: "\f0fe";
@@ -1683,7 +1728,7 @@ h1.merchandise {
     }
   }
   .widgetblock {
-    padding: 0.9em;
+    padding: 0 10px 10px 10px;
   }
 }
 #newsletter_signup {
@@ -1717,11 +1762,18 @@ h1.merchandise {
     background: none;
     margin: auto;
     width: 62%;
+    form {
+      padding:0;
+      margin:0;
+    }
     @include media-query-size(0px,820px){
       width:100%;
       display:block;
     }
     .mc-field-group {
+      padding:0;
+      margin:0;
+      width:100%;
       label {
         color: white;
         font-weight: 500;
@@ -1731,13 +1783,7 @@ h1.merchandise {
       display: none;
     }
     .button {
-      background-color: orange;
-      border: none;
-      outline: none;
-      margin: auto;
-      display: table;
-      font-size: 1em;
-      color: #333;
+      @include orangeButton;
     }
     #mce-responses {
       padding: 1em;
@@ -1814,6 +1860,10 @@ footer {
       content:'/';
       color:#ccc;
       padding:0 3px 0 10px;
+      @include media-query--phone {
+        content:'';
+        padding:unset;
+      }
     }
   }
   ul {
@@ -1956,7 +2006,20 @@ a.woocommerce-product-gallery__trigger {
     }
   }
 }
+.checkout-button {
+  @include border-radius(10px);
+  background-color: $brand_orange !important;
+  color:white !important;
+}
 .site-main {
+  width: auto;
+  display:inline-block;
+  @include media-query--phone {
+    width:unset;
+    float:none;
+    display:block;
+    margin: 20px 0 0;
+  }
   .products {
     margin: 1em 0 3em 0;
     li {
@@ -1993,13 +2056,27 @@ a.woocommerce-product-gallery__trigger {
             font-size:1em;
           }
         }
+        &.added_to_cart {
+          @include orangeButton;
+          float:left;
+          width:100%;
+          margin-top:10px;
+          padding:10px 0;
+
+          @include media-query--phone {
+          }
+        }
         .woocommerce-loop-product__title {
-          font-size: 1em;
+          font-size: 16px;
           text-align: center;
           min-height: 75px;
           max-height: 75px;
           text-overflow: ellipsis;
           overflow: hidden;
+          color:#6b6b6b;
+          &:hover {
+            color:$brand_orange;
+          }
           &:after {
             content: "...";
           }
@@ -2011,7 +2088,7 @@ a.woocommerce-product-gallery__trigger {
           display:block;
         }
         .onsale {
-          background: #fdd207;
+          background: $brand_yellow;
           padding: 0.9em;
           border-radius: 71%;
           position: absolute;
@@ -2113,6 +2190,7 @@ nav.woocommerce-breadcrumb {
   @include media-query--phone {
     margin:10px 0;
     padding-bottom:10px;
+    text-align: center;
   }
   a {
     font-size: 15px;
@@ -2197,43 +2275,6 @@ div.wpcf7 {
     height: 160px;
   }
   header {
-    #right {
-      float: left;
-      display: block;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      #top {
-        display:inline-block;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        #one {
-          display:inline-block;
-          width: 100%;
-          margin: 0;
-          padding: 0;
-        }
-        #two {
-          display:inline-block;
-          width: 100%;
-          margin: 0;
-          padding: 0;
-        }
-        #three {
-          display:inline-block;
-          width: 100%;
-          margin: 0;
-          padding: 0;
-        }
-        #four {
-          display:inline-block;
-          width: 100%;
-          margin: 0;
-          padding: 0;
-        }
-      }
-    }
     #logo {
       width: 100%;
       margin: 1.8em 0;
@@ -2311,31 +2352,6 @@ div.wpcf7 {
         width: 30%;
       }
     }
-    #social_share {
-      ul {
-        li {
-          width: 100%;
-          display: block;
-          padding: 0;
-          margin: 0 0 0.3em 0;
-          img {
-            width: auto;
-            height: auto;
-          }
-        }
-      }
-      .share_email_button {
-        width: 110px;
-      }
-      height: auto;
-    }
-  }
-  .widget-area {
-    float: left;
-    display: block;
-    width: 100%;
-    margin: 0;
-    padding: 0;
   }
   img {
     width: 100%;
@@ -2371,9 +2387,6 @@ div.wpcf7 {
       }
     }
   }
-  #top_mobile_directions {
-    display: block;
-  }
   #home_look {
     #right {
       margin: auto;
@@ -2394,74 +2407,6 @@ div.wpcf7 {
 }
 @media (max-width: 767px) {
   header {
-    #top {
-      #logo {
-        float: none;
-        width: auto;
-        margin: 15px auto;
-        text-align: center;
-        max-width: 250px;
-      }
-      float: none;
-      //#right {
-      //  float: none;
-      //  width: 100%;
-      //  overflow: hidden;
-      //  #top {
-      //    float: none;
-      //    width: 100%;
-      //    height: auto;
-      //    padding: 0.625em 0;
-      //    text-align: center;
-      //    margin: 0;
-      //
-      //    //#one {
-      //    //  float: none;
-      //    //  width: 25%;
-      //    //  margin: 0;
-      //    //  display: inline-block;
-      //    //  vertical-align: middle;
-      //    //  margin: 0 -3px;
-      //    //  ul {
-      //    //    display: block;
-      //    //  }
-      //    //}
-      //    //#two {
-      //    //  float: none;
-      //    //  width: 25%;
-      //    //  margin: 0;
-      //    //  display: inline-block;
-      //    //  vertical-align: middle;
-      //    //  margin: 0 -3px;
-      //    //  #phone {
-      //    //    display: block;
-      //    //  }
-      //    //}
-      //    //#three {
-      //    //  float: none;
-      //    //  width: 25%;
-      //    //  margin: 0;
-      //    //  display: inline-block;
-      //    //  vertical-align: middle;
-      //    //  margin: 0 -3px;
-      //    //  #contact {
-      //    //    display: block;
-      //    //  }
-      //    //}
-      //    //#four {
-      //    //  float: none;
-      //    //  width: 25%;
-      //    //  margin: 0;
-      //    //  display: inline-block;
-      //    //  vertical-align: middle;
-      //    //  margin: 0 -3px;
-      //    //  #login {
-      //    //    display: block;
-      //    //  }
-      //    //}
-      //  }
-      //}
-    }
     #bottom {
       #box {
         #menu {
@@ -2489,60 +2434,6 @@ div.wpcf7 {
       }
     }
   }
-  .content-area {
-    .site-main {
-      width: 67.7%;
-      @include media-query-size(0px,770px) {
-        width:100%;
-        display:block;
-      }
-    }
-  }
-  //.widget-area {
-  //  width: 100%;
-  //  box-sizing: border-box;
-  //  margin: 0 0 20px;
-  //  .sidebar_cta {
-  //    float: none;
-  //    width: 100%;
-  //    margin: 0;
-  //  }
-  //  .widgetblock {
-  //    width: 100%;
-  //    box-sizing: border-box;
-  //  }
-  //}
-  .site-main {
-    .products {
-      li {
-        &:nth-child(2n) {
-          margin-right: 0 !important;
-        }
-        float: left;
-        width: 48%;
-        margin: 0 0.7em 16px 0;
-        min-height: inherit;
-        overflow: hidden;
-        a {
-          display: block;
-          .attachment-woocommerce_thumbnail {
-            width: 100%;
-            height: 200px;
-          }
-        }
-      }
-      margin: 1em 0 1em 0;
-      overflow: hidden;
-    }
-  }
-  h1.woocommerce-products-header__title {
-    font-size: 1.4em;
-    padding: 0;
-    margin-bottom: 0;
-    &::before {
-      width: 30px;
-    }
-  }
   footer {
     ul {
       text-align: center;
@@ -2556,21 +2447,11 @@ div.wpcf7 {
   }
 }
 @media (max-width: 673px) {
-  #product_left_sidebar {
-    width: 100%;
-    float: none;
-  }
-  .content-area {
-    .site-main {
-      width: 100%;
-      float: none;
-      margin: 20px 0 0;
-    }
-  }
   .site-main {
     .products {
       li {
         width: 100%;
+        margin:0 0 10px 0;
         a {
           .attachment-woocommerce_thumbnail {
             height: auto;
@@ -2578,53 +2459,6 @@ div.wpcf7 {
           .woocommerce-loop-product__title {
             min-height: inherit;
             max-height: inherit;
-          }
-        }
-      }
-    }
-  }
-  header {
-    #top {
-      #right {
-        #top {
-          //#four {
-          //  width: 100% !important;
-          //  margin: 15px 0 0 !important;
-          //  #login {
-          //    br {
-          //      display: none;
-          //    }
-          //    a {
-          //      display: inline-block;
-          //      margin: 0 8px;
-          //    }
-          //  }
-          //}
-          //#one {
-          //  width: 33%;
-          //}
-          //#two {
-          //  width: 33%;
-          //}
-          //#three {
-          //  width: 33%;
-          //  border-right: none;
-          //}
-        }
-      }
-    }
-  }
-}
-@media (max-width: 500px) {
-  header {
-    #top {
-      #right {
-        #top {
-          .fa {
-            font-size: 1em;
-          }
-          a {
-            font-size: 0.9em !important;
           }
         }
       }
