@@ -34,6 +34,12 @@ ul {
 }
 .home_wrapper {
   max-width:1000px;
+  header #bottom #box #search input[type=search] {
+    width:275px;
+    @include media-query--phone {
+      width:100%;
+    }
+  }
 }
 .internal_wrapper {
   max-width:1230px;
@@ -344,25 +350,24 @@ header {
 }
 .homeCTALeft {
   display: inline-block !important;
-  float: left !important;
-  width: 49.5% !important;
+  vertical-align: top;
+  width: 49% !important;
   margin: 0 !important;
 }
 .homeCTARight {
   display: inline-block !important;
-  float: right !important;
-  width: 49.5% !important;
+  vertical-align: top;
+  width: 49% !important;
   margin: 0 !important;
+  float:right;
 }
 #home_slider {
-  float: left;
-  width: 100%;
+  display:block;
   background: #b30917;
   max-height: 400px;
   height: 400px;
   z-index: 1;
   overflow: hidden;
-  margin: 0 0 1em 0;
   .image_slider {
     float: left;
     width: 1000px;
@@ -517,15 +522,11 @@ header {
   }
 }
 #home_announcements {
-  float: left;
   display: block;
   margin: 0;
-  padding: 1.5em 0 0 0;
-  width: 100%;
+  padding: 5px 10px 0 10px;
   #message {
-    width: 100%;
-    float: left;
-    margin: 0 2em 0 0;
+    display:block;
     img {
       width: 100%;
       height: auto;
@@ -542,12 +543,12 @@ header {
   }
 }
 #home_intouch {
-  float: left;
-  width: 100%;
+  display:block;
   margin: 1em 0 2em 0;
   #left {
-    float: left;
-    width: 48%;
+    display:inline-block;
+    vertical-align: top;
+    width: 49%;
     h1 {
       font-size: 1.5em;
       font-weight: 100;
@@ -614,8 +615,10 @@ header {
     }
   }
   #right {
-    float: right;
-    width: 50%;
+    display:inline-block;
+    vertical-align: top;
+    float:right;
+    width: 49%;
     img {
       width: 100%;
       height: auto;
@@ -1198,7 +1201,6 @@ h1.woocommerce-products-header__title {
   display:inline-block;
   margin: 0 10px 0 0;
   vertical-align: top;
-  float:right;
   @include media-query--phone {
     float: none;
     display: block;
@@ -1421,13 +1423,9 @@ h1.woocommerce-products-header__title {
     }
   }
   .woocommerce {
-    float: left;
-    width: 100%;
+    display:block;
     @include media-query--phone {
-      display:block;
-      float:unset;
       padding:10px;
-      width:auto;
     }
     .woocommerce-MyAccount-navigation {
       float: left;
@@ -1737,6 +1735,10 @@ h1.woocommerce-products-header__title {
   padding: 1em 0;
   margin: 80px 0 2em 0;
   background: $brand_blue;
+  @include media-query--phone {
+    float:none;
+    width:auto;
+  }
   .title {
     font-size: 1.3em;
     line-height: 1.2em;
@@ -1767,7 +1769,8 @@ h1.woocommerce-products-header__title {
       margin:0;
     }
     @include media-query-size(0px,820px){
-      width:100%;
+      width:auto;
+      padding:0 10px;
       display:block;
     }
     .mc-field-group {
@@ -1821,16 +1824,16 @@ h1.woocommerce-products-header__title {
     }
   }
 }
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.5em;
-}
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.5em;
-}
+//.alignleft {
+//  display: inline;
+//  float: left;
+//  margin-right: 1.5em;
+//}
+//.alignright {
+//  display: inline;
+//  float: right;
+//  margin-left: 1.5em;
+//}
 .aligncenter {
   clear: both;
   display: block;
@@ -1851,14 +1854,27 @@ h1.woocommerce-products-header__title {
   }
 }
 footer {
-  float: left;
-  width: 100%;
-  background: #f8f8f8;
-  padding: 1.4em 0 0 0;
+  display:block;
+  background: $brand_blue;
+  padding: 1em 0 0.4em 0;
+  text-align: center;
+  color:white;
+  margin-top:20px;
+  @include media-query--phone {
+    margin-top:20px;
+    padding:1em 0.4em 0.4em 0.4em;
+  }
+  a {
+    color:white;
+    &:hover {
+      color:$brand_yellow;
+      text-decoration: underline;
+    }
+  }
   .menu-footer-menu-container ul li {
     &:not(:last-child):after {
       content:'/';
-      color:#ccc;
+      color:white;
       padding:0 3px 0 10px;
       @include media-query--phone {
         content:'';
@@ -1870,6 +1886,19 @@ footer {
     margin: 0 auto 0.9em auto;
     width: auto;
     display: table;
+    &.footer_social {
+      @include media-query--phone {
+        display:inline-block;
+      }
+    }
+    &#menu-footer-menu li {
+      @include media-query--phone {
+        display:block;
+      }
+    }
+    &.menu li a {
+      font-size:16px;
+    }
     li {
       display: inline-block;
       padding: 0 0.4em 0 0;
@@ -1885,6 +1914,7 @@ footer {
     display:block;
     text-align: center;
     p {
+      line-height:1.8;
       &.copyright {
         font-size:12px;
         font-style: italic;
@@ -2224,6 +2254,10 @@ div.wpcf7 {
       width: 100%;
       margin: 0;
       padding: 0;
+      @include media-query--phone {
+        float:none;
+        width:auto;
+      }
     }
     #right {
       float: left;
@@ -2231,6 +2265,10 @@ div.wpcf7 {
       width: 100%;
       margin: 0;
       padding: 0;
+      @include media-query--phone {
+        float:none;
+        width:auto;
+      }
     }
   }
   #content_full {
@@ -2377,14 +2415,6 @@ div.wpcf7 {
       width: auto;
       margin: auto;
       display: table;
-    }
-    ul {
-      li {
-        float: left;
-        width: 100%;
-        margin: 0 0 0.5em 0;
-        text-align: center;
-      }
     }
   }
   #home_look {

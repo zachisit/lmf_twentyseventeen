@@ -9,7 +9,7 @@
 ?>
 <!-- new server 2/12/2020 -->
 <footer>
-    <ul>
+    <ul class="footer_social">
             <li><a href="https://www.facebook.com/LouisianaMusicFactory" title="<?php echo get_bloginfo( 'name' ); ?> Facebook" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i>
                 </a></li>
             <li><a href="https://twitter.com/LMFnola" title="<?php echo get_bloginfo( 'name' ); ?> Twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>
