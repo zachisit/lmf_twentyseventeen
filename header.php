@@ -45,8 +45,21 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 <div id="wrapper" class="<?php if ( is_home() ) { echo 'home_wrapper';} else { echo 'internal_wrapper'; }?>">
-    <div id="top_mobile_directions">
-        <p><a href="<?php echo get_home_url(); ?>/contact" title="Directions">Directions</a></p>
+    <div id="mobile_header">
+        <ul class="topItems">
+            <li class="search"><a href="<?=home_url('/shop')?>" title="Catalog Search"><i class="fas fa-search"></i></a></li>
+            <li class="cart"><a href="<?=home_url('/cart')?>" title="Your Cart"><i class="fas fa-shopping-cart"></i></a></li>
+            <li class="menu-trigger"><button class="mobileMenuTrigger"><i class="fas fa-bars"></i></button></li>
+        </ul>
+        <div class="mobile-menu">
+            <ul>
+                <li><?=headerUserStatusMessage()?></li>
+                <li><a href="<?=get_home_url('/contact')?>" title="Directions">Directions</a></li>
+                <li><a href="tel:+15045861094">504-586-1094</a></li>
+                <li><a href="<?=get_home_url('/contact#contact')?>" title="Contact <?=get_bloginfo( 'name' )?>">Contact</a></li>
+                <li><?php wp_nav_menu( array( 'theme_location' => 'header_menu', 'menu_id' => 'primary-menu' ) ); ?></li>
+            </ul>
+        </div>
     </div>
 <header>
     <div id="top">
@@ -57,7 +70,7 @@
             <div id="top">
                 <div id="one">
                     <ul>
-                        <li><a href="https://www.facebook.com/LouisianaMusicFactory" title="<?php echo get_bloginfo( 'name' ); ?> Facebook" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i>
+                        <li><a href="https://www.facebook.com/LouisianaMusicFactory" title="<?php echo get_bloginfo( 'name' ); ?> Facebook" target="_blank"><i class="fab fa-facebook-square" aria-hidden="true"></i>
                             </a></li>
                         <li><a href="https://twitter.com/LMFnola" title="<?php echo get_bloginfo( 'name' ); ?> Twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>
                             </a></li>
@@ -71,7 +84,7 @@
                     <div id="phone"><a href="tel:+15045861094">504-586-1094</a></div>
                 </div>
                 <div id="three">
-                    <div id="contact"><a href="<?=get_home_url()?>/contact#contact" title="Contact <?=get_bloginfo( 'name' )?>">Contact</a></div>
+                    <div id="contact"><a href="<?=get_home_url('/contact#contact')?>" title="Contact <?=get_bloginfo( 'name' )?>">Contact</a></div>
                 </div>
                 <div id="four">
                     <div id="login">

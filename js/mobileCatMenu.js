@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
     catMenuHandler();
     window.addEventListener("resize", catMenuHandler);
-    console.log('hi')
 
     function catMenuHandler() {
         if (document.documentElement.clientWidth < 770) {
@@ -23,16 +22,32 @@ document.addEventListener("DOMContentLoaded", function(){
                 if (!document.getElementsByClassName('category-dropdown')[0]) {
                     catMenu.querySelectorAll('li').forEach((item) => {
                         const aLink = item.querySelector('a');
-                        catArray.push({'link':aLink.getAttribute("href"),'title':aLink.innerText})
+                        let current = null;
+                        //
+
+                        if (item.classList.contains('current-cat')) {
+                            console.log('yes')
+                            console.log(item)
+                            current = true;
+                        }
+                        catArray.push({
+                            'link':aLink.getAttribute("href"),
+                            'title':aLink.innerText,
+                            current
+                        })
                     })
 
                     const select = document.createElement('select');
+                    console.log(catArray)
                     select.classList.add('category-dropdown');
 
                     catArray.forEach((value, index) => {
                         const option = document.createElement('option');
                         option.value = value.title;
                         option.text = value.title;
+                        if (value.current) {
+                            option.setAttribute('selected',true);
+                        }
                         option.setAttribute('data-linkto',value.link);
                         select.appendChild(option);
                     })

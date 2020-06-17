@@ -35,10 +35,7 @@ ul {
 .home_wrapper {
   max-width:1000px;
   header #bottom #box #search input[type=search] {
-    width:275px;
-    @include media-query--phone {
-      width:100%;
-    }
+    width:266px;
   }
 }
 .internal_wrapper {
@@ -61,21 +58,6 @@ a {
 }
 .italic {
   font-style: italic;
-}
-#top_mobile_directions {
-  display: none;
-  background: #096cc8;
-  padding:10px 0;
-  @include media-query--phone {
-    display:block;
-  }
-  p {
-    text-align: center;
-    a {
-      color: gold;
-      text-decoration: none;
-    }
-  }
 }
 header {
   margin: 0 0 1em 0;
@@ -111,21 +93,18 @@ header {
         display:block;
       }
       @include media-query--phone {
-        float:none;
+        display:none;
       }
       #top {
         display:block;
         border-top: 3px solid #096cc8;
-        .fa {
+        .fa, .fab {
           font-size: 26px;
         }
         #one {
           display:inline-block;
           border-right: 2px solid #ccc;
           padding: 12px 7px 0 7px;
-          @include media-query--phone {
-            display:none;
-          }
           ul {
             margin: auto;
             display: table;
@@ -143,9 +122,6 @@ header {
           border-right: 2px solid #ccc;
           padding: 12px 7px 0 7px;
           vertical-align: top;
-          @include media-query--phone {
-            display:none !important;
-          }
           #phone {
             &::before {
               content: "\f095";
@@ -166,9 +142,6 @@ header {
           border-right: 0.125em solid #ccc;
           padding: 12px 7px 0 7px;
           vertical-align: top;
-          @include media-query--phone {
-            display:none !important;
-          }
           #contact {
             &:hover {
               &::before {
@@ -190,9 +163,6 @@ header {
           display:inline-block;
           padding: 12px 7px 0 7px;
           vertical-align: top;
-          @include media-query--phone {
-            display:block;
-          }
           #login {
             &:hover {
               &::before {
@@ -257,7 +227,7 @@ header {
               font-size: 1.2em;
               &:hover {
                 text-decoration: none;
-                color: $brand_orange;
+                color: $brand_yellow;
               }
             }
             .sub-menu {
@@ -342,6 +312,7 @@ header {
           @include media-query--phone {
             width:100%;
             margin-top:10px;
+            padding:10px 0;
           }
         }
       }
@@ -690,7 +661,8 @@ header {
 }
 .woocommerce a.button {
   @include media-query--phone {
-    width:100%;
+    //width:100%;
+    width:auto;
     padding:10px 0;
     text-align:center;
   }
@@ -701,27 +673,44 @@ header {
     font-size:1.1em;
   }
 }
+.product-type-simple .onsale {
+  @include media-query--phone {
+    left:-10px !important;
+    top:-20px !important;
+  }
+}
 .product {
+  @include media-query--phone {
+    position:relative //to fix .onsale placement below
+  }
   .related {
     display: none !important;
   }
   .onsale {
+    @include border-radius(71%);
     background: $brand_yellow;
     padding: 0.9em;
-    border-radius: 71%;
+    font-size:14px;
     position: absolute;
     top: -19px;
-    left: 0;
+    left: -14px;
     color: $brand_blue;
     z-index: 99;
+    @include media-query--phone {
+      position:absolute;
+      top:0;
+      left:0;
+    }
   }
   .summary.entry-summary {
     min-height: 290px;
-    float: right;
-    width: 53%;
+    display:inline-block;
+    width: 60%;
+    vertical-align: top;
     @include media-query--phone {
-      width:100%;
-      float:left;
+      width:auto;
+      display:block;
+      float:none;
     }
     h1 {
       margin: 0 0 20px;
@@ -744,19 +733,15 @@ header {
     }
   }
   .woocommerce-product-gallery {
-    float: left;
-    width: 43%;
+    display:inline-block;
     img {
       display: block;
       width: 100%;
       height: auto;
       object-fit: contain;
     }
-
     @include media-query--phone {
-      width:100%;
-      float:left;
-
+      display:block;
       img {
         margin:auto;
         display:block;
@@ -764,11 +749,9 @@ header {
     }
   }
   .woocommerce-tabs {
-    float: left;
     display: block;
     margin: 2em 0 0 0;
     padding: 0.5em 0 0 0;
-    width: 100%;
     .wc-tabs {
       display: none;
     }
@@ -789,8 +772,6 @@ header {
     }
   }
   .up-sells {
-    float: left;
-    width: 100%;
     margin: 2em 0 3em 0;
     border-top: 1px solid #ccc;
     padding: 0.5em 0 0 0;
@@ -804,19 +785,6 @@ header {
   }
   .related {
     display: none;
-  }
-  .onsale {
-    background: $brand_yellow;
-    color: red;
-    font-size: 1.1em;
-    padding: 1.1em;
-    -webkit-border-radius: 2.8em;
-    -moz-border-radius: 2.8em;
-    border-radius: 2.8em;
-    position: relative;
-    margin: -0.625em 0 0 -63px;
-    font-weight: 500;
-    z-index: 1;
   }
 }
 
@@ -1155,7 +1123,7 @@ h1.woocommerce-products-header__title {
     font-family: "FontAwesome";
     font-size: 1em;
     padding:0 10px 0 0;
-    color: $brand_yellow;
+    color: $brand_orange;
   }
   &.book {
     &::before {
@@ -1202,11 +1170,7 @@ h1.woocommerce-products-header__title {
   margin: 0 10px 0 0;
   vertical-align: top;
   @include media-query--phone {
-    float: none;
-    display: block;
-    width: auto;
-    margin: 0;
-    padding: 10px;
+    display:none;
   }
   .widgetblock {
     padding: 1em;
@@ -1396,6 +1360,9 @@ h1.woocommerce-products-header__title {
       }
     }
   }
+  .woocommerce .woocommerce-info .button,  .woocommerce button.button {
+    @include orangeButton;
+  }
   .woocommerce-button, .woocommerce-form-coupon .button {
     @include blueButton;
   }
@@ -1428,12 +1395,27 @@ h1.woocommerce-products-header__title {
       padding:10px;
     }
     .woocommerce-MyAccount-navigation {
-      float: left;
+      display:inline-block;
+      vertical-align: top;
       width: 25%;
+      @include media-query--phone {
+        width:auto;
+        display:block;
+        text-align: center;
+        margin-bottom:20px;
+        padding-bottom:10px;
+        border-bottom:1px solid $brand_blue;
+      }
     }
     .woocommerce-MyAccount-content {
-      float: right;
-      width: 70%;
+      display:inline-block;
+      vertical-align: top;
+      width: 74%;
+      @include media-query--phone {
+        width:auto;
+        display:block;
+        margin-bottom:20px;
+      }
     }
   }
 }
@@ -1787,6 +1769,13 @@ h1.woocommerce-products-header__title {
     }
     .button {
       @include orangeButton;
+      @include media-query--phone {
+        display:block;
+        width:100%;
+        padding:7px 0;
+        font-size:1.3em;
+        height:auto;
+      }
     }
     #mce-responses {
       padding: 1em;
@@ -1894,10 +1883,14 @@ footer {
     &#menu-footer-menu li {
       @include media-query--phone {
         display:block;
+        padding-bottom:8px;
       }
     }
     &.menu li a {
       font-size:16px;
+      @include media-query--phone {
+        font-size:18px;
+      }
     }
     li {
       display: inline-block;
@@ -1905,7 +1898,7 @@ footer {
       &:last-child {
         padding: 0;
       }
-      .fa {
+      .fa, .fab {
         font-size: 1.6em;
       }
     }
@@ -1931,9 +1924,7 @@ footer {
 }
 .woocommerce-product-gallery {
   position: relative;
-  margin-bottom: 3em;
-  float: left;
-  margin: 0 1em 0 0;
+  margin: 0 1em 3em 0;
   figure {
     margin: 0;
   }
@@ -2117,15 +2108,6 @@ a.woocommerce-product-gallery__trigger {
           margin:auto;
           display:block;
         }
-        .onsale {
-          background: $brand_yellow;
-          padding: 0.9em;
-          border-radius: 71%;
-          position: absolute;
-          top: -8px;
-          left: 37px;
-          color: $brand_blue;
-        }
       }
       .add_to_cart_button {
         background: $brand_blue !important;
@@ -2164,8 +2146,6 @@ a.woocommerce-product-gallery__trigger {
     }
   }
   .up-sells {
-    float: left;
-    width: 100%;
     display: block;
     position: relative;
   }
@@ -2174,6 +2154,13 @@ a.woocommerce-product-gallery__trigger {
   float: left;
   width: 100%;
   height: 70px;
+  @include media-query--phone {
+    float:none;
+    display:block;
+    width:auto;
+    height:auto;
+    text-align: center;
+  }
   .page-numbers {
     text-align: center;
     li {
@@ -2329,6 +2316,9 @@ div.wpcf7 {
         #menu {
           float: left;
           width: 100%;
+          @include media-query--phone {
+            display:none;
+          }
           ul {
             li {
               text-align: center;
@@ -2435,47 +2425,47 @@ div.wpcf7 {
     width: 18%;
   }
 }
-@media (max-width: 767px) {
-  header {
-    #bottom {
-      #box {
-        #menu {
-          float: none;
-          width: 100%;
-          margin: 0;
-          position: relative;
-          text-align: center;
-          ul {
-            li {
-              a {
-                font-size: 0.9em;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  #logo {
-    a {
-      display: block;
-      img {
-        max-width: 100%;
-      }
-    }
-  }
-  footer {
-    ul {
-      text-align: center;
-      display: block;
-    }
-    ul#menu-footer-menu {
-      li {
-        padding: 0 0.4em 0.4em 0;
-      }
-    }
-  }
-}
+//@media (max-width: 767px) {
+//  header {
+//    #bottom {
+//      #box {
+//        #menu {
+//          float: none;
+//          width: 100%;
+//          margin: 0;
+//          position: relative;
+//          text-align: center;
+//          ul {
+//            li {
+//              a {
+//                font-size: 0.9em;
+//              }
+//            }
+//          }
+//        }
+//      }
+//    }
+//  }
+//  #logo {
+//    a {
+//      display: block;
+//      img {
+//        max-width: 100%;
+//      }
+//    }
+//  }
+//  footer {
+//    ul {
+//      text-align: center;
+//      display: block;
+//    }
+//    ul#menu-footer-menu {
+//      li {
+//        padding: 0 0.4em 0.4em 0;
+//      }
+//    }
+//  }
+//}
 @media (max-width: 673px) {
   .site-main {
     .products {
@@ -2493,5 +2483,102 @@ div.wpcf7 {
         }
       }
     }
+  }
+}
+#page_content {
+  &.fourOhFour {
+    padding:30px 0;
+    margin-bottom:80px;
+    text-align:center;
+    h1 {
+      color:$brand_blue;
+    }
+    .asset {
+      display:block;
+      width:54%;
+      margin:auto;
+      @include media-query--phone {
+        width:90%;
+      }
+      img {
+        width:100%;
+        height:auto;
+      }
+    }
+  }
+}
+#mobile_header {
+  display:none;
+  background:white;
+  border-bottom:1px solid $brand_blue;
+  padding:10px 0;
+  position:sticky;
+  z-index: 999;
+  top:0;
+  @include media-query--phone {
+    display:block;
+  }
+  .topItems {
+    margin:0;
+    padding:0;
+    text-align: right;
+    li {
+      display:inline-block;
+      padding:0 12px 0 0;
+      font-size:1.2em;
+      button {
+        background:white;
+        border:none;
+        outline:none;
+        cursor:pointer;
+        color:black;
+        font-size:1em;
+      }
+    }
+  }
+  .mobile-menu {
+    @include box-shadow(-3px 22px 39px #737272);
+    @include transition(visibility 0s, opacity 0.3s linear);
+    visibility: hidden;
+    background:$brand_orange;
+    opacity: 0;
+    position:absolute;
+    right:0;
+    width:80%;
+    z-index:999999999;
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+    ul {
+      margin:0;
+      padding:10px;
+      li {
+        display:block;
+        padding:3px 3px 5px 3px;
+        text-align: right;
+        color:white;
+        ul {
+          margin:0;
+          padding:0;
+          &#primary-menu {
+            margin:5px 0 0 0;
+            border-top:1px solid white;
+            padding:10px 0 0 0;
+
+          }
+        }
+        a {
+          color:white;
+          font-size:1.2em;
+        }
+      }
+    }
+  }
+}
+//#wpadminbar {display:none;}
+.home_wrapper #bottom {
+  @include media-query--phone {
+    display:none;
   }
 }

@@ -10,9 +10,13 @@
  */
 get_header(); ?>
 
-<div id="page_content">
+<div id="page_content" class="fourOhFour">
     <h1>404 Page Not Found</h1>
-    <p>This page is not found. Above is a live-action shot of Snooks looking for it. Until then, please <a href="<?php echo get_home_url(); ?>" title="Home">return to the homepage</a>.</p>
+    <div class="asset">
+        <img src="https://cdn.louisianamusicfactory.com/media/wp-content/uploads/2020/06/16104105/SNOOKS-WINDOW-DRESSING-scaled.jpg" alt="Snooks the cat Louisiana Music Factory" />
+    </div>
+    <p>This page is not found. Above is a live-action shot of Snooks looking for it.</p>
+    <p>Until then, please <a href="<?=get_home_url()?>" title="Home">return to the homepage</a>.</p>
 </div>
 
 <?php get_footer(); ?>
