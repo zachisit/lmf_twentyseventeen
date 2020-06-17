@@ -2526,6 +2526,14 @@ div.wpcf7 {
       display:inline-block;
       padding:0 12px 0 0;
       font-size:1.2em;
+      &.cart .cartTotal {
+        @include border-radius(5px);
+        background:$brand_orange;
+        color:white;
+        padding:3px 7px;
+        font-size:14px;
+        vertical-align: top;
+      }
       button {
         background:white;
         border:none;

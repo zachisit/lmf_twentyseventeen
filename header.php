@@ -44,11 +44,14 @@
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
+<?php
+$cartTotal = WC()->cart->get_cart_contents_count();
+?>
 <div id="wrapper" class="<?php if ( is_home() ) { echo 'home_wrapper';} else { echo 'internal_wrapper'; }?>">
     <div id="mobile_header">
         <ul class="topItems">
             <li class="search"><a href="<?=home_url('/shop')?>" title="Catalog Search"><i class="fas fa-search"></i></a></li>
-            <li class="cart"><a href="<?=home_url('/cart')?>" title="Your Cart"><i class="fas fa-shopping-cart"></i></a></li>
+            <li class="cart"><a href="<?=home_url('/cart')?>" title="Your Cart"><i class="fas fa-shopping-cart"></i><?=($cartTotal>0)?'<span class="cartTotal">'.$cartTotal.'</span>':''?></a></li>
             <li class="menu-trigger"><button class="mobileMenuTrigger"><i class="fas fa-bars"></i></button></li>
         </ul>
         <div class="mobile-menu">
