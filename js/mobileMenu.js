@@ -17,8 +17,10 @@ document.addEventListener("DOMContentLoaded", function(){
     function menuHandler() {
         if (mobileMenu.classList.contains('active')) {
             mobileMenu.classList.remove('active');
+            menuTrigger.classList.remove('active');
         } else {
             mobileMenu.classList.add('active');
+            menuTrigger.classList.add('active');
         }
     }
 });

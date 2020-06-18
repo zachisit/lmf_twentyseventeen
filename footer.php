@@ -22,7 +22,7 @@
     <?php wp_nav_menu( [ 'theme_location' => 'footer_menu' ] ); ?>
     <div id="bottom">
         <p class="copyright">&copy; 2012-<?=date("Y")?> <?=get_bloginfo( 'name' )?> - v<?=THEME_VERSION?></p>
-        <p class="hosting-and-version">Hosting provided by <a href="http://www.handsomecathosting.com" title="Handsome Cat Hosting" target="_blank">Handsome Cat Hosting</a> - Made in the USA <img src="<?=get_template_directory_uri()?>/images/usa_flag.jpg" alt="USA flag" /></p>
+        <p class="hosting-and-version">Hosting provided by <a href="http://www.handsomecathosting.com" title="Handsome Cat Hosting" target="_blank">Handsome Cat Hosting</a> - Made in the USA <img src="https://cdn.louisianamusicfactory.com/site-assets/usa_flag.jpg" alt="USA flag" /></p>
     </div>
 </footer>
 </div><!--/wrapper-->

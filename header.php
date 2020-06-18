@@ -17,9 +17,7 @@
     <title><?php if ( !is_front_page() ) { wp_title( '|', true, 'right' ); } bloginfo( 'name' ); ?></title>
     <!--mailchimp-->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
-        #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-    </style>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -27,6 +25,25 @@
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-5CPS5KN');</script>
     <!-- End Google Tag Manager -->
+
+    <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="https://cdn.louisianamusicfactory.com/site-assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#f2730d">
+    <meta name="msapplication-TileImage" content="https://cdn.louisianamusicfactory.com/site-assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#f2730d">
+
     <?php wp_head(); ?>
 </head>
 <!--<body --><?php //body_class(); ?><!---->
@@ -67,7 +84,7 @@ $cartTotal = WC()->cart->get_cart_contents_count();
 <header>
     <div id="top">
         <div id="logo">
-            <a href="<?php echo get_home_url(); ?>" title="Home"><img src="<?php echo get_template_directory_uri(); ?>/images/logo-twentyseventeen.png" alt="<?php echo get_bloginfo( 'name' ); ?> - Home" /></a>
+            <a href="<?=get_home_url()?>" title="Home"><img src="https://cdn.louisianamusicfactory.com/site-assets/logo-twentyseventeen.png" alt="<?=get_bloginfo( 'name' )?> - Home" /></a>
         </div>
         <div id="right">
             <div id="top">

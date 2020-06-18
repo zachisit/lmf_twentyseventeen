@@ -17,7 +17,7 @@
   transition: $args;
 }
 @mixin media-query--phone() {
-  @media only screen and (min-width:0px) and (max-width:550px) {
+  @media only screen and (min-width:0px) and (max-width:770px) {
     @content;
   }
 }

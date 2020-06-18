@@ -17,7 +17,12 @@ document.addEventListener("DOMContentLoaded", function(){
     window.addEventListener("resize", catMenuHandler);
 
     function catMenuHandler() {
-        if (document.documentElement.clientWidth < 770) {
+        /**
+         * our mobile menu width in css is 770px
+         * but this client width is about 15px away from true css width apparently
+         * so this is where this amount comes from
+         */
+        if (document.documentElement.clientWidth < 755) {
             if (document.getElementsByClassName('product-categories')[0]) {
                 if (!document.getElementsByClassName('category-dropdown')[0]) {
                     catMenu.querySelectorAll('li').forEach((item) => {
@@ -26,8 +31,6 @@ document.addEventListener("DOMContentLoaded", function(){
                         //
 
                         if (item.classList.contains('current-cat')) {
-                            console.log('yes')
-                            console.log(item)
                             current = true;
                         }
                         catArray.push({
@@ -38,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function(){
                     })
 
                     const select = document.createElement('select');
-                    console.log(catArray)
                     select.classList.add('category-dropdown');
 
                     catArray.forEach((value, index) => {
@@ -71,5 +73,4 @@ document.addEventListener("DOMContentLoaded", function(){
             window.location.replace(event.target.options[event.target.selectedIndex].dataset.linkto);
         }
     }
-
 });
