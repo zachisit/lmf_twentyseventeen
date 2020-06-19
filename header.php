@@ -17,9 +17,7 @@
     <title><?php if ( !is_front_page() ) { wp_title( '|', true, 'right' ); } bloginfo( 'name' ); ?></title>
     <!--mailchimp-->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
-        #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-    </style>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -27,9 +25,29 @@
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-5CPS5KN');</script>
     <!-- End Google Tag Manager -->
+
+    <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="https://cdn.louisianamusicfactory.com/site-assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#3385c3">
+    <meta name="msapplication-TileImage" content="https://cdn.louisianamusicfactory.com/site-assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#3385c3">
+
     <?php wp_head(); ?>
 </head>
-<body>
+<!--<body --><?php //body_class(); ?><!---->
+<body class="<?=lmf_body_class()?>">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CPS5KN"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -43,20 +61,36 @@
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
+<?php
+$cartTotal = WC()->cart->get_cart_contents_count();
+?>
 <div id="wrapper" class="<?php if ( is_home() ) { echo 'home_wrapper';} else { echo 'internal_wrapper'; }?>">
-    <div id="top_mobile_directions">
-        <p><a href="<?php echo get_home_url(); ?>/contact" title="Directions">Directions</a></p>
+    <div id="mobile_header">
+        <ul class="topItems">
+            <li class="search"><a href="<?=home_url('/shop')?>" title="Catalog Search"><i class="fas fa-search"></i></a></li>
+            <li class="cart"><a href="<?=home_url('/cart')?>" title="Your Cart"><i class="fas fa-shopping-cart"></i><?=($cartTotal>0)?'<span class="cartTotal">'.$cartTotal.'</span>':''?></a></li>
+            <li class="menu-trigger"><button class="mobileMenuTrigger"><i class="fas fa-bars"></i></button></li>
+        </ul>
+        <div class="mobile-menu">
+            <ul>
+                <li><?=headerUserStatusMessage()?></li>
+                <li><a href="<?=home_url('/contact')?>" title="Directions">Directions</a></li>
+                <li><a href="tel:+15045861094">504-586-1094</a></li>
+                <li><a href="<?=home_url('/contact-louisiana-music-factory/#contactforrm')?>" title="Contact <?=get_bloginfo( 'name' )?>">Contact</a></li>
+                <li><?php wp_nav_menu( array( 'theme_location' => 'header_menu', 'menu_id' => 'primary-menu' ) ); ?></li>
+            </ul>
+        </div>
     </div>
 <header>
     <div id="top">
         <div id="logo">
-            <a href="<?php echo get_home_url(); ?>" title="Home"><img src="<?php echo get_template_directory_uri(); ?>/images/logo-twentyseventeen.png" alt="<?php echo get_bloginfo( 'name' ); ?> - Home" /></a>
+            <a href="<?=home_url()?>" title="Home"><img src="https://cdn.louisianamusicfactory.com/site-assets/logo-twentyseventeen.png" alt="<?=get_bloginfo( 'name' )?> - Home" /></a>
         </div>
         <div id="right">
             <div id="top">
                 <div id="one">
                     <ul>
-                        <li><a href="https://www.facebook.com/LouisianaMusicFactory" title="<?php echo get_bloginfo( 'name' ); ?> Facebook" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i>
+                        <li><a href="https://www.facebook.com/LouisianaMusicFactory" title="<?php echo get_bloginfo( 'name' ); ?> Facebook" target="_blank"><i class="fab fa-facebook-square" aria-hidden="true"></i>
                             </a></li>
                         <li><a href="https://twitter.com/LMFnola" title="<?php echo get_bloginfo( 'name' ); ?> Twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>
                             </a></li>
@@ -70,20 +104,11 @@
                     <div id="phone"><a href="tel:+15045861094">504-586-1094</a></div>
                 </div>
                 <div id="three">
-                    <div id="contact"><a href="<?php echo get_home_url(); ?>/contact#contact" title="Contact <?php echo get_bloginfo( 'name' ); ?>">Contact Us</a></div>
+                    <div id="contact"><a href="<?=get_home_url('/contact#contact')?>" title="Contact <?=get_bloginfo( 'name' )?>">Contact</a></div>
                 </div>
                 <div id="four">
                     <div id="login">
-                        <?php
-                        if ( is_user_logged_in() ) {
-                            $current_user = wp_get_current_user();
-
-                            echo 'Welcome '. $current_user->user_login .'<br />';
-                            echo '<a href="'. get_home_url() .'/my-account-2/" title="My Account">My Account</a> | <a href="'. wp_logout_url( 'http://multisiteparent.com' ) .'">Logout</a>';
-                        } else {
-                            echo'<a href="' .get_home_url() .'/my-account-2/" title="' .get_bloginfo( 'name' ) .' Customer Login">Customer Login</a>';
-                        }
-                        ?>
+                        <?=headerUserStatusMessage()?>
                     </div>
                 </div>
             </div>

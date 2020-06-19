@@ -50,3 +50,11 @@ function new_loop_shop_per_page( $cols ) {
 
 add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
 
+
+function lmf_body_class(){
+    $class = null;
+    if (is_product()){
+        $class = 'single_product';
+    }
+    return $class;
+}

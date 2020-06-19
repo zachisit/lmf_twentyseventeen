@@ -1,5 +1,5 @@
 <div id="newsletter_signup">
-    <img id="newsletter_header" src="<?php echo get_template_directory_uri(); ?>/images/newsletter_header.png" alt="<?php echo get_bloginfo( 'name' ); ?> - Newsletter" />
+    <img id="newsletter_header" src="https://cdn.louisianamusicfactory.com/site-assets/newsletter_header.png" alt="<?php echo get_bloginfo( 'name' ); ?> - Newsletter" />
     <div class="title">Stay up to date with latest news and concert information, latest sale items available only to newsletter subscribers, and more!</div>
     <!-- Begin MailChimp Signup Form -->
     <div id="mc_embed_signup">
