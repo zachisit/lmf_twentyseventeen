@@ -40,9 +40,9 @@
     <link rel="icon" type="image/png" sizes="96x96" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/favicon-16x16.png">
     <link rel="manifest" href="https://cdn.louisianamusicfactory.com/site-assets/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#f2730d">
+    <meta name="msapplication-TileColor" content="#3385c3">
     <meta name="msapplication-TileImage" content="https://cdn.louisianamusicfactory.com/site-assets/favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#f2730d">
+    <meta name="theme-color" content="#3385c3">
 
     <?php wp_head(); ?>
 </head>
@@ -74,9 +74,9 @@ $cartTotal = WC()->cart->get_cart_contents_count();
         <div class="mobile-menu">
             <ul>
                 <li><?=headerUserStatusMessage()?></li>
-                <li><a href="<?=get_home_url('/contact')?>" title="Directions">Directions</a></li>
+                <li><a href="<?=home_url('/contact')?>" title="Directions">Directions</a></li>
                 <li><a href="tel:+15045861094">504-586-1094</a></li>
-                <li><a href="<?=get_home_url('/contact#contact')?>" title="Contact <?=get_bloginfo( 'name' )?>">Contact</a></li>
+                <li><a href="<?=home_url('/contact-louisiana-music-factory/#contactforrm')?>" title="Contact <?=get_bloginfo( 'name' )?>">Contact</a></li>
                 <li><?php wp_nav_menu( array( 'theme_location' => 'header_menu', 'menu_id' => 'primary-menu' ) ); ?></li>
             </ul>
         </div>
@@ -84,7 +84,7 @@ $cartTotal = WC()->cart->get_cart_contents_count();
 <header>
     <div id="top">
         <div id="logo">
-            <a href="<?=get_home_url()?>" title="Home"><img src="https://cdn.louisianamusicfactory.com/site-assets/logo-twentyseventeen.png" alt="<?=get_bloginfo( 'name' )?> - Home" /></a>
+            <a href="<?=home_url()?>" title="Home"><img src="https://cdn.louisianamusicfactory.com/site-assets/logo-twentyseventeen.png" alt="<?=get_bloginfo( 'name' )?> - Home" /></a>
         </div>
         <div id="right">
             <div id="top">

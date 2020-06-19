@@ -22,7 +22,7 @@ ul {
 }
 #wrapper {
   background: white;
-  margin: 5px auto;
+  margin: auto;
   box-shadow: 0 0 0.188em rgba(0, 0, 0, 0.1);
   display: block;
   padding:0;
@@ -73,7 +73,7 @@ header {
     #logo {
       display:inline-block;
       width: 307px;
-      margin: 0 0 0 0.875em;
+      margin: 5px 0 0 0.875em;
       @include media-query-size(0px,950px){
         display:block;
         margin:0 auto 10px auto;
@@ -97,7 +97,7 @@ header {
       }
       #top {
         display:block;
-        border-top: 3px solid #096cc8;
+        border-top: 3px solid $brand_blue;
         @include media-query-size(951px,1115px) {
           font-size:17px;
           .fa,.fab {
@@ -138,7 +138,7 @@ header {
             }
             &:hover {
               &::before {
-                color: #096cc8;
+                color: $brand_blue;
               }
             }
           }
@@ -151,7 +151,7 @@ header {
           #contact {
             &:hover {
               &::before {
-                color: #096cc8;
+                color: $brand_blue;
               }
             }
             display: table;
@@ -172,7 +172,7 @@ header {
           #login {
             &:hover {
               &::before {
-                color: #096cc8;
+                color: $brand_blue;
               }
             }
             margin: auto;
@@ -242,7 +242,7 @@ header {
               position: absolute;
               top: 100%;
               left: 0;
-              background: #096cc8;
+              background: $brand_blue;
               border: 1px solid #ccc;
               padding: 0;
               width: 200px;
@@ -346,12 +346,24 @@ header {
   height: 400px;
   z-index: 1;
   overflow: hidden;
+  @include media-query--phone {
+    height:auto;
+  }
   .image_slider {
     float: left;
     width: 1000px;
     height: auto;
     max-height: 400px;
     margin: 0;
+    @include media-query--phone {
+      float: left;
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      max-height: none;
+      height: auto;
+    }
     .asset {
       height: auto;
       position: relative;
@@ -371,6 +383,11 @@ header {
         font-weight: 100;
         font-family: Arial, Arial, Tahoma, sans-serif;
         background: rgba(253, 210, 7, 0.7);
+        @include media-query--phone {
+          font-size:0.9em;
+          padding:5px 0;
+          bottom:0;
+        }
       }
       h2 {
         color: white;
@@ -388,6 +405,11 @@ header {
         font-weight: 100;
         font-family: Arial, Arial, Tahoma, sans-serif;
         background: rgba(179, 9, 23, 0.7);
+        @include media-query--phone {
+          font-size:0.9em;
+          padding:5px 0;
+          bottom:0;
+        }
       }
       img {
         height: auto;
@@ -448,7 +470,7 @@ header {
       float: right;
       width: 50%;
       height: 245px;
-      background: #096cc8;
+      background: $brand_blue;
     }
   }
   h2 {
@@ -520,13 +542,31 @@ header {
     }
   }
 }
+.woocommerce-error {
+  background:$pastel_red;
+  color:white;
+  border-top:none;
+  li {
+    margin-bottom:8px;
+  }
+  &:before {
+    color:white;
+  }
+}
 #home_intouch {
   display:block;
   margin: 1em 0 2em 0;
+  @include media-query--phone {
+    margin-bottom:0;
+  }
   #left {
     display:inline-block;
     vertical-align: top;
     width: 49%;
+    @include media-query--phone {
+      width:auto;
+      display: block;
+    }
     h1 {
       font-size: 1.5em;
       font-weight: 100;
@@ -543,34 +583,41 @@ header {
       font-size: 1.3em;
       margin: 0 0 0 1em;
       font-weight: 100;
+      @include media-query--phone {
+        margin-left:8px;
+      }
     }
     .datum {
       font-size: 1em;
       margin: 0.3em 0 1em 1em;
+      position:relative;
+      @include media-query--phone {
+        margin-left:8px;
+      }
     }
     .clock {
       &::before {
         content: "\f017";
         font-family: "FontAwesome";
         font-size: 1.40em;
-        padding: 0.5em 0.9em 0 .5em;
+        padding: 0.5em 0.5em 0 .5em;
         color: $brand_blue;
       }
     }
     .address {
-      p {
-        padding: 0 0 0 3.1em;
-        margin: 0;
-        &:nth-child(1) {
-          margin: -18px 0 0 0;
-        }
+      .address-container {
+        display:inline-block;
+        margin-left:52px;
       }
       &::before {
         content: "\f041";
         font-family: "FontAwesome";
         font-size: 1.40em;
-        padding: 0.5em 0.8em 0 .5em;
+        padding: 0 0 0 .5em;
         color: $brand_blue;
+        position:absolute;
+        top:0;
+        left:0;
       }
     }
     .phone {
@@ -578,7 +625,7 @@ header {
         content: "\f095";
         font-family: "FontAwesome";
         font-size: 1.40em;
-        padding: 0.5em 0.9em 0 .5em;
+        padding: 0.5em 0.5em 0 .5em;
         color: $brand_blue;
       }
     }
@@ -587,7 +634,7 @@ header {
         content: "\f003";
         font-family: "FontAwesome";
         font-size: 1.40em;
-        padding: 0.5em 0.7em 0 .5em;
+        padding: 0.5em 0.5em 0 .5em;
         color: $brand_blue;
       }
     }
@@ -597,6 +644,11 @@ header {
     vertical-align: top;
     float:right;
     width: 49%;
+    @include media-query--phone {
+      width:auto;
+      display: block;
+      float:unset;
+    }
     img {
       width: 100%;
       height: auto;
@@ -606,6 +658,11 @@ header {
       width: 100%;
       margin: 0.625em 0;
       text-align: center;
+      @include media-query--phone {
+        float:unset;
+        display:block;
+        width:auto;
+      }
       &::before {
         padding: 0 0.5em 0 0;
         content: "\f041";
@@ -667,9 +724,9 @@ header {
   }
 }
 .woocommerce a.button {
+  @include blueButton;
   @include media-query--phone {
-    //width:100%;
-    width:auto;
+    width:100%;
     padding:10px 0;
     text-align:center;
   }
@@ -812,7 +869,7 @@ header {
   }
 
   .woocommerce-products-header {
-    background: #096cc8;
+    background: $brand_blue;
     border-bottom: 0.375em solid $brand_blue;
     color: white;
     margin: 0 0 0.625em 0;
@@ -874,7 +931,7 @@ header {
         -moz-border-radius: 0.5em;
         border-radius: 0.5em;
         &:hover {
-          background: #096cc8;
+          background: $brand_blue;
           text-decoration: none;
           transition: background 0.9s ease;
           &::after {
@@ -907,7 +964,7 @@ header {
         -moz-border-radius: 0.5em;
         border-radius: 0.5em;
         &:hover {
-          background: #096cc8;
+          background: $brand_blue;
           text-decoration: none;
           transition: background 0.9s ease;
           &::after {
@@ -994,7 +1051,7 @@ header {
       content: "\f041";
       font-family: "FontAwesome";
       font-size: 1em;
-      color: #096cc8;
+      color: $brand_blue;
       margin: 0 0.5em 0 1em;
     }
   }
@@ -1004,7 +1061,7 @@ header {
 }
 .woocommerce-message {
   background: $brand_blue;
-  border-top-color: #1CAA3C;
+  border-top-color: $brand_yellow;
   display: block;
   color: white;
   @include media-query--phone {
@@ -1019,7 +1076,7 @@ header {
   &::before {
     content: "\f06a";
     font-family: "FontAwesome";
-    color: white;
+    color: $brand_yellow;
     font-size: 2em;
     position: absolute;
     top: 11px;
@@ -1090,7 +1147,7 @@ h3 {
 }
 
 .international-shipping-alert-container {
-  background:#096cc8;
+  background:$brand_blue;
   padding:20px;
   text-align:center;
   display:block;
@@ -1327,12 +1384,14 @@ h1.woocommerce-products-header__title {
 }
 #content_left {
   padding: 0 1em;
+  min-height:70vh;
   @include media-query--phone {
     padding:unset;
+    min-height:unset;
   }
   #header {
     display:block;
-    background: #096cc8;
+    background: $brand_blue;
     border-bottom: 0.375em solid $brand_blue;
     padding: 1.5em 0;
     margin: 0 0 1em 0;
@@ -1341,7 +1400,7 @@ h1.woocommerce-products-header__title {
     }
     h2 {
       font-size: 1.4em;
-      color: white;
+      color: $brand_yellow;
       font-weight: 100;
       margin: 0 0 0 1em;
       @include media-query--phone {
@@ -1361,7 +1420,7 @@ h1.woocommerce-products-header__title {
         content: "\f041";
         font-family: "FontAwesome";
         font-size: 1em;
-        color: #096cc8;
+        color: $brand_blue;
         margin: 0 0.5em 0 1em;
       }
     }
@@ -1384,10 +1443,20 @@ h1.woocommerce-products-header__title {
   .woocommerce-button, .woocommerce-form-coupon .button {
     @include blueButton;
   }
-  .woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
-    font-size:1em;
-    padding:5px 10px;
-    color:#333;
+  .woocommerce form {
+    .form-row input.input-text, .form-row textarea {
+      font-size:1em;
+      padding:5px 10px;
+      color:#333;
+    }
+    .woocommerce-invalid {
+      label {
+        color:$pastel_red;
+      }
+      input.input-text, select {
+        border-color:$pastel_red;
+      }
+    }
   }
   .woocommerce-checkout {
     #place_order {
@@ -1411,6 +1480,14 @@ h1.woocommerce-products-header__title {
     display:block;
     @include media-query--phone {
       padding:10px;
+    }
+    .woocommerce-info:before {
+      content: "\f059";
+      font-family: "FontAwesome";
+      font-size: 1.2em;
+      color: $brand_blue;
+      padding-right:10px;
+      top:inherit;
     }
     .woocommerce-MyAccount-navigation {
       display:inline-block;
@@ -1438,10 +1515,15 @@ h1.woocommerce-products-header__title {
   }
 }
 #content_full {
+  display:block;
+  padding:1em 0;
+  @include media-query--phone {
+    margin-bottom:3em;
+  }
   #header {
     float: left;
     width: 100%;
-    background: #096cc8;
+    background: $brand_blue;
     border-bottom: 0.375em solid $brand_blue;
     padding: 1.5em 0;
     margin: 0 0 1em 0;
@@ -1464,7 +1546,7 @@ h1.woocommerce-products-header__title {
         content: "\f041";
         font-family: "FontAwesome";
         font-size: 1em;
-        color: #096cc8;
+        color: $brand_blue;
         margin: 0 0.5em 0 1em;
       }
     }
@@ -1472,9 +1554,6 @@ h1.woocommerce-products-header__title {
   #newsletter_signup {
     margin: 2em 0;
   }
-  width: 100%;
-  display: block;
-  float: left;
   #top_quote {
     background: #F8F8F8;
     width: 95%;
@@ -1493,7 +1572,7 @@ h1.woocommerce-products-header__title {
       float: left;
       margin: 0.6em;
       font-size: 2.5em;
-      color: #096cc8;
+      color: $brand_blue;
     }
   }
   #map_contact {
@@ -1639,7 +1718,7 @@ h1.woocommerce-products-header__title {
       }
       .gform_footer {
         input[type=submit] {
-          background: #096cc8;
+          background: $brand_blue;
           color: white;
           text-align: center;
           padding: 0.5em 1em;
@@ -2293,30 +2372,6 @@ div.wpcf7 {
     margin: 0;
     padding: 0;
   }
-  #home_intouch {
-    #left {
-      float: left;
-      display: block;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      @include media-query--phone {
-        float:none;
-        width:auto;
-      }
-    }
-    #right {
-      float: left;
-      display: block;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      @include media-query--phone {
-        float:none;
-        width:auto;
-      }
-    }
-  }
   #content_full {
     #map_contact {
       #right {
@@ -2334,29 +2389,6 @@ div.wpcf7 {
         padding: 0;
       }
     }
-  }
-  #home_slider {
-    .image_slider {
-      float: left;
-      display: block;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      max-height: none;
-      height: auto;
-      img {
-        width: 100%;
-        height: auto;
-      }
-      .asset {
-        h1 {
-          font-size: 1.2em;
-          bottom: 0;
-        }
-      }
-    }
-    margin: 0;
-    height: 160px;
   }
   header {
     #logo {
@@ -2500,7 +2532,7 @@ div.wpcf7 {
 #mobile_header {
   display:none;
   background:white;
-  border-bottom:1px solid $brand_blue;
+  border-bottom:1px solid #d2d2d2;
   padding:10px 0;
   position:sticky;
   z-index: 999;
@@ -2578,7 +2610,7 @@ div.wpcf7 {
   }
 }
 //#wpadminbar {display:none;}
-.home_wrapper #bottom {
+.home_wrapper header #bottom {
   @include media-query--phone {
     display:none;
   }
