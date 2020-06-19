@@ -6,11 +6,12 @@
  *
  * @package tater
  */
-define('THEME_VERSION','4.21');
+define('THEME_VERSION','4.23');
 require_once "cpts/announcements.php";
 require_once "cpts/homepage_slider.php";
 require_once "woo/woo_specifics.php";
 require_once 'woo/international_shipping_alert_product_settings.php';
+
 
 /*************************************************
  * disable xml logins

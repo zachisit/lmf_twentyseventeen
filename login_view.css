@@ -11,7 +11,7 @@ body {
     color:white !important;
 }
 body.login div#login h1 a {
-    background:url(images/logo-twentyseventeen.png) no-repeat;
+    background:url('https://cdn.louisianamusicfactory.com/site-assets/logo-twentyseventeen.png') no-repeat;
     background-size:319px;
     height:89px;
     width:322px;
