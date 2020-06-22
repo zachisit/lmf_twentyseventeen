@@ -18,11 +18,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function catMenuHandler() {
         /**
-         * our mobile menu width in css is 770px
-         * but this client width is about 15px away from true css width apparently
-         * so this is where this amount comes from
+         * if iPad or less
          */
-        if (document.documentElement.clientWidth < 755) {
+        if (document.documentElement.clientWidth < 770) {
             if (document.getElementsByClassName('product-categories')[0]) {
                 if (!document.getElementsByClassName('category-dropdown')[0]) {
                     catMenu.querySelectorAll('li').forEach((item) => {
@@ -58,12 +56,13 @@ document.addEventListener("DOMContentLoaded", function(){
 
                     catMenu.style.display = 'none';
                 }
-
             }
         } else {
-            catMenu.style.display = 'block';
-            if (document.getElementsByClassName('category-dropdown')[0]) {
-                document.getElementsByClassName('category-dropdown')[0].remove();
+            if (catMenu && catMenu.style.display === 'none') {
+                catMenu.style.display = 'block';
+                if (document.getElementsByClassName('category-dropdown')[0]) {
+                    document.getElementsByClassName('category-dropdown')[0].remove();
+                }
             }
         }
     }

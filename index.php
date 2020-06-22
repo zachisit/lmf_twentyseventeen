@@ -27,7 +27,7 @@
         <div id="left">
             <h1>Get In Touch</h1>
             <div class="title">Store Hours</div>
-            <div class="datum clock">10am - 7pm Daily</div>
+            <div class="datum clock"><?=(get_option('shop_hours_option'))?get_option('shop_hours_option'):'10am - 7pm Daily'?></div>
             <div class="title">Phone Number</div>
             <div class="datum phone"><a href="tel:+15045861094">504-586-1094</a></div>
             <div class="title">Our Address:</div>

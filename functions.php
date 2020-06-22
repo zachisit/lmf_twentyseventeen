@@ -6,11 +6,12 @@
  *
  * @package tater
  */
-define('THEME_VERSION','4.23');
+define('THEME_VERSION','4.26');
 require_once "cpts/announcements.php";
 require_once "cpts/homepage_slider.php";
 require_once "woo/woo_specifics.php";
 require_once 'woo/international_shipping_alert_product_settings.php';
+require_once "theme-customization.php";
 
 
 /*************************************************
@@ -94,6 +95,12 @@ function lmf_theme_scripts() {
         wp_enqueue_script( 'checkout_international_alert', get_template_directory_uri() . '/js/checkout_international_alert.js', THEME_VERSION, true );
         wp_localize_script( 'checkout_international_alert', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
         wp_enqueue_script( 'checkout_international_alert' );
+    }
+
+    if (is_product()) {
+        wp_register_script( "back_to_search_results", get_template_directory_uri() . '/js/backToSearchResults.js', array('jquery') );
+        wp_enqueue_script( 'back_to_search_results', get_template_directory_uri() . '/js/backToSearchResults.js', THEME_VERSION, true );
+
     }
 }
 add_action( 'wp_enqueue_scripts', 'lmf_theme_scripts' );
