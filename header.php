@@ -74,9 +74,9 @@ $cartTotal = WC()->cart->get_cart_contents_count();
         <div class="mobile-menu">
             <ul>
                 <li><?=headerUserStatusMessage()?></li>
-                <li><a href="<?=home_url('/contact')?>" title="Directions">Directions</a></li>
+                <li><a href="<?=home_url('/directions')?>" title="Directions">Directions</a></li>
                 <li><a href="tel:+15045861094">504-586-1094</a></li>
-                <li><a href="<?=home_url('/contact-louisiana-music-factory/#contactforrm')?>" title="Contact <?=get_bloginfo( 'name' )?>">Contact</a></li>
+                <li><a href="<?=home_url('/contact')?>" title="Contact <?=get_bloginfo( 'name' )?>">Contact</a></li>
                 <li><?php wp_nav_menu( array( 'theme_location' => 'header_menu', 'menu_id' => 'primary-menu' ) ); ?></li>
             </ul>
         </div>
@@ -104,7 +104,7 @@ $cartTotal = WC()->cart->get_cart_contents_count();
                     <div id="phone"><a href="tel:+15045861094">504-586-1094</a></div>
                 </div>
                 <div id="three">
-                    <div id="contact"><a href="<?=get_home_url('/contact#contact')?>" title="Contact <?=get_bloginfo( 'name' )?>">Contact</a></div>
+                    <div id="contact"><a href="<?=home_url('/contact')?>" title="Contact <?=get_bloginfo( 'name' )?>">Contact</a></div>
                 </div>
                 <div id="four">
                     <div id="login">

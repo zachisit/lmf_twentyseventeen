@@ -341,7 +341,7 @@ header {
 }
 #home_slider {
   display:block;
-  background: #b30917;
+  background: $brand_blue;
   max-height: 400px;
   height: 400px;
   z-index: 1;
@@ -1300,7 +1300,7 @@ h1.woocommerce-products-header__title {
           margin-bottom:5px;
           color:white;
           &:hover {
-            color:$brand_blue;
+            background:$brand_blue;
           }
           &::after {
             content: "\f0da";
@@ -1314,7 +1314,7 @@ h1.woocommerce-products-header__title {
           background: $brand_blue;
           color: white;
           &:hover {
-            color:white;
+            background:$brand_orange;
           }
           &::after {
             content: "\f0da";
@@ -1779,6 +1779,18 @@ h1.woocommerce-products-header__title {
       padding:10px;
       @include media-query--phone {
         padding:unset;
+      }
+      .backToSearch {
+        display:block;
+        margin-bottom:15px;
+        font-size:15px;
+        color:$brand_orange;
+        &:before {
+          content: "\f0a5";
+          font-family: "FontAwesome";
+          padding: 0 0.5em 0 0;
+          font-size: 0.9em;
+        }
       }
     }
   }
