@@ -8,10 +8,7 @@ function theme_option_page() {
         <h1>Custom Theme Options Page</h1>
         <form method="post" action="options.php">
             <?php
-            // display settings field on theme-option page
             settings_fields("theme-options-grp");
-
-            // display all sections for theme-options page
             do_settings_sections("theme-options");
             submit_button();
             ?>
@@ -45,9 +42,13 @@ function lmf_theme_settings(){
 
     add_settings_field('first_header_headline', 'First Header Headline Message', 'display_first_headline_option_field', 'theme-options', 'second_section');
     register_setting( 'theme-options-grp', 'first_header_headline');
+    add_settings_field('first_header_headline_background_color', 'First Header Headline Background Color', 'display_first_headline_background_color_option_field', 'theme-options', 'second_section');
+    register_setting( 'theme-options-grp', 'first_header_headline_background_color');
 
     add_settings_field('second_header_headline', 'Second Header Headline Message', 'display_second_headline_option_field', 'theme-options', 'second_section');
     register_setting( 'theme-options-grp', 'second_header_headline');
+    add_settings_field('second_header_headline_background_color', 'Second Header Headline Background Color', 'display_second_headline_background_color_option_field', 'theme-options', 'second_section');
+    register_setting( 'theme-options-grp', 'second_header_headline_background_color');
 }
 add_action('admin_init','lmf_theme_settings');
 
@@ -59,6 +60,14 @@ function display_shop_hours_option_field(){
 function display_first_headline_option_field(){
     echo '<div class="explainer">Keep the message short (ideally less than 130 characters), to the point, and any links should use UTM linking.</div>';
     echo wp_editor( get_option('first_header_headline'), 'first_header_headline', ['textarea_name' => 'first_header_headline','media_buttons' => false,'tinymce' => ['height' => '50', 'toolbar1' => 'bold,italic,underline,separator,link,unlink,undo,redo',]] );
+}
+function display_first_headline_background_color_option_field() {
+    $selectedOption = get_option('first_header_headline_background_color');
+    echo '<select name="first_header_headline_background_color" id="first_header_headline_background_color"><option value="0">Select A Color</option><option value="blue" '.selected( $selectedOption, "blue", false ).'>Blue</option><option value="gray" '.selected( $selectedOption, "gray", false ).'>Gray</option><option value="orange" '.selected( $selectedOption, "orange", false ).'>Orange</option><option value="white" '.selected( $selectedOption, "white", false ).'>White</option><option value="yellow" '.selected( $selectedOption, "yellow", false ).'>Yellow</option></select>';
+}
+function display_second_headline_background_color_option_field() {
+    $selectedOption = get_option('second_header_headline_background_color');
+    echo '<select name="second_header_headline_background_color" id="second_header_headline_background_color"><option value="0">Select A Color</option><option value="blue" '.selected( $selectedOption, "blue", false ).'>Blue</option><option value="gray" '.selected( $selectedOption, "gray", false ).'>Gray</option><option value="orange" '.selected( $selectedOption, "orange", false ).'>Orange</option><option value="white" '.selected( $selectedOption, "white", false ).'>White</option><option value="yellow" '.selected( $selectedOption, "yellow", false ).'>Yellow</option></select>';
 }
 function display_second_headline_option_field(){
     echo '<div class="explainer">Keep the message short (ideally less than 130 characters), to the point, and any links should use UTM linking.</div>';

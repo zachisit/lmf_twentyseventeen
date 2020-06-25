@@ -65,10 +65,10 @@
 $cartTotal = WC()->cart->get_cart_contents_count();
 ?>
 <?php if (get_option('first_header_headline')) : ?>
-    <div class="headerHeadlineMessage"><?=get_option('first_header_headline')?></div>
+    <div class="headerHeadlineMessage <?=(get_option('first_header_headline_background_color') != '0')?get_option('first_header_headline_background_color'):''?>"><?=get_option('first_header_headline')?></div>
 <?php endif ?>
 <?php if (get_option('second_header_headline')) : ?>
-    <div class="headerHeadlineMessage"><?=get_option('second_header_headline')?></div>
+    <div class="headerHeadlineMessage <?=(get_option('second_header_headline_background_color') != '0')?get_option('second_header_headline_background_color'):''?>"><?=get_option('second_header_headline')?></div>
 <?php endif ?>
 <div id="wrapper" class="<?php if ( is_home() ) { echo 'home_wrapper';} else { echo 'internal_wrapper'; }?>">
     <div id="mobile_header">
