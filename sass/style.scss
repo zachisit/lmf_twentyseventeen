@@ -20,6 +20,49 @@ ul {
   padding: 0;
   list-style-type: none;
 }
+.headerHeadlineMessage {
+  display:block;
+  background-color:white;
+  padding:10px 8%;
+  text-align: center;
+  border-bottom:1px solid #ccc;
+  font-size:15px;
+  &.orange {
+    background-color:$brand_orange;
+    color:white;
+    a {
+      color:white;
+    }
+  }
+  &.blue {
+    background-color: $brand_blue;
+    color:white;
+    a {
+      color:white;
+    }
+  }
+  &.yellow {
+    background-color: $brand_yellow;
+    color:#333;
+    a {
+      color:#333;
+    }
+  }
+  &.gray {
+    background-color:gray;
+    color:white;
+    a {
+      color:white;
+    }
+  }
+  @include media-query-size(0,1040px){
+    padding:10px 0;
+  }
+  a {
+    color:black;
+    text-decoration: underline;
+  }
+}
 #wrapper {
   background: white;
   margin: auto;

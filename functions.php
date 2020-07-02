@@ -6,7 +6,7 @@
  *
  * @package tater
  */
-define('THEME_VERSION','4.26');
+define('THEME_VERSION','4.29');
 require_once "cpts/announcements.php";
 require_once "cpts/homepage_slider.php";
 require_once "woo/woo_specifics.php";
